@@ -1,0 +1,80 @@
+/* css/home.css */
+
+/* Grilla principal */
+.home-grid {
+    margin-bottom: 28px;
+}
+
+/* Tarjetas de acceso rápido */
+.quick-card {
+    text-decoration: none;
+    display: block;
+    text-align: center; /* Centramos el contenido de la card */
+    transition: var(--transicion);
+}
+
+.card-icon {
+    font-size: 28px; 
+    margin-bottom: 10px;
+}
+
+.card-title {
+    font-size: 15px; 
+    font-weight: 600; 
+    color: var(--texto); 
+    margin-bottom: 4px;
+}
+
+.card-desc {
+    font-size: 13px; 
+    color: var(--texto-gris);
+    line-height: 1.4;
+}
+
+/* Sección de Tendencias */
+.trending-card {
+    border-left: 4px solid var(--rosa-fuerte); /* Un detalle elegante */
+}
+
+.trending-header {
+    display: flex; 
+    align-items: center; 
+    gap: 10px; 
+    margin-bottom: 12px;
+}
+
+.trending-label {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--texto-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.hashtag {
+    background: var(--rosa-fuerte);
+    color: white;
+    font-size: 12px;
+    padding: 3px 12px;
+    border-radius: 50px;
+    font-weight: 500;
+}
+
+.trending-text {
+    font-size: 14px;
+    color: var(--texto-gris);
+    line-height: 1.6;
+    font-style: italic;
+    margin-bottom: 12px;
+}
+
+.trending-link {
+    color: var(--rosa-fuerte);
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.trending-link:hover {
+    text-decoration: underline;
+}

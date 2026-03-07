@@ -1,0 +1,135 @@
+/* css/profile.css — Estilos específicos para Mi Espacio */
+
+/* 1. Cabecera Hero de Perfil */
+.card-hero-profile {
+    background: linear-gradient(135deg, var(--sidebar-fondo), #3a2a35);
+    color: white;
+    padding: 35px;
+    border-radius: 20px;
+    margin-bottom: 28px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.card-hero-profile h2 {
+    margin: 0 0 8px 0;
+    font-size: 26px;
+    font-weight: 700;
+}
+
+.card-hero-profile p {
+    margin: 0 0 18px 0;
+    opacity: 0.85;
+    font-size: 15px;
+}
+
+.badge-proteccion {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(39, 174, 96, 0.15);
+    color: var(--verde);
+    border-radius: 50px;
+    padding: 6px 14px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+/* 2. Títulos de Sección */
+.seccion-titulo {
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--texto-muted);
+    margin: 30px 0 15px 5px;
+}
+
+/* 3. Ítems del Listado (Mini-items) */
+.mini-item {
+    background: white;
+    border: 1.5px solid var(--borde);
+    border-radius: 16px;
+    padding: 16px 20px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.25s ease;
+    cursor: pointer;
+}
+
+.mini-item:hover {
+    transform: translateX(5px);
+    border-color: var(--rosa-medio);
+    box-shadow: 0 4px 12px rgba(181, 71, 110, 0.06);
+}
+
+.mini-item-izq {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.mini-icono {
+    width: 42px;
+    height: 42px;
+    background: var(--rosa-claro);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+
+.mini-titulo {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--texto);
+    margin-bottom: 2px;
+}
+
+.mini-sub {
+    font-size: 13px;
+    color: var(--texto-gris);
+}
+
+/* 4. Estados de Color */
+.text-danger { color: var(--rojo); font-weight: 600; }
+.text-success { color: var(--verde); font-weight: 600; }
+
+.mini-flecha {
+    color: var(--texto-muted);
+    font-size: 20px;
+    font-weight: 300;
+    transition: transform 0.2s ease;
+}
+
+.mini-item:hover .mini-flecha {
+    transform: translateX(3px);
+    color: var(--rosa-fuerte);
+}
+
+/* 5. Ítem de Perfil Punteado (Dashed) */
+.item-dashed {
+    background: rgba(255, 255, 255, 0.5);
+    border: 2px dashed var(--borde);
+}
+
+.item-dashed:hover {
+    background: white;
+    border-style: solid;
+    border-color: var(--rosa-fuerte);
+}
+
+.mini-icono-plus {
+    width: 42px;
+    height: 42px;
+    background: var(--borde);
+    color: var(--rosa-fuerte);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    font-weight: bold;
+}

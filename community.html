@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WomenConnect — Comunidad</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/community.css">
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="topbar-logo">Women<em>Connect</em></div>
+    <button class="btn-menu" onclick="abrirMenu()">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+      </svg>
+    </button>
+  </div>
+
+  <div class="menu-movil" id="menu-movil">
+    <nav>
+      <a href="home.html" class="nav-link"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 12L12 3L21 12V20a1 1 0 0 1-1 1h-5v-5H9v5H4a1 1 0 0 1-1-1V12z"/></svg>Inicio</a>
+      <a href="community.html" class="nav-link activo"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="7" r="3"/><circle cx="15" cy="7" r="3"/><path d="M3 21c0-3 2.7-5 6-5h6c3.3 0 6 2 6 5"/></svg>Comunidad</a>
+      <a href="valia.html" class="nav-link"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Valia IA</a>
+      <a href="ranking.html" class="nav-link"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg>Ranking</a>
+      <a href="profile.html" class="nav-link"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg>Mi Espacio</a>
+      <a href="index.html" class="btn-salir" style="text-decoration: none;">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+        Cerrar sesión
+      </a>
+    </nav>
+  </div>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="sidebar-logo"><span>Women<em>Connect</em></span></div>
+      <nav>
+        <a href="home.html" class="nav-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 12L12 3L21 12V20a1 1 0 0 1-1 1h-5v-5H9v5H4a1 1 0 0 1-1-1V12z"/></svg>Inicio</a>
+        <a href="community.html" class="nav-link activo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="7" r="3"/><circle cx="15" cy="7" r="3"/><path d="M3 21c0-3 2.7-5 6-5h6c3.3 0 6 2 6 5"/></svg>Comunidad</a>
+        <a href="valia.html" class="nav-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Valia IA</a>
+        <a href="ranking.html" class="nav-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg>Ranking</a>
+        <a href="profile.html" class="nav-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg>Mi Espacio</a>
+      </nav>
+      <div class="sidebar-footer">
+        <div class="sidebar-usuario">
+          <div class="avatar" id="avatar-letra">U</div>
+          <div class="usuario-info"><span id="nombre-usuario">Usuaria</span><small>🔒 Protegida</small></div>
+        </div>
+        <a href="index.html" class="btn-salir" style="text-decoration: none;">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+          Cerrar sesión
+         </a>
+      </div>
+    </aside>
+
+    <main class="contenido animar">
+      <div class="main-container">
+        <div class="pagina-titulo">
+          <h1>Comunidad</h1>
+          <p>Espacio seguro. Tú decides cómo participar.</p>
+        </div>
+
+        <div class="post-actions">
+          <button class="btn-principal" onclick="abrirModal('modal-publicar')">
+            + Compartir experiencia
+          </button>
+        </div>
+
+    <!-- FEED DE POSTS -->
+      <div id="feed">
+
+        <div class="post">
+          <span class="badge">#ReinicioLaboral</span>
+          <p class="post-texto">Volví al mercado laboral después de 4 años cuidando a mis hijos. Gracias a WomenConnect detecté una oferta fraudulenta antes de responder. No estamos solas.</p>
+          <div class="post-pie">
+            <div class="post-reacciones">
+              <button class="btn-reaccion" id="like-1" onclick="darLike('1')">
+                ♥ <span id="contador-1">48</span>
+              </button>
+            </div>
+            <span class="anon-label">🔒 Anónima</span>
+          </div>
+        </div>
+
+        <div class="post">
+          <span class="badge">#Salarial</span>
+          <p class="post-texto">Me enteré que mi colega con menos experiencia ganaba 20% más. Usé el FemScore como argumento con RRHH. Me escucharon.</p>
+          <div class="post-pie">
+            <div class="post-reacciones">
+              <button class="btn-reaccion" id="like-2" onclick="darLike('2')">
+                ♥ <span id="contador-2">93</span>
+              </button>
+            </div>
+            <span class="anon-label">🔒 Anónima</span>
+          </div>
+        </div>
+
+        <div class="post">
+          <span class="badge">#Cuidados</span>
+          <p class="post-texto">El trabajo de cuidado es trabajo. Cuando lo puse en mi CV con ayuda de Valia, varias empresas lo valoraron positivamente.</p>
+          <div class="post-pie">
+            <div class="post-reacciones">
+              <button class="btn-reaccion" id="like-3" onclick="darLike('3')">
+                ♥ <span id="contador-3">67</span>
+              </button>
+            </div>
+            <span class="anon-label">🔒 Anónima</span>
+          </div>
+        </div>
+
+      </div><!-- /feed -->
+      </div>
+    </main>
+  </div>
+
+  <div class="modal-fondo" id="modal-publicar">
+    <div class="modal-caja">
+      <div class="modal-titulo">Compartir experiencia</div>
+      <label class="campo-label">Etiqueta</label>
+      <div class="tag-selector">
+        <button class="btn-tag" onclick="seleccionarEtiqueta(this)">#ReinicioLaboral</button>
+        <button class="btn-tag" onclick="seleccionarEtiqueta(this)">#Salarial</button>
+        <button class="btn-tag" onclick="seleccionarEtiqueta(this)">#Cuidados</button>
+        <button class="btn-tag" onclick="seleccionarEtiqueta(this)">#PrimerEmpleo</button>
+      </div>
+
+      <label class="campo-label">Tu experiencia</label>
+      <textarea class="campo-textarea" id="texto-post" placeholder="Escribe tu experiencia aquí..."></textarea>
+      <p class="privacy-note">🔒 Tu publicación será completamente anónima.</p>
+
+      <button class="btn-principal full-width" onclick="publicarPost()">Publicar</button>
+      <button class="btn-cancelar" onclick="cerrarModal('modal-publicar')">Cancelar</button>
+    </div>
+  </div>
+
+  <div id="toast"></div>
+  <script src="js/main.js"></script>
+  <script src="js/community.js"></script>
+</body>
+</html>

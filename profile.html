@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WomenConnect — Mi Espacio</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/profile.css">
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="topbar-logo">Women<em>Connect</em></div>
+    <button class="btn-menu" onclick="abrirMenu()">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+      </svg>
+    </button>
+  </div>
+
+  <div class="menu-movil" id="menu-movil">
+    <nav>
+      <a href="home.html" class="nav-link"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 12L12 3L21 12V20a1 1 0 0 1-1 1h-5v-5H9v5H4a1 1 0 0 1-1-1V12z"/></svg>Inicio</a>
+      <a href="community.html" class="nav-link"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="7" r="3"/><circle cx="15" cy="7" r="3"/><path d="M3 21c0-3 2.7-5 6-5h6c3.3 0 6 2 6 5"/></svg>Comunidad</a>
+      <a href="valia.html" class="nav-link"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Valia IA</a>
+      <a href="ranking.html" class="nav-link"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg>Ranking</a>
+      <a href="profile.html" class="nav-link activo"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg>Mi Espacio</a>
+      <a href="index.html" class="btn-salir" style="text-decoration: none;">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+          Cerrar sesión
+        </a>
+    </nav>
+  </div>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="sidebar-logo"><span>Women<em>Connect</em></span></div>
+      <nav>
+        <a href="home.html" class="nav-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 12L12 3L21 12V20a1 1 0 0 1-1 1h-5v-5H9v5H4a1 1 0 0 1-1-1V12z"/></svg>Inicio</a>
+        <a href="community.html" class="nav-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="7" r="3"/><circle cx="15" cy="7" r="3"/><path d="M3 21c0-3 2.7-5 6-5h6c3.3 0 6 2 6 5"/></svg>Comunidad</a>
+        <a href="valia.html" class="nav-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Valia IA</a>
+        <a href="ranking.html" class="nav-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg>Ranking</a>
+        <a href="profile.html" class="nav-link activo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg>Mi Espacio</a>
+      </nav>
+      <div class="sidebar-footer">
+        <div class="sidebar-usuario">
+          <div class="avatar" id="avatar-letra">U</div>
+          <div class="usuario-info"><span id="nombre-usuario">Usuaria</span><small>🔒 Protegida</small></div>
+        </div>
+        <a href="index.html" class="btn-salir" style="text-decoration: none;">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+          Cerrar sesión
+        </a>
+      </div>
+    </aside>
+
+    <main class="contenido animar">
+
+      <!-- Cabecera oscura -->
+      <div class="card-hero" style="margin-bottom:28px;">
+        <h2>Mi Espacio Seguro</h2>
+        <p>Tu información, bajo tu control. Nadie más tiene acceso.</p>
+        <div style="display:inline-flex;align-items:center;gap:6px;background:var(--verde-fondo);color:var(--verde);border-radius:50px;padding:6px 14px;font-size:12px;">
+          🔒 Datos protegidos
+        </div>
+      </div>
+
+      <!-- Mis verificaciones -->
+      <div class="seccion-titulo">Mis verificaciones</div>
+
+      <div class="mini-item">
+        <div class="mini-item-izq">
+          <div class="mini-icono">🛡</div>
+          <div>
+            <div class="mini-titulo">Oferta: "Vendedora desde casa"</div>
+            <div class="mini-sub" style="color:var(--rojo);">⚠ Riesgo alto detectado</div>
+          </div>
+        </div>
+        <span style="color:var(--texto-muted);">›</span>
+      </div>
+
+      <div class="mini-item">
+        <div class="mini-item-izq">
+          <div class="mini-icono">✅</div>
+          <div>
+            <div class="mini-titulo">Oferta: "Analista de datos Jr."</div>
+            <div class="mini-sub" style="color:var(--verde);">✓ Bajo riesgo</div>
+          </div>
+        </div>
+        <span style="color:var(--texto-muted);">›</span>
+      </div>
+
+      <!-- Empresas guardadas -->
+      <div class="seccion-titulo">Empresas guardadas</div>
+
+      <div class="mini-item">
+        <div class="mini-item-izq">
+          <div class="mini-icono">⭐</div>
+          <div>
+            <div class="mini-titulo">Futuro Digital S.A.</div>
+            <div class="mini-sub">FemScore: <strong style="color:var(--verde);">8.7</strong></div>
+          </div>
+        </div>
+        <span style="color:var(--texto-muted);">›</span>
+      </div>
+
+      <div class="mini-item">
+        <div class="mini-item-izq">
+          <div class="mini-icono">⭐</div>
+          <div>
+            <div class="mini-titulo">Salud Integral Perú</div>
+            <div class="mini-sub">FemScore: <strong style="color:var(--verde);">9.2</strong></div>
+          </div>
+        </div>
+        <span style="color:var(--texto-muted);">›</span>
+      </div>
+
+      <!-- Mis publicaciones -->
+      <div class="seccion-titulo">Mis publicaciones</div>
+
+      <div class="mini-item">
+        <div class="mini-item-izq">
+          <div class="mini-icono">💬</div>
+          <div>
+            <div class="mini-titulo">#ReinicioLaboral</div>
+            <div class="mini-sub">48 reacciones · 12 comentarios</div>
+          </div>
+        </div>
+        <span style="color:var(--texto-muted);">›</span>
+      </div>
+
+      <!-- Perfil -->
+      <div class="seccion-titulo">Mi perfil</div>
+
+      <div class="mini-item" style="border-style:dashed;" onclick="mostrarToast('Próximamente: completar perfil')">
+        <div class="mini-item-izq">
+          <div class="mini-icono" style="font-size:20px;">＋</div>
+          <div>
+            <div class="mini-titulo">Completar mi perfil</div>
+            <div class="mini-sub">Incluye experiencias de cuidado y no formales</div>
+          </div>
+        </div>
+        <span style="color:var(--texto-muted);">›</span>
+      </div>
+
+    </main>
+  </div>
+
+  <div id="toast"></div>
+  <script src="js/main.js"></script>
+  <script src="js/profile.js"></script>
+</body>
+</html>
