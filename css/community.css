@@ -1,42 +1,354 @@
-/* css/community.css */
-.post-actions {
-  display: flex; 
-  justify-content: flex-end; 
-  margin-bottom: 20px;
+/* =========================================================
+   COMUNIDAD.CSS — Extiende styles.css sin romper nada
+   ========================================================= */
+
+/* ----- HEADER Y ACCIONES ----- */
+.comunidad-header { margin-bottom: 24px; }
+
+.comunidad-actions-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 32px;
 }
 
-.tag-selector {
+.comunidad-top-row {
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* Sobreescribe el search-bar de styles.css con el estilo del proyecto */
+.search-bar {
+  flex: 1;
+  min-width: 250px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--blanco);
+  border: 1.5px solid var(--borde);
+  border-radius: 50px;
+  padding: 12px 20px;
+  transition: var(--transicion);
+}
+.search-bar:focus-within { border-color: var(--rosa-fuerte); }
+.search-bar input {
+  border: none; outline: none; flex: 1;
+  font-family: inherit; font-size: 14px;
+  background: transparent; color: var(--texto);
+}
+
+/* ----- FILTROS DE ETIQUETA ----- */
+.filter-tags {
   display: flex;
   gap: 8px;
   flex-wrap: wrap;
-  margin-bottom: 16px;
+  width: 100%;
 }
 
+.ftag {
+  background: var(--blanco);
+  border: 1px solid var(--borde);
+  color: var(--texto-gris);
+  font-size: 12px;
+  padding: 6px 16px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: var(--transicion);
+  font-family: inherit;
+}
+.ftag:hover, .ftag.active {
+  border-color: var(--rosa-fuerte);
+  color: var(--rosa-fuerte);
+  background: var(--rosa-claro);
+  font-weight: 500;
+}
+
+/* ----- TARJETA DE POST ----- */
+.post-card {
+  background: var(--blanco);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio);
+  padding: 24px;
+  margin-bottom: 16px;
+  transition: var(--transicion);
+}
+.post-card:hover {
+  border-color: var(--rosa-fuerte);
+  box-shadow: 0 4px 16px rgba(181, 71, 110, 0.08);
+}
+
+.post-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+
+.post-author { display: flex; align-items: center; gap: 12px; }
+
+.author-avatar {
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  background: var(--rosa-claro);
+  display: flex; align-items: center; justify-content: center;
+}
+.author-avatar svg { width: 20px; height: 20px; color: var(--rosa-fuerte); }
+
+.author-info { display: flex; flex-direction: column; }
+
+.author-name {
+  font-size: 14px; font-weight: 500; color: var(--texto);
+  display: flex; align-items: center; gap: 6px;
+}
+.author-time {
+  font-size: 11px; color: var(--texto-muted);
+  margin-top: 2px; text-transform: uppercase; letter-spacing: 0.5px;
+}
+
+.btn-report {
+  background: none; border: none; color: var(--texto-muted);
+  cursor: pointer; transition: var(--transicion);
+  display: flex; align-items: center; gap: 6px; font-size: 12px;
+  font-family: inherit;
+}
+.btn-report:hover { color: var(--rojo); }
+
+.post-tag {
+  display: inline-block;
+  background: var(--rosa-claro); color: var(--rosa-fuerte);
+  font-size: 11px; font-weight: 500;
+  padding: 4px 12px; border-radius: 50px;
+  border: 1px solid var(--borde); margin-bottom: 12px;
+}
+
+.post-text {
+  font-size: 14px; color: var(--texto);
+  line-height: 1.65; margin-bottom: 20px;
+}
+
+/* ----- FOOTER DEL POST ----- */
+.post-footer {
+  display: flex; justify-content: space-between;
+  align-items: center; flex-wrap: wrap; gap: 12px;
+  border-top: 1px solid var(--borde); padding-top: 16px;
+}
+
+.post-reactions { display: flex; gap: 8px; }
+
+.reaction-btn {
+  display: flex; align-items: center; gap: 6px;
+  font-size: 13px; color: var(--texto-gris);
+  cursor: pointer; background: var(--rosa-claro);
+  border: 1px solid var(--borde); border-radius: 50px;
+  padding: 6px 16px; transition: var(--transicion);
+  font-family: inherit;
+}
+.reaction-btn:hover {
+  background: var(--rosa-claro);
+  border-color: var(--rosa-fuerte); color: var(--rosa-fuerte);
+}
+.reaction-btn.liked {
+  background: var(--rosa-claro);
+  border-color: var(--rosa-fuerte); color: var(--rosa-fuerte);
+}
+.reaction-btn.liked svg { fill: var(--rosa-fuerte); stroke: var(--rosa-fuerte); }
+
+/* ----- COMENTARIOS ----- */
+.comments-section {
+  display: none;
+  margin-top: 16px; padding-top: 16px;
+  border-top: 1px dashed var(--borde);
+}
+.comments-section.open { display: block; }
+
+.comment-item {
+  margin-bottom: 12px;
+  background: var(--rosa-claro);
+  border-radius: 12px 12px 12px 4px;
+  padding: 12px 16px;
+}
+.comment-text {
+  font-size: 13px; color: var(--texto); line-height: 1.5; margin-bottom: 6px;
+}
+.comment-meta {
+  font-size: 11px; color: var(--texto-muted);
+  display: flex; justify-content: space-between;
+}
+.comment-like {
+  display: inline-flex; align-items: center; gap: 4px;
+  cursor: pointer; transition: color 0.3s ease;
+}
+.comment-like:hover, .comment-like.liked { color: var(--rosa-fuerte); }
+.comment-like.liked svg { fill: var(--rosa-fuerte); stroke: var(--rosa-fuerte); }
+
+.comment-box-container {
+  background: var(--rosa-claro); padding: 16px;
+  border-radius: 12px; border: 1px solid var(--borde); margin-top: 16px;
+}
+.comment-input-wrapper {
+  display: flex; gap: 12px; align-items: center;
+}
+.comment-input {
+  flex: 1; background: var(--blanco);
+  border: 1px solid var(--borde); border-radius: 50px;
+  padding: 10px 18px; font-family: inherit; font-size: 13px;
+  color: var(--texto); outline: none; transition: var(--transicion);
+}
+.comment-input:focus { border-color: var(--rosa-fuerte); }
+.btn-send-comment {
+  background: var(--rosa-fuerte); color: white; border: none;
+  border-radius: 50px; padding: 10px 20px;
+  font-family: inherit; font-size: 13px; font-weight: 500;
+  cursor: pointer; transition: var(--transicion); white-space: nowrap;
+}
+.btn-send-comment:hover { background: var(--rosa-medio); }
+
+/* ----- OVERRIDE: MODAL FLOTANTE CENTRADO ----- */
+/* Sobreescribe el modal de styles.css para que quede en el centro */
+.modal-fondo {
+  align-items: center !important;
+  padding: 20px;
+}
+
+.modal-caja {
+  border-radius: var(--radio) !important; /* todos los bordes redondeados, no solo arriba */
+  border-top: 3px solid var(--rosa-fuerte);
+  transform: translateY(-12px) scale(0.97) !important;
+  transition: transform 0.3s, opacity 0.3s !important;
+  max-width: 500px;
+  width: 100%;
+  position: relative;
+}
+
+.modal-fondo.abierto .modal-caja {
+  transform: translateY(0) scale(1) !important;
+}
+
+/* ----- MODALES (comunidad) ----- */
+.modal-badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: var(--rosa-claro); color: var(--rosa-fuerte);
+  border: 1px solid var(--borde); padding: 5px 14px;
+  border-radius: 50px; font-size: 11px; font-weight: 600;
+  letter-spacing: 0.8px; text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.modal-sub {
+  font-size: 13px; color: var(--texto-gris); margin-bottom: 20px;
+}
+
+.modal-cerrar {
+  position: absolute; top: 20px; right: 20px;
+  background: none; border: none; color: var(--texto-muted);
+  cursor: pointer; transition: var(--transicion);
+}
+.modal-cerrar:hover { color: var(--rosa-fuerte); transform: scale(1.1); }
+
+.modal-grande { max-width: 560px; }
+
+.modal-privacy-row {
+  display: flex; align-items: center; gap: 16px;
+  flex-wrap: wrap; margin: 20px 0;
+  border-top: 1px solid var(--borde); padding-top: 20px;
+}
+
+.privacy-note {
+  font-size: 12px; color: var(--verde); margin: 0;
+}
+
+/* Toggle switch pequeño */
+.toggle-wrapper { display: flex; align-items: center; gap: 8px; }
+.toggle-text { font-size: 13px; color: var(--texto); font-weight: 500; }
+
+.switch-sm {
+  position: relative; display: inline-block; width: 38px; height: 22px;
+}
+.switch-sm input { opacity: 0; width: 0; height: 0; }
+.slider-sm {
+  position: absolute; cursor: pointer;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: #ccc; transition: .3s; border-radius: 22px;
+}
+.slider-sm:before {
+  position: absolute; content: "";
+  height: 16px; width: 16px; left: 3px; bottom: 3px;
+  background-color: white; transition: .3s; border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+input:checked + .slider-sm { background-color: var(--rosa-fuerte); }
+input:checked + .slider-sm:before { transform: translateX(16px); }
+
+/* Selección de etiqueta activa en modales */
+.btn-tag.activo-tag {
+  background: var(--rosa-claro);
+  border-color: var(--rosa-fuerte);
+  color: var(--rosa-fuerte);
+  font-weight: 600;
+}
+
+.tall-textarea { min-height: 130px; }
+
+/* ----- OVERRIDES PARA INPUTS Y BOTONES EN MODALES ----- */
+.campo-textarea {
+  background: var(--rosa-claro) !important;
+  border-color: var(--borde) !important;
+}
+.campo-textarea:focus {
+  border-color: var(--rosa-fuerte) !important;
+  background: var(--blanco) !important;
+  box-shadow: 0 0 0 3px rgba(181,71,110,0.08) !important;
+}
+
+/* Botón cancelar con estilo */
+.btn-cancelar {
+  display: block;
+  margin: 10px auto 0;
+  background: none;
+  border: none;
+  color: var(--texto-muted);
+  font-size: 13px;
+  font-family: inherit;
+  cursor: pointer;
+  padding: 8px 16px;
+  border-radius: 50px;
+  transition: var(--transicion);
+  width: 100%;
+  text-align: center;
+}
+.btn-cancelar:hover {
+  background: var(--rosa-claro);
+  color: var(--texto-gris);
+}
+
+/* Botón principal full width */
+.full-width {
+  width: 100%;
+  justify-content: center;
+}
+
+/* Botón tag en modales */
 .btn-tag {
   background: white;
   color: var(--rosa-fuerte);
   border: 1.5px solid var(--rosa-fuerte);
   border-radius: 50px;
-  padding: 5px 14px;
+  padding: 6px 14px;
   font-size: 12px;
+  font-family: inherit;
+  cursor: pointer;
   transition: var(--transicion);
+  font-weight: 500;
 }
-
-.privacy-note {
-  font-size: 12px;
-  color: var(--verde);
-  margin-bottom: 16px;
+.btn-tag:hover {
+  background: var(--rosa-claro);
 }
-
-.full-width {
-  width: 100%;
-}
-
-.btn-cancelar {
-  display: block;
-  margin: 12px auto 0;
-  background: none;
-  border: none;
-  color: var(--texto-muted);
-  font-size: 13px;
+.btn-tag.activo-tag {
+  background: var(--rosa-claro);
+  border-color: var(--rosa-fuerte);
+  color: var(--rosa-fuerte);
+  font-weight: 600;
 }

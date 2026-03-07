@@ -1,48 +1,330 @@
-/* css/ranking.css */
+/* =============================================
+   ranking.css — WomenConnect (Hackaton8M)
+   Extiende styles.css (variables --rosa-fuerte, etc.)
+   ============================================= */
+
+/* ---- BUSCADOR ---- */
 .barra-busqueda {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  background: white;
-  border: 1.5px solid var(--borde);
-  border-radius: 50px;
-  padding: 10px 18px;
-  margin-bottom: 14px;
-}
-
-.barra-busqueda input {
-  border: none; background: none; outline: none;
-  font-family: inherit; font-size: 14px; color: var(--texto);
-  flex: 1;
-}
-
-.filtros {
-  display: flex;
-  gap: 8px; flex-wrap: wrap;
-  margin-bottom: 22px;
-}
-
-.filtro {
-  border: 1px solid var(--borde);
-  background: white;
-  color: var(--texto-gris);
-  font-size: 12px;
-  padding: 6px 16px;
-  border-radius: 50px;
-  cursor: pointer;
+  display: flex; align-items: center; gap: 10px;
+  background: var(--blanco); border: 1.5px solid var(--borde);
+  border-radius: 50px; padding: 10px 18px; margin-bottom: 14px;
   transition: var(--transicion);
 }
+.barra-busqueda:focus-within { border-color: var(--rosa-fuerte); }
+.barra-busqueda input {
+  border: none; background: none; outline: none;
+  font-family: inherit; font-size: 14px; color: var(--texto); flex: 1;
+}
 
+/* ---- FILTROS ---- */
+.filtros { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 22px; }
+.filtro {
+  border: 1px solid var(--borde); background: var(--blanco); color: var(--texto-gris);
+  font-size: 12px; padding: 6px 16px; border-radius: 50px;
+  cursor: pointer; transition: var(--transicion); font-family: inherit;
+}
 .filtro:hover { border-color: var(--rosa-fuerte); color: var(--rosa-fuerte); }
-.filtro.activo { 
-  border-color: var(--rosa-fuerte); 
-  color: var(--rosa-fuerte); 
-  background: var(--rosa-claro); 
-  font-weight: 500; 
+.filtro.activo {
+  border-color: var(--rosa-fuerte); color: var(--rosa-fuerte);
+  background: var(--rosa-claro); font-weight: 500;
 }
 
-.ranking-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
+/* ---- LISTA DE EMPRESAS ---- */
+.ranking-grid { display: flex; flex-direction: column; gap: 12px; }
+
+/* =============================================
+   PERFIL DE EMPRESA
+   (Clases del empresa.html de Nicole, adaptadas
+    a las variables de TU styles.css)
+   ============================================= */
+
+.back-link {
+  display: inline-flex; align-items: center; gap: 6px;
+  color: var(--rosa-fuerte); font-size: 14px; font-weight: 500;
+  margin-bottom: 20px; background: none; border: none;
+  cursor: pointer; font-family: inherit; padding: 0;
+  text-decoration: none; transition: var(--transicion);
 }
+.back-link:hover { color: var(--rosa-medio); }
+
+/* Header blanco con borde */
+.perfil-header {
+  background: var(--blanco); border: 1px solid var(--borde);
+  border-radius: var(--radio); padding: 28px; margin-bottom: 24px;
+}
+.header-top {
+  display: flex; justify-content: space-between;
+  align-items: flex-start; gap: 24px; margin-bottom: 24px; flex-wrap: wrap;
+}
+
+/* Título y descripción */
+.perfil-title h1 {
+  font-family: Georgia, serif; font-size: 26px;
+  font-weight: 400; color: var(--texto); margin-bottom: 8px;
+}
+.perfil-title p {
+  font-size: 14px; color: var(--texto-gris); max-width: 500px; line-height: 1.6;
+}
+
+/* Pills de meta-info (RUC, sede, industria) */
+.empresa-meta { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+.meta-item {
+  display: inline-flex; align-items: center; gap: 6px; font-size: 12px;
+  color: var(--texto-gris); background: var(--rosa-claro);
+  border: 1px solid var(--borde); padding: 5px 12px; border-radius: 50px;
+}
+
+/* FemScore grande en perfil */
+.header-actions { display: flex; align-items: center; gap: 20px; flex-shrink: 0; }
+.perfil-score { text-align: center; }
+.perfil-score .femscore-numero {
+  font-family: Georgia, serif; font-size: 52px;
+  font-weight: 300; line-height: 1; color: var(--verde);
+}
+.perfil-score .femscore-label {
+  font-size: 9px; font-weight: 700; letter-spacing: 1.5px;
+  text-transform: uppercase; margin-top: 4px; color: var(--verde);
+}
+
+/* Botón guardar */
+.btn-fav {
+  background: none; border: 1px solid var(--borde); border-radius: var(--radio-sm);
+  color: var(--texto-muted); cursor: pointer;
+  display: flex; flex-direction: column; align-items: center; gap: 5px;
+  font-size: 11px; font-family: inherit; padding: 10px 14px; transition: var(--transicion);
+}
+.btn-fav svg { width: 22px; height: 22px; }
+.btn-fav:hover, .btn-fav.activo {
+  color: var(--rosa-fuerte); border-color: var(--rosa-fuerte); background: var(--rosa-claro);
+}
+
+/* Grilla métricas */
+.metrics-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+.metric-box {
+  background: var(--rosa-claro); border: 1px solid var(--borde);
+  border-radius: var(--radio-sm); padding: 14px; text-align: center;
+}
+.metric-name {
+  font-size: 10px; color: var(--texto-gris); text-transform: uppercase;
+  letter-spacing: 1px; margin-bottom: 6px; font-weight: 500;
+}
+.metric-value { font-size: 20px; font-weight: 600; color: var(--rosa-fuerte); }
+
+/* Layout: reseñas + sidebar CTA */
+.perfil-body { display: flex; gap: 24px; align-items: flex-start; }
+.reviews-section { flex: 1; min-width: 0; }
+.sidebar-cta { width: 280px; flex-shrink: 0; position: sticky; top: 20px; }
+
+/* Título sección reseñas */
+.section-title {
+  font-family: Georgia, serif; font-size: 17px; font-weight: 400;
+  color: var(--texto); margin-bottom: 16px;
+  display: flex; align-items: center; gap: 8px;
+}
+.section-title svg { stroke: var(--rosa-fuerte); }
+
+/* Tarjetas de reseña */
+.review-card {
+  background: var(--blanco); border: 1px solid var(--borde);
+  border-radius: var(--radio); padding: 18px; margin-bottom: 12px;
+  transition: var(--transicion);
+}
+.review-card:hover { border-color: var(--borde-fuerte); box-shadow: var(--sombra); }
+.review-header {
+  display: flex; justify-content: space-between;
+  align-items: center; margin-bottom: 10px;
+}
+.user-anon {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 13px; font-weight: 500; color: var(--texto);
+}
+.user-avatar {
+  width: 30px; height: 30px; background: var(--rosa-claro);
+  border: 1px solid var(--borde); border-radius: 50%;
+  display: inline-block; flex-shrink: 0;
+}
+.stars { color: var(--rosa-fuerte); font-size: 15px; letter-spacing: 2px; }
+.star-empty { color: var(--borde); }
+.review-text { font-size: 14px; color: var(--texto); line-height: 1.6; margin-bottom: 8px; }
+.review-date {
+  font-size: 10px; color: var(--texto-muted);
+  text-transform: uppercase; letter-spacing: 1px; font-weight: 600;
+}
+
+/* CTA lateral rosado */
+.cta-box {
+  background: linear-gradient(135deg, var(--rosa-medio), var(--rosa-fuerte));
+  border-radius: var(--radio); padding: 26px 20px; text-align: center;
+}
+.cta-box h3 {
+  color: white; font-family: Georgia, serif; font-size: 19px;
+  font-weight: 400; margin-bottom: 10px;
+}
+.cta-box p { font-size: 13px; color: rgba(255,255,255,0.9); margin-bottom: 18px; line-height: 1.5; }
+.btn-white {
+  background: white; color: var(--rosa-fuerte); border: none;
+  border-radius: 50px; padding: 11px 22px; font-size: 14px; font-weight: 600;
+  font-family: inherit; cursor: pointer; width: 100%; transition: var(--transicion);
+}
+.btn-white:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(0,0,0,0.15); }
+
+/* =============================================
+   MODAL RESEÑA — centrado flotante
+   ============================================= */
+.modal-fondo {
+  display: none; position: fixed; inset: 0;
+  background: rgba(0,0,0,0.45); z-index: 200;
+  align-items: center; justify-content: center; padding: 20px;
+}
+.modal-fondo.abierto { display: flex; }
+
+.modal-caja {
+  background: var(--blanco); border-radius: var(--radio);
+  border-top: 3px solid var(--rosa-fuerte);
+  padding: 28px; width: 100%; max-width: 500px;
+  position: relative; animation: slideUp 0.28s ease;
+}
+.modal-resena-caja { max-width: 560px; max-height: 88vh; overflow-y: auto; }
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px) scale(0.97); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.modal-cerrar {
+  position: absolute; top: 16px; right: 16px;
+  background: none; border: none; color: var(--texto-muted);
+  cursor: pointer; transition: var(--transicion); padding: 4px;
+}
+.modal-cerrar:hover { color: var(--rosa-fuerte); transform: scale(1.15); }
+
+.modal-badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: var(--rosa-claro); color: var(--rosa-fuerte);
+  border: 1px solid var(--borde); padding: 4px 12px; border-radius: 50px;
+  font-size: 11px; font-weight: 600; letter-spacing: 0.5px; margin-bottom: 10px;
+}
+.modal-titulo { font-family: Georgia,serif; font-size: 20px; font-weight: 400; color: var(--texto); margin-bottom: 4px; }
+.modal-sub { font-size: 13px; color: var(--texto-gris); margin-bottom: 0; }
+
+/* Fila privacidad */
+.modal-privacy-row {
+  display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+  margin: 18px 0; border-top: 1px solid var(--borde); padding-top: 16px;
+}
+.secure-note-modal {
+  display: flex; align-items: center; gap: 10px; background: var(--rosa-claro);
+  border: 1px solid var(--borde); border-radius: var(--radio-sm);
+  padding: 10px 14px; flex: 1;
+}
+.toggle-wrapper { display: flex; align-items: center; gap: 8px; }
+.toggle-text { font-size: 13px; color: var(--texto); font-weight: 500; }
+.switch-sm { position: relative; display: inline-block; width: 38px; height: 22px; }
+.switch-sm input { opacity: 0; width: 0; height: 0; }
+.slider-sm {
+  position: absolute; cursor: pointer; inset: 0;
+  background: #ccc; border-radius: 22px; transition: .3s;
+}
+.slider-sm:before {
+  content: ""; position: absolute; width: 16px; height: 16px;
+  left: 3px; bottom: 3px; background: white; border-radius: 50%; transition: .3s;
+}
+input:checked + .slider-sm { background: var(--rosa-fuerte); }
+input:checked + .slider-sm:before { transform: translateX(16px); }
+
+/* Grilla estrellas */
+.rating-grid-modal { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 18px; }
+.rating-box-modal {
+  background: var(--rosa-claro); border: 1px solid var(--borde);
+  border-radius: var(--radio-sm); padding: 12px;
+}
+.rating-label-modal {
+  font-size: 11px; font-weight: 600; color: var(--rosa-fuerte);
+  margin-bottom: 8px; display: block;
+}
+.stars-row { display: flex; gap: 3px; margin-bottom: 4px; }
+.star-btn {
+  background: none; border: none; font-size: 20px; cursor: pointer;
+  color: var(--borde-fuerte); transition: color 0.15s; padding: 0; line-height: 1;
+}
+.star-btn:hover, .star-btn.activa { color: var(--rosa-fuerte); }
+.rating-desc-modal { font-size: 10px; color: var(--texto-muted); }
+
+/* Tags reseña */
+.tags-resena { display: flex; flex-wrap: wrap; gap: 8px; }
+.tag-resena {
+  border-radius: 50px; padding: 6px 13px; font-size: 12px; font-weight: 500;
+  cursor: pointer; transition: var(--transicion); font-family: inherit; background: var(--blanco);
+}
+.tag-resena.pos { border: 1px solid var(--verde); color: var(--verde); }
+.tag-resena.neg { border: 1px solid var(--rosa-fuerte); color: var(--rosa-fuerte); }
+.tag-resena.pos.seleccionada { background: var(--verde-fondo); font-weight: 600; }
+.tag-resena.neg.seleccionada { background: var(--rosa-claro); font-weight: 600; }
+
+/* Inputs campo */
+.campo-label { display: block; font-size: 12px; font-weight: 600; color: var(--texto-gris); text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 6px; margin-top: 16px; }
+.campo-input {
+  width: 100%; border: 1.5px solid var(--borde); border-radius: var(--radio-sm);
+  padding: 10px 14px; font-family: inherit; font-size: 14px; color: var(--texto);
+  background: var(--blanco); transition: var(--transicion); box-sizing: border-box;
+}
+.campo-input:focus { outline: none; border-color: var(--rosa-fuerte); }
+
+/* Botones */
+.full-width { width: 100%; justify-content: center; }
+.btn-cancelar {
+  display: block; width: 100%; text-align: center; margin-top: 10px;
+  background: none; border: none; color: var(--texto-muted); font-size: 13px;
+  font-family: inherit; cursor: pointer; padding: 8px; border-radius: 50px;
+  transition: var(--transicion);
+}
+.btn-cancelar:hover { background: var(--rosa-claro); color: var(--texto-gris); }
+
+/* =============================================
+   RESPONSIVE
+   ============================================= */
+@media (max-width: 768px) {
+  .perfil-body { flex-direction: column; }
+  .sidebar-cta { width: 100%; position: static; }
+  .metrics-grid { grid-template-columns: repeat(2, 1fr); }
+  .header-top { flex-direction: column; }
+  .rating-grid-modal { grid-template-columns: 1fr; }
+}
+
+/* ---- Fila buscador + botón añadir ---- */
+.ranking-top-row {
+  display: flex; gap: 12px; align-items: center;
+  margin-bottom: 14px; flex-wrap: wrap;
+}
+.ranking-top-row .barra-busqueda { margin-bottom: 0; flex: 1; min-width: 200px; }
+
+/* ---- Grupos de campos del modal empresa ---- */
+.form-group-modal { margin-bottom: 14px; }
+
+/* Select dentro de modal */
+.campo-select {
+  appearance: none; -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%239090AA' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: right 14px center;
+  padding-right: 36px; cursor: pointer;
+}
+
+@media (max-width: 500px) {
+  .ranking-top-row { flex-direction: column; align-items: stretch; }
+  .ranking-top-row .btn-primario { width: 100%; justify-content: center; }
+}
+
+/* ---- BTN PRIMARIO (rosa principal) ---- */
+.btn-primario {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--rosa-fuerte); color: white; border: none;
+  border-radius: 50px; padding: 11px 22px;
+  font-family: inherit; font-size: 14px; font-weight: 600;
+  cursor: pointer; transition: var(--transicion); white-space: nowrap;
+}
+.btn-primario:hover {
+  background: var(--rosa-oscuro);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(181,71,110,0.35);
+}
+.btn-primario.full-width { width: 100%; justify-content: center; }

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechNova Solutions - Escudo</title>
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/ranking.css">
+</head>
+
+<body>
+
+      <!-- TOPBAR MÓVIL -->
+  <div class="topbar">
+    <div class="topbar-logo">Women<em>Connect</em></div>
+    <button class="btn-menu" onclick="abrirMenu()">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- MENÚ MÓVIL -->
+  <div class="menu-movil" id="menu-movil">
+    <nav>
+      <a href="home.html" class="nav-link"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 12L12 3L21 12V20a1 1 0 0 1-1 1h-5v-5H9v5H4a1 1 0 0 1-1-1V12z"/></svg>Inicio</a>
+      <a href="comunidad.html" class="nav-link"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="7" r="3"/><circle cx="15" cy="7" r="3"/><path d="M3 21c0-3 2.7-5 6-5h6c3.3 0 6 2 6 5"/></svg>Comunidad</a>
+      <a href="valia.html" class="nav-link"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Valia IA</a>
+      <a href="ranking.html" class="nav-link activo"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg>Ranking</a>
+      <a href="profile.html" class="nav-link"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg>Mi Espacio</a>
+      <a href="index.html" class="btn-salir">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+        Cerrar sesión
+      </a>
+    </nav>
+  </div>
+
+  <!-- LAYOUT PRINCIPAL -->
+  <div class="layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="sidebar-logo"><span>Women<em>Connect</em></span></div>
+      <nav>
+        <a href="home.html" class="nav-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 12L12 3L21 12V20a1 1 0 0 1-1 1h-5v-5H9v5H4a1 1 0 0 1-1-1V12z"/></svg>Inicio</a>
+        <a href="comunidad.html" class="nav-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="7" r="3"/><circle cx="15" cy="7" r="3"/><path d="M3 21c0-3 2.7-5 6-5h6c3.3 0 6 2 6 5"/></svg>Comunidad</a>
+        <a href="valia.html" class="nav-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Valia IA</a>
+        <a href="ranking.html" class="nav-link activo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg>Ranking</a>
+        <a href="profile.html" class="nav-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg>Mi Espacio</a>
+      </nav>
+      <div class="sidebar-footer">
+        <div class="sidebar-usuario">
+          <div class="avatar" id="avatar-letra">U</div>
+          <div class="usuario-info"><span id="nombre-usuario">Usuaria</span><small>🔒 Protegida</small></div>
+        </div>
+        <a href="index.html" class="btn-salir">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+          Cerrar sesión
+        </a>
+      </div>
+    </aside>
+
+    <div class="container">
+        <a href="ranking.html" class="back-link">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="19" y1="12" x2="5" y2="12" />
+                <polyline points="12 19 5 12 12 5" />
+            </svg>
+            Volver al ranking
+        </a>
+
+        <div class="perfil-header">
+            <div class="header-top">
+                <div class="perfil-title">
+                    <h1>TechNova Solutions</h1>
+                    <p>Proveedor especializado en soluciones de software B2B, infraestructura cloud y soporte técnico
+                        corporativo, impulsando la transformación digital de empresas en la región.</p>
+
+                    <div class="empresa-meta">
+                        <span class="meta-item">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16c0 1.1.9 2 2 2h12a2 2 0 0 0 2-2V8l-6-6z" />
+                                <path d="M14 3v5h5M16 13H8M16 17H8M10 9H8" />
+                            </svg>
+                            RUC: 20524544789
+                        </span>
+                        <span class="meta-item">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                            Sede: San Isidro, Lima
+                        </span>
+                        <span class="meta-item">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+                                <line x1="8" y1="21" x2="16" y2="21" />
+                                <line x1="12" y1="17" x2="12" y2="21" />
+                            </svg>
+                            Industria: Tecnología y Sistemas
+                        </span>
+                    </div>
+                </div>
+
+                <div class="header-actions">
+                    <div class="femscore perfil-score score-high">
+                        <div class="femscore-num">9.5</div>
+                        <div class="femscore-label">FEMSCORE</div>
+                    </div>
+
+                    <button class="btn-fav" id="btnFav" onclick="toggleFav()">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                        </svg>
+                        Guardar
+                    </button>
+                </div>
+            </div>
+
+            <div class="metrics-grid">
+                <div class="metric-box">
+                    <div class="metric-name">Salarial</div>
+                    <div class="metric-value">5/5</div>
+                </div>
+                <div class="metric-box">
+                    <div class="metric-name">Flexibilidad</div>
+                    <div class="metric-value">4/5</div>
+                </div>
+                <div class="metric-box">
+                    <div class="metric-name">Seguridad</div>
+                    <div class="metric-value">5/5</div>
+                </div>
+                <div class="metric-box">
+                    <div class="metric-name">Crecimiento</div>
+                    <div class="metric-value">5/5</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="perfil-body">
+
+            <div class="reviews-section">
+                <h2 class="section-title">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--p4)" stroke-width="2">
+                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                    </svg>
+                    Lo que dicen las mujeres
+                </h2>
+
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="user-anon">
+                            <div class="user-avatar"></div> Usuario Anónima
+                        </div>
+                        <div class="stars">★★★★★</div>
+                    </div>
+                    <p class="review-text">Llevo 2 años aquí y el apoyo a las madres es increíble. Nunca me sentí
+                        juzgada por pedir flexibilidad por temas de cuidado. El equipo directivo es muy empático.</p>
+                    <span class="review-date">Publicado en 2024</span>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="user-anon">
+                            <div class="user-avatar"></div> Usuario Anónima
+                        </div>
+                        <div class="stars">★★★★<span class="empty">★</span></div>
+                    </div>
+                    <p class="review-text">Excelente cultura de trabajo. Las oportunidades de
+                        promoción interna son reales y transparentes. Solo me gustaría que el
+                        seguro de salud tuviera mejor cobertura.</p>
+                    <span class="review-date">Publicado en 2024</span>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="user-anon">
+                            <div class="user-avatar"></div> Usuario Anónima
+                        </div>
+                        <div class="stars">★★★★★</div>
+                    </div>
+                    <p class="review-text">Es la primera empresa en la que trabajo donde la
+                        transparencia salarial es un hecho desde el día uno. Sabes exactamente
+                        cuál es tu banda salarial y qué necesitas para subir.</p>
+                    <span class="review-date">Publicado en 2023</span>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="user-anon">
+                            <div class="user-avatar"></div> Usuario Anónima
+                        </div>
+                        <div class="stars">★★★★★</div>
+                    </div>
+                    <p class="review-text">El liderazgo femenino es visible aquí. Tenemos
+                        varias directoras de área y eso inspira mucha confianza. Hay un
+                        programa de mentoría excelente.</p>
+                    <span class="review-date">Publicado en 2023</span>
+                </div>
+
+            </div>
+
+            <div class="sidebar-cta">
+                <div class="cta-box">
+                    <h3>¿Trabajaste aquí?</h3>
+                    <p>Tu reseña es completamente anónima y ayuda a miles de mujeres a tomar mejores decisiones
+                        laborales.</p>
+                    <button class="btn-white" onclick="window.location.href='formulario-reseña.html'">Escribir
+                        Reseña</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="js/ranking.js"></script>
+</body>
+
+</html>
