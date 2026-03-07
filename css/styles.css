@@ -79,6 +79,20 @@ button {
   z-index: 100;
 }
 
+/* ---------- SIDEBAR ---------- */
+.sidebar {
+  width: 220px;
+  background: var(--sidebar-fondo);
+  display: flex;
+  flex-direction: column;
+  padding: 24px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  z-index: 100;
+}
+
 .sidebar-logo {
   padding: 0 20px 24px 20px;
   border-bottom: 1px solid rgba(255,255,255,0.08);
@@ -219,35 +233,15 @@ button {
   z-index: 200;
 }
 
-/* --- Estilo Simplificado del Logo --- */
-
-/* --- Arreglo para que el logo no se ensanche en PC --- */
-/* Estilo simple para el logo */
-/* --- ESTILO DE LOGO SIMPLIFICADO Y CENTRADO (SIN IMPORANT) --- */
-
-/* 1. Ajuste del contenedor padre (Sidebar) */
-.sidebar {
-    /* Aseguramos que el sidebar no tenga un padding que asfixie al logo */
-    padding: 10px ; 
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Esto ayuda a centrar todo el contenido */
+.topbar-logo {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--texto);
 }
 
-/* Una sola orden para agrandar el logo sin que se deforme */
-.sidebar img {
-    width: 180px ; /* Cámbialo a 250px si lo quieres más grande aún */
-    height: auto ;  /* Mantiene la forma perfecta */
-    margin: 0 auto 30px auto; 
-    display: block;
-}
-
-/* 2. Imagen de la Topbar (Menú móvil) */
-.topbar-logo img {
-    height: 35px; 
-    width: auto;
-    display: block;
-    margin: 0 auto;
+.topbar-logo em {
+  color: var(--rosa-fuerte);
+  font-style: italic;
 }
 
 
