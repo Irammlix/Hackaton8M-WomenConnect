@@ -1,3 +1,6 @@
+
+Copiar
+
 /* =============================================
    ranking.css — WomenConnect (Hackaton8M)
    Extiende styles.css (variables --rosa-fuerte, etc.)
@@ -14,19 +17,6 @@
 .barra-busqueda input {
   border: none; background: none; outline: none;
   font-family: inherit; font-size: 14px; color: var(--texto); flex: 1;
-}
-
-/* ---- FILTROS ---- */
-.filtros { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 22px; }
-.filtro {
-  border: 1px solid var(--borde); background: var(--blanco); color: var(--texto-gris);
-  font-size: 12px; padding: 6px 16px; border-radius: 50px;
-  cursor: pointer; transition: var(--transicion); font-family: inherit;
-}
-.filtro:hover { border-color: var(--rosa-fuerte); color: var(--rosa-fuerte); }
-.filtro.activo {
-  border-color: var(--rosa-fuerte); color: var(--rosa-fuerte);
-  background: var(--rosa-claro); font-weight: 500;
 }
 
 /* ---- LISTA DE EMPRESAS ---- */
@@ -318,7 +308,7 @@ input:checked + .slider-sm:before { transform: translateX(16px); }
 .btn-primario {
   display: inline-flex; align-items: center; gap: 8px;
   background: var(--rosa-fuerte); color: white; border: none;
-  border-radius: 50px; padding: 11px 22px;
+  border-radius: 50px; padding: 11px 22px 10px 22px;
   font-family: inherit; font-size: 14px; font-weight: 600;
   cursor: pointer; transition: var(--transicion); white-space: nowrap;
 }
@@ -328,3 +318,63 @@ input:checked + .slider-sm:before { transform: translateX(16px); }
   box-shadow: 0 4px 15px rgba(181,71,110,0.35);
 }
 .btn-primario.full-width { width: 100%; justify-content: center; }
+
+/* ---- FILTROS AVANZADOS ---- */
+.btn-filtros-avanzados {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: none; border: 1px solid var(--borde);
+  border-radius: 50px; padding: 8px 18px; margin-bottom: 0;
+  font-family: inherit; font-size: 13px; font-weight: 500;
+  color: var(--texto-gris); cursor: pointer; transition: var(--transicion);
+}
+.btn-filtros-avanzados:hover,
+.btn-filtros-avanzados.activo {
+  border-color: var(--rosa-fuerte); color: var(--rosa-fuerte);
+  background: var(--rosa-claro);
+}
+.chevron-filtro {
+  transition: transform 0.25s ease; margin-left: auto;
+}
+.btn-filtros-avanzados.activo .chevron-filtro { transform: rotate(180deg); }
+
+.panel-filtros {
+  display: none; grid-template-columns: repeat(3, 1fr); gap: 14px;
+  background: var(--blanco); border: 1px solid var(--borde);
+  border-radius: var(--radio); padding: 20px; margin-top: 10px;
+  margin-bottom: 18px;
+}
+.panel-filtros.abierto { display: grid; }
+
+.filtro-grupo { display: flex; flex-direction: column; gap: 6px; }
+.filtro-label {
+  font-size: 11px; font-weight: 600; text-transform: uppercase;
+  letter-spacing: 0.8px; color: var(--texto-gris);
+}
+.filtro-select {
+  border: 1.5px solid var(--borde); border-radius: var(--radio-sm);
+  padding: 9px 12px; font-family: inherit; font-size: 13px;
+  color: var(--texto); background: var(--blanco);
+  cursor: pointer; transition: var(--transicion);
+  appearance: none; -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%239090AA' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: right 12px center;
+  padding-right: 34px;
+}
+.filtro-select:focus { outline: none; border-color: var(--rosa-fuerte); }
+
+.panel-filtros-footer {
+  grid-column: 1 / -1; display: flex; align-items: center;
+  gap: 12px; border-top: 1px solid var(--borde); padding-top: 16px; margin-top: 4px;
+}
+.btn-limpiar {
+  background: none; border: none; color: var(--texto-muted);
+  font-size: 13px; font-family: inherit; cursor: pointer;
+  padding: 8px 12px; border-radius: 50px; transition: var(--transicion);
+}
+.btn-limpiar:hover { color: var(--rosa-fuerte); background: var(--rosa-claro); }
+
+@media (max-width: 600px) {
+  .panel-filtros.abierto { grid-template-columns: 1fr; }
+  .panel-filtros-footer { flex-direction: column; align-items: stretch; }
+  .panel-filtros-footer .btn-primario { justify-content: center; }
+}

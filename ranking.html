@@ -1,3 +1,7 @@
+
+Ranking · HTML
+Copiar
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -46,7 +50,10 @@
       <div class="sidebar-footer">
         <div class="sidebar-usuario">
           <div class="avatar" id="avatar-letra">U</div>
-          <div class="usuario-info"><span id="nombre-usuario">Usuaria</span><small>🔒 Protegida</small></div>
+          <div class="usuario-info">
+            <span id="nombre-usuario">Usuaria</span>
+            <small>🔒 Protegida</small>
+          </div>
         </div>
         <a href="index.html" class="btn-salir" style="text-decoration:none;">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
@@ -79,13 +86,55 @@
           </button>
         </div>
 
-        <!-- Filtros -->
-        <div class="filtros">
-          <button class="filtro activo" onclick="activarFiltro(this)">Todas</button>
-          <button class="filtro" onclick="activarFiltro(this)">Tecnología</button>
-          <button class="filtro" onclick="activarFiltro(this)">Finanzas</button>
-          <button class="filtro" onclick="activarFiltro(this)">Salud</button>
-          <button class="filtro" onclick="activarFiltro(this)">FemScore alto</button>
+        <!-- Botón filtros avanzados -->
+        <button class="btn-filtros-avanzados" onclick="toggleFiltros()" id="btn-filtros">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/>
+          </svg>
+          Filtros Avanzados
+          <svg class="chevron-filtro" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="6 9 12 15 18 9"/>
+          </svg>
+        </button>
+
+        <!-- Panel filtros avanzados -->
+        <div class="panel-filtros" id="panel-filtros">
+          <div class="filtro-grupo">
+            <label class="filtro-label">Ubicación Geográfica</label>
+            <select class="filtro-select">
+              <option>Todo el Perú</option>
+              <option>Lima</option>
+              <option>Arequipa</option>
+              <option>Trujillo</option>
+              <option>Remoto</option>
+            </select>
+          </div>
+          <div class="filtro-grupo">
+            <label class="filtro-label">Área / Industria</label>
+            <select class="filtro-select">
+              <option>Todas las industrias</option>
+              <option>Tecnología</option>
+              <option>Comunicaciones</option>
+              <option>Finanzas</option>
+              <option>Salud</option>
+              <option>Construcción</option>
+            </select>
+          </div>
+          <div class="filtro-grupo">
+            <label class="filtro-label">Ordenar por FemScore</label>
+            <select class="filtro-select">
+              <option>Mayor a menor</option>
+              <option>Menor a mayor</option>
+              <option>Más recientes</option>
+            </select>
+          </div>
+          <div class="panel-filtros-footer">
+            <button class="btn-primario" onclick="aplicarFiltros()">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              Aplicar filtros
+            </button>
+            <button class="btn-limpiar" onclick="limpiarFiltros()">Limpiar</button>
+          </div>
         </div>
 
         <!-- Lista de empresas -->
@@ -467,82 +516,6 @@
 
   <div id="toast"></div>
   <script src="js/main.js"></script>
-  <script>
-    /* ---- Navegación lista <-> perfil ---- */
-    function mostrarPerfil() {
-      document.getElementById('vista-lista').style.display = 'none';
-      document.getElementById('vista-perfil').style.display = 'block';
-      window.scrollTo(0, 0);
-    }
-    function volverRanking() {
-      document.getElementById('vista-perfil').style.display = 'none';
-      document.getElementById('vista-lista').style.display = 'block';
-      window.scrollTo(0, 0);
-    }
-
-    /* ---- Filtros ---- */
-    function activarFiltro(btn) {
-      document.querySelectorAll('.filtro').forEach(b => b.classList.remove('activo'));
-      btn.classList.add('activo');
-    }
-
-    /* ---- Favorito ---- */
-    function toggleFav() {
-      const btn = document.getElementById('btnFav');
-      btn.classList.toggle('activo');
-      btn.querySelector('svg').style.fill = btn.classList.contains('activo') ? 'var(--rosa-fuerte)' : 'none';
-      mostrarToast(btn.classList.contains('activo') ? '❤️ Empresa guardada' : 'Empresa eliminada de guardados');
-    }
-
-    /* ---- Estrellas ---- */
-    function setStars(btn, n, grupo) {
-      const fila = btn.closest('.stars-row');
-      fila.querySelectorAll('.star-btn').forEach((s, i) => {
-        s.classList.toggle('activa', i < n);
-      });
-    }
-
-    /* ---- Tags ---- */
-    function toggleTag(btn) { btn.classList.toggle('seleccionada'); }
-
-    /* ---- Modales ---- */
-    function abrirModal(id) {
-      const m = document.getElementById(id);
-      m.classList.add('abierto');
-      document.body.style.overflow = 'hidden';
-    }
-    function cerrarModal(id) {
-      document.getElementById(id).classList.remove('abierto');
-      document.body.style.overflow = '';
-    }
-    document.querySelectorAll('.modal-fondo').forEach(m => {
-      m.addEventListener('click', e => { if (e.target === m) cerrarModal(m.id); });
-    });
-
-    /* ---- Submit reseña ---- */
-    function submitModal(id) {
-      cerrarModal(id);
-      mostrarToast('✅ ¡Reseña enviada! Gracias por ayudar a otras mujeres.');
-    }
-
-    /* ---- Submit empresa ---- */
-    function submitEmpresa() {
-      cerrarModal('modal-empresa');
-      mostrarToast('🏢 ¡Empresa registrada! Quedará pendiente de validación.');
-    }
-
-    /* ---- Toast ---- */
-    function mostrarToast(msg) {
-      const t = document.getElementById('toast');
-      t.textContent = msg;
-      t.classList.add('visible');
-      setTimeout(() => t.classList.remove('visible'), 3000);
-    }
-
-    /* ---- Menu móvil ---- */
-    function abrirMenu() {
-      document.getElementById('menu-movil').classList.toggle('abierto');
-    }
-  </script>
+  <script src="js/ranking.js"></script>
 </body>
 </html>
