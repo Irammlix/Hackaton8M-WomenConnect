@@ -113,8 +113,7 @@ async function consultarAValia(mensajeDeLaUsuaria, base64Data = null, mimeType =
         if(resultado.candidates && resultado.candidates.length > 0) {
             return resultado.candidates[0].content.parts[0].text;
         } else {
-            return "Lo siento, no pude procesar eso. ¿Intentamos de nuevo?";
-        }
+            return "Error técnico: " + JSON.stringify(resultado);        }
     } catch (error) {
         return "Fallo de conexión. ¿Podemos intentarlo en un momento?";
     }
