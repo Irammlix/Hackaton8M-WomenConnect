@@ -5,14 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>WomenConnect — Valia IA</title>
   <link rel="stylesheet" href="css/styles.css">
-  <link rel="stylesheet" href="css/valia.css">
+  <link rel="stylesheet" href="css/chatbot.css">
 </head>
 <body>
 
   <div class="topbar">
-    <div class="topbar-logo">
     <div class="topbar-logo">Women<em>Connect</em></div>
-   </div>
     <button class="btn-menu" onclick="abrirMenu()">
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
         <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
@@ -22,77 +20,134 @@
 
   <div class="menu-movil" id="menu-movil">
     <nav>
-      <a href="home.html" class="nav-link"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 12L12 3L21 12V20a1 1 0 0 1-1 1h-5v-5H9v5H4a1 1 0 0 1-1-1V12z"/></svg>Inicio</a>
-      <a href="community.html" class="nav-link"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="7" r="3"/><circle cx="15" cy="7" r="3"/><path d="M3 21c0-3 2.7-5 6-5h6c3.3 0 6 2 6 5"/></svg>Comunidad</a>
-      <a href="valia.html" class="nav-link activo"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Valia IA</a>
-      <a href="ranking.html" class="nav-link"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg>Ranking</a>
-      <a href="profile.html" class="nav-link"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg>Mi Espacio</a>
-      <a href="index.html" class="btn-salir" style="text-decoration: none;">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
-          Cerrar sesión
-      </a>
+        <a href="home.html" class="nav-link">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 12L12 3L21 12V20a1 1 0 0 1-1 1h-5v-5H9v5H4a1 1 0 0 1-1-1V12z"/></svg>
+        Inicio
+        </a>
+        <a href="community.html" class="nav-link">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="7" r="3"/><circle cx="15" cy="7" r="3"/><path d="M3 21c0-3 2.7-5 6-5h6c3.3 0 6 2 6 5"/></svg>
+        Comunidad
+        </a>
+        <a href="valia.html" class="nav-link activo">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        Valia IA
+        </a>
+        <a href="ranking.html" class="nav-link">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg>
+        Ranking
+        </a>
+        <a href="profile.html" class="nav-link">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+        Mi Espacio
+        </a>
+        
+        <a href="index.html" class="btn-salir" style="margin-top: 30px; text-decoration: none; display: flex; align-items: center; gap: 10px;">
+         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+         Cerrar sesión
+        </a>
     </nav>
-  </div>
+    </div>
 
-  <div class="layout chat-layout">
+  <div class="layout">
     <aside class="sidebar">
       <div class="sidebar-logo"><span>Women<em>Connect</em></span></div>
       <nav>
-        <a href="home.html" class="nav-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 12L12 3L21 12V20a1 1 0 0 1-1 1h-5v-5H9v5H4a1 1 0 0 1-1-1V12z"/></svg>Inicio</a>
+        <a href="home.html"    class="nav-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 12L12 3L21 12V20a1 1 0 0 1-1 1h-5v-5H9v5H4a1 1 0 0 1-1-1V12z"/></svg>Inicio</a>
         <a href="community.html" class="nav-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="7" r="3"/><circle cx="15" cy="7" r="3"/><path d="M3 21c0-3 2.7-5 6-5h6c3.3 0 6 2 6 5"/></svg>Comunidad</a>
-        <a href="valia.html" class="nav-link activo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Valia IA</a>
-        <a href="ranking.html" class="nav-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg>Ranking</a>
-        <a href="profile.html" class="nav-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg>Mi Espacio</a>
+        <a href="valia.html"     class="nav-link activo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Valia IA</a>
+        <a href="ranking.html"   class="nav-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg>Ranking</a>
+        <a href="profile.html"   class="nav-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg>Mi Espacio</a>
       </nav>
       <div class="sidebar-footer">
         <div class="sidebar-usuario">
-          <div class="avatar" id="avatar-letra">U</div>
-          <div class="usuario-info"><span id="nombre-usuario">Usuaria</span><small>🔒 Protegida</small></div>
+          <div class="avatar" id="avatar-letra">A</div>
+          <div class="usuario-info"><span id="nombre-usuario">Ana</span><small>🔒 Protegida</small></div>
         </div>
-          <a href="index.html" class="btn-salir" style="text-decoration: none;">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
-           Cerrar sesión
-          </a>
+        <a href="index.html" class="btn-salir">← Cerrar sesión</a>
       </div>
     </aside>
 
-    <main class="contenido-chat">
-      <div class="chat-header">
-        <div class="chat-header-info">
-          <div class="valia-avatar">🛡</div>
-          <div>
-            <div class="chat-name">Valia</div>
-            <div class="chat-status"><span class="dot-online"></span>En línea · Privado</div>
+    <main class="contenido">
+      <div class="chat-cabecera">
+      <div class="chat-cabecera-izq">
+        <div class="valia-avatar-wrapper">
+          <div class="valia-avatar-gradient-bg"></div>
+          <div class="valia-robot-sphere">
+            <div class="robot-face">
+            <div style="display:flex; gap:6px;"> <span class="robot-eye"></span>
+              <span class="robot-eye"></span>
+            </div>
+            <span class="robot-mouth"></span>
+          </div>
+            <div class="sphere-shine"></div>
+          </div>
+          <div class="avatar-sparkles">
+            <div class="sparkle sparkle-1"></div>
+            <div class="sparkle sparkle-2"></div>
+            <div class="sparkle sparkle-3"></div>
           </div>
         </div>
-        <button class="btn-reset" onclick="nuevaConversacion()">↺ Nueva</button>
+        <div class="chat-cabecera-nombre-y-estado">
+          <div class="chat-cabecera-nombre">Valia</div>
+          <div class="chat-cabecera-estado">
+            <span class="punto-verde"></span>
+            En línea · conversación privada
+          </div>
+        </div>
+      </div>
+      <button class="btn-nueva" onclick="nuevaConversacion()">↺ Nueva</button>    </div>
+      <div id="chat-mensajes"></div>
+
+
+      <div id="sugerencias">
+        <button class="sugerencia" onclick="seleccionarOpcion('Quiero verificar una oferta de trabajo')">🛡 Verificar oferta</button>
+        <button class="sugerencia" onclick="seleccionarOpcion('Necesito ayuda con mi CV')">📄 Mejorar CV</button>
+        <button class="sugerencia" onclick="seleccionarOpcion('Quiero negociar mi salario')">💰 Negociar salario</button>
+        <button class="sugerencia" onclick="seleccionarOpcion('Necesito apoyo, estoy pasando un momento difícil')">💙 Necesito apoyo</button>
       </div>
 
-      <div id="chat-mensajes" class="messages-area"></div>
+      <div class="chat-input-area">
+        <div class="chat-input-caja">
+          <div class="input-tools">
+            <button class="btn-tool" onclick="document.getElementById('input-doc').click()" title="Subir Documento">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/></svg>
+            </button>
 
-      <div class="chat-controls">
-        <div id="sugerencias" class="suggestions-grid">
-          <button class="sugerencia" onclick="mensajeRapido('Quiero verificar una oferta de trabajo')">🛡 Verificar oferta</button>
-          <button class="sugerencia" onclick="mensajeRapido('Necesito ayuda con mi CV')">📄 Mejorar CV</button>
-          <button class="sugerencia" onclick="mensajeRapido('Quiero negociar mi salario')">💰 Negociar salario</button>
-          <button class="sugerencia" onclick="mensajeRapido('Necesito apoyo emocional')">💙 Necesito apoyo</button>
-        </div>
+            <button class="btn-tool" onclick="document.getElementById('input-foto').click()" title="Subir Foto">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg>
+            </button>
 
-        <div class="input-container">
-          <div class="input-box">
-            <textarea id="chat-input" placeholder="Escríbele a Valia..." rows="1" onkeydown="teclaEnter(event)" oninput="ajustarAltura(this)"></textarea>
-            <button class="btn-send" onclick="enviarMensaje()">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            <button class="btn-tool" onclick="pegarEnlace()" title="Pegar Enlace">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+            </button>
+
+            <button class="btn-tool" onclick="iniciarDictado()" title="Hablar por micrófono">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" x2="12" y1="19" y2="22"/></svg>
             </button>
           </div>
-          <p class="privacy-disclaimer">🔒 Conversación encriptada y privada</p>
+          <textarea
+            id="chat-input"
+            placeholder="Escríbele a Valia..."
+            rows="1"
+            onkeydown="if(event.key === 'Enter' && !event.shiftKey) { event.preventDefault(); enviarMensaje(); }"
+            oninput="ajustarAltura(this)"
+          ></textarea>
+          <button class="btn-enviar" onclick="enviarMensaje()">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="22" y1="2" x2="11" y2="13"/>
+              <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+            </svg>
+          </button>
         </div>
+        <p class="privacidad-nota">🔒 Conversación encriptada y privada</p>
       </div>
+      
+      <input type="file" id="input-foto" accept="image/*" style="display:none" onchange="manejarArchivo(this, 'foto')">
+      <input type="file" id="input-doc" accept=".pdf,.doc,.docx" style="display:none" onchange="manejarArchivo(this, 'documento')">
+    
     </main>
   </div>
 
-  <div id="toast"></div>
-  <script src="js/main.js"></script>
-  <script src="js/valia.js"></script>
+  <script src="js/chatbot.js"></script>
 </body>
 </html>

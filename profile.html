@@ -70,13 +70,15 @@
 
       <!-- Mis verificaciones -->
       <div class="seccion-titulo">Mis verificaciones</div>
+      
+      <div id="lista-guardadas"></div>
 
       <div class="mini-item">
         <div class="mini-item-izq">
           <div class="mini-icono">🛡</div>
           <div>
             <div class="mini-titulo">Oferta: "Vendedora desde casa"</div>
-            <div class="mini-sub" style="color:var(--rojo);">⚠ Riesgo alto detectado</div>
+            <div class="mini-sub" style="color:var(--rojo);">⚠ Riesgo alto detectado. Guardado el 1/03/2026</div>
           </div>
         </div>
         <span style="color:var(--texto-muted);">›</span>
@@ -87,7 +89,7 @@
           <div class="mini-icono">✅</div>
           <div>
             <div class="mini-titulo">Oferta: "Analista de datos Jr."</div>
-            <div class="mini-sub" style="color:var(--verde);">✓ Bajo riesgo</div>
+            <div class="mini-sub" style="color:var(--verde);">✓ Bajo riesgo. Guardado el 27/02/2026</div>
           </div>
         </div>
         <span style="color:var(--texto-muted);">›</span>
@@ -152,5 +154,72 @@
   <div id="toast"></div>
   <script src="js/main.js"></script>
   <script src="js/profile.js"></script>
+  <div id="toast"></div>
+  <script src="js/main.js"></script>
+  <script src="js/profile.js"></script>
+
+  <script>
+  document.addEventListener("DOMContentLoaded", function() {
+      const contenedor = document.getElementById('lista-guardadas');
+      if(!contenedor) return; 
+
+      // 1. Sacamos las ofertas de la memoria del navegador
+      const ofertasGuardadas = JSON.parse(localStorage.getItem('wc_ofertas_guardadas') || '[]');
+
+      // 2. Si no hay nada, mostramos un mensaje sutil
+      if(ofertasGuardadas.length === 0) {
+          contenedor.innerHTML = '<div style="padding: 10px 20px; color: var(--texto-muted); font-size: 14px;">Aún no tienes verificaciones guardadas.</div>';
+          return;
+      }
+
+     // 3. Si sí hay, creamos una tarjetita usando TU PROPIO DISEÑO EXACTO
+      let htmlTarjetas = "";
+      ofertasGuardadas.forEach(oferta => {
+          
+          // LÓGICA DE COLORES E ICONOS
+          let colorRiesgo = "var(--rojo)"; 
+          let iconoPrincipal = "🛡"; // El emoji grande de la izquierda
+          let iconoSub = "⚠";       // El emoji chiquito del texto
+          let textoRiesgo = oferta.estado; 
+
+          // Si es Riesgo Medio
+          if (textoRiesgo.toLowerCase().includes("medio")) {
+              colorRiesgo = "#b8860b"; // Mostaza
+              iconoPrincipal = "⚠️";    // Triángulo de advertencia
+              iconoSub = "⚠";
+          } 
+          // Si es Riesgo Bajo / Seguro
+          else if (textoRiesgo.toLowerCase().includes("bajo") || textoRiesgo.toLowerCase().includes("seguro")) {
+              colorRiesgo = "var(--verde)"; // Verde
+              iconoPrincipal = "✅";        // Check verde grande
+              iconoSub = "✓";             // Check chiquito
+          } 
+          // Si es Riesgo Alto (por defecto)
+          else {
+              colorRiesgo = "var(--rojo)"; // Rojo
+              iconoPrincipal = "🛡";        // Escudo oscuro
+              iconoSub = "⚠";
+          }
+
+          htmlTarjetas += `
+          <div class="mini-item" onclick="mostrarToast('Abriendo diagnóstico de Valia...')">
+            <div class="mini-item-izq">
+              <div class="mini-icono">${iconoPrincipal}</div> 
+              <div>
+                <div class="mini-titulo">${oferta.tipo}</div>
+                <div class="mini-sub" style="color:${colorRiesgo};">
+                    ${iconoSub} ${textoRiesgo} · Guardado el ${oferta.fecha}
+                </div>
+              </div>
+            </div>
+            <span style="color:var(--texto-muted);">›</span>
+          </div>`;
+      });
+      // 4. Pintamos las tarjetas en la pantalla
+      contenedor.innerHTML = htmlTarjetas;
+  });
+  </script>
+</body>
+</html>
 </body>
 </html>

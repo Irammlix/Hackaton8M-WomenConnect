@@ -1,0 +1,396 @@
+:root {
+  --rosa-fuerte: #b52a5c; /* El rosa/magenta de los botones y tus mensajes */
+  --rosa-medio: #d9537f;
+  --rosa-claro: #fdf2f6; /* Fondo de inputs y áreas claras */
+  --valia-bg: #4a152b;   /* El color vino oscuro/guinda de los mensajes de Valia */
+  --borde: #f0d8e1;
+  --texto: #333333;
+  --texto-gris: #666666;
+  --texto-muted: #999999;
+  --verde: #2ecc71;
+  --bg-chat: #fef9fa; /* Fondo general sutil del chat */
+  --transicion: all 0.3s ease;
+}
+
+.contenido {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  flex: 1; 
+  background-color: fdf2f6;
+  position: relative;
+}
+
+/* === BARRA SUPERIOR DEL CHAT === */
+.chat-cabecera {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px;
+  background: linear-gradient(90deg, #4a152b 0%, #7c2348 100%); 
+  border-bottom: none;
+  flex-shrink: 0;
+  color: white;
+}
+
+.chat-cabecera-izq {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Avatar de Valia */
+.valia-avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--rosa-medio), var(--rosa-oscuro));
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  flex-shrink: 0;
+  box-shadow: 0 2px 6px rgba(181, 42, 92, 0.3);
+}
+
+.chat-cabecera-nombre {
+  font-size: 18px;
+  font-weight: 700;
+  color: #ffffff; 
+}
+
+.chat-cabecera-estado {
+  font-size: 12px;
+  color: #ffdae6; 
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 2px;
+  opacity: 0.9;
+}
+
+.punto-verde {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--verde);
+  display: inline-block;
+}
+
+.btn-nueva {
+  background: rgba(255, 255, 255, 0.1); /* Fondo semi-transparente */
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50px;
+  padding: 8px 18px;
+  font-size: 13px;
+  color: white;
+  font-weight: 500;
+  transition: var(--transicion);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.btn-nueva:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: white;
+}
+
+/* === ÁREA DE MENSAJES === */
+#chat-mensajes {
+  flex: 1;
+  overflow-y: auto;
+  padding: 24px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px; /* Espacio entre mensajes */
+}
+
+/* Diseño base de la burbuja */
+.burbuja {
+  max-width: 75%;
+  padding: 14px 18px;
+  font-size: 14.5px;
+  line-height: 1.5;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+/* Mensaje de la IA (Valia) - A la izquierda, color vino */
+.mensaje-valia {
+  align-self: flex-start;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.mensaje-valia .burbuja {
+  background-color: var(--valia-bg);
+  color: white;
+  border-radius: 20px 20px 20px 4px; /* Piquito abajo a la izquierda */
+}
+
+/* Mensaje del Usuario (Ana) - A la derecha, color rosa fuerte */
+.mensaje-usuario {
+  align-self: flex-end;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: 100%;
+}
+
+.mensaje-usuario .burbuja {
+  background-color: var(--rosa-fuerte);
+  color: white;
+  border-radius: 20px 20px 4px 20px; /* Piquito abajo a la derecha */
+}
+
+/* Formateo de las negritas generadas por la IA */
+.burbuja b {
+  font-weight: 700;
+  color: #ffdae6; /* Un rosa clarito para que resalte en fondos oscuros */
+}
+
+/* === SUGERENCIAS RÁPIDAS === */
+#sugerencias {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  padding: 0 28px 16px;
+  flex-shrink: 0;
+}
+
+.sugerencia {
+  background: white;
+  border: 1.5px solid var(--borde);
+  border-radius: 50px;
+  padding: 10px 18px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--valia-bg);
+  transition: var(--transicion);
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+}
+
+.sugerencia:hover {
+  border-color: var(--rosa-fuerte);
+  background-color: var(--rosa-claro);
+  color: var(--rosa-fuerte);
+  transform: translateY(-2px);
+}
+
+/* === CAJA DE INPUT === */
+.chat-input-area {
+  padding: 12px 28px 20px;
+  flex-shrink: 0;
+  background: var(--bg-chat);
+}
+
+.chat-input-caja {
+  display: flex;
+  align-items: center; /* Centrado vertical */
+  gap: 10px;
+  background: white;
+  border: 1.5px solid var(--borde);
+  border-radius: 30px;
+  padding: 8px 12px 8px 20px;
+  transition: var(--transicion);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+}
+
+.chat-input-caja:focus-within {
+  border-color: var(--rosa-fuerte);
+  box-shadow: 0 4px 12px rgba(181, 42, 92, 0.1);
+}
+
+.input-tools {
+  display: flex;
+  gap: 10px;
+  padding-right: 12px;
+  border-right: 2px solid var(--rosa-claro);
+  align-items: center;
+}
+
+.btn-tool {
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  transition: 0.2s;
+  opacity: 0.6;
+  padding: 0;
+}
+
+.btn-tool:hover {
+  opacity: 1;
+  transform: scale(1.15);
+  color: var(--rosa-fuerte);
+}
+
+#chat-input {
+  flex: 1;
+  border: none;
+  background: none;
+  outline: none;
+  font-family: inherit;
+  font-size: 14.5px;
+  color: var(--texto);
+  resize: none;
+  min-height: 20px;
+  max-height: 100px;
+  overflow-y: auto;
+  padding-top: 5px;
+}
+
+#chat-input::placeholder { color: var(--texto-muted); }
+
+.btn-enviar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--rosa-fuerte);
+  border: none;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: var(--transicion);
+  cursor: pointer;
+}
+
+.btn-enviar:hover {
+  background: var(--valia-bg);
+  transform: scale(1.05);
+}
+
+.privacidad-nota {
+  text-align: center;
+  font-size: 11.5px;
+  color: var(--texto-muted);
+  margin-top: 12px;
+  font-weight: 500;
+}
+
+/* MÓVIL*/
+@media (max-width: 768px) {
+  .sidebar {
+    display: none; /* Ocultamos el menú lateral en celulares por ahora */
+  }
+
+  .contenido { 
+    width: 100%; /* El chat ahora ocupa toda la pantalla del celular */
+    height: 100vh; /* Ajustamos para que ocupe todo el alto */
+    margin-top: 0; 
+  }
+  
+  .chat-cabecera { padding: 12px 16px; }
+  #chat-mensajes { padding: 16px; gap: 12px; }
+  .burbuja { max-width: 90%; font-size: 14px; }
+  
+  #sugerencias { 
+    padding: 0 16px 12px; 
+    justify-content: flex-start; 
+    overflow-x: auto; 
+    flex-wrap: nowrap; 
+  }
+  .sugerencia { flex-shrink: 0; }
+  .chat-input-area { padding: 10px 16px 16px; }
+}
+/* Indicador de Valia Escribiendo */
+#indicador-cargando .burbuja {
+  background-color: var(--rosa-claro);
+  color: var(--valia-bg);
+  font-style: italic;
+  font-size: 13px;
+  box-shadow: none;
+  border: 1px dashed var(--borde);
+}
+
+/* === TARJETA DE RIESGO DE VALIA (PROTOTIPO) === */
+.tarjeta-riesgo {
+  background-color: #fdfaeaa6; /* Tono amarillento clarito */
+  border: 1px solid #f2e7c3;
+  border-radius: 16px;
+  padding: 18px;
+  width: 100%;
+  max-width: 340px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  color: var(--texto);
+  font-family: inherit;
+  margin-top: 5px;
+}
+.tr-header { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+.tr-icon { font-size: 22px; }
+.tr-header h3 { margin: 0; font-size: 16px; color: #b8860b; font-weight: 700; }
+.tr-header p { margin: 2px 0 0; font-size: 12px; color: var(--texto-muted); }
+.tr-lista { margin: 0 0 16px; padding-left: 20px; font-size: 13.5px; color: var(--texto-gris); line-height: 1.6;}
+.tr-lista li { margin-bottom: 4px; }
+.tr-tip { display: flex; gap: 8px; background: #fffde7; padding: 10px; border-radius: 8px; font-size: 12px; margin-bottom: 16px; border: 1px solid #f5f0d5; color: var(--texto-gris);}
+.tr-botones { display: flex; gap: 10px; }
+.tr-btn { flex: 1; padding: 10px; border-radius: 50px; border: 1.5px solid var(--borde); background: white; cursor: pointer; font-weight: 600; color: var(--valia-bg); transition: 0.2s; display: flex; justify-content: center; align-items: center; gap: 6px; font-size: 13px; }
+
+/* === ESTILO DEL AVATAR ROBOT (NUEVO) === */
+.valia-avatar-wrapper {
+  position: relative;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.valia-robot-sphere {
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 30% 30%, #d9537f, #4a152b);
+  border-radius: 50%;
+  position: relative;
+  box-shadow: 0 0 15px rgba(217, 83, 127, 0.5);
+  border: 1.5px solid rgba(255, 255, 255, 0.2);
+}
+
+.robot-face {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  gap: 3px;
+}
+
+.robot-eye {
+  width: 5px;
+  height: 5px;
+  background: white;
+  border-radius: 50%;
+  display: inline-block;
+  box-shadow: 0 0 5px white;
+}
+
+.robot-face span:not(.robot-mouth) {
+  display: flex;
+  gap: 8px;
+}
+
+.robot-mouth {
+  width: 12px;
+  height: 6px;
+  border-bottom: 2px solid white;
+  border-radius: 0 0 10px 10px;
+}
+
+.sphere-shine {
+  position: absolute;
+  top: 5px;
+  left: 8px;
+  width: 12px;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  transform: rotate(-25deg);
+}
