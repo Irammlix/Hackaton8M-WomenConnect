@@ -1,14 +1,14 @@
 :root {
-  --rosa-fuerte: #b52a5c; /* El rosa/magenta de los botones y tus mensajes */
+  --rosa-fuerte: #b52a5c; 
   --rosa-medio: #d9537f;
-  --rosa-claro: #fdf2f6; /* Fondo de inputs y áreas claras */
-  --valia-bg: #4a152b;   /* El color vino oscuro/guinda de los mensajes de Valia */
+  --rosa-claro: #fdf2f6;
+  --valia-bg: #4a152b; 
   --borde: #f0d8e1;
   --texto: #333333;
   --texto-gris: #666666;
   --texto-muted: #999999;
   --verde: #2ecc71;
-  --bg-chat: #fef9fa; /* Fondo general sutil del chat */
+  --bg-chat: #fef9fa;
   --transicion: all 0.3s ease;
 }
 
