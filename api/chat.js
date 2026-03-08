@@ -15,12 +15,17 @@ export default async function handler(req, res) {
 
         const resultado = await respuesta.json();
         
-        // AGREGA ESTA LÍNEA PARA VER EL ERROR REAL EN VERCEL
-        console.log("Respuesta de Gemini:", JSON.stringify(resultado, null, 2));
+        // Esto enviará el error real al chat si algo sale mal
+        if (resultado.error) {
+            return res.status(200).json({ 
+                candidates: [{ 
+                    content: { parts: [{ text: `⚠️ Error de Google: ${resultado.error.message}` }] } 
+                }] 
+            });
+        }
 
         res.status(200).json(resultado);
     } catch (error) {
-        console.error("Error en la función:", error);
         res.status(500).json({ error: 'Fallo la conexión con la IA' });
     }
 }
