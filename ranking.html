@@ -1,9 +1,9 @@
-
 Ranking · HTML
 Copiar
 
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,6 +11,7 @@ Copiar
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/ranking.css">
 </head>
+
 <body>
 
   <!-- TOPBAR MÓVIL -->
@@ -18,20 +19,44 @@ Copiar
     <div class="topbar-logo">Women<em>Connect</em></div>
     <button class="btn-menu" onclick="abrirMenu()">
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+        <line x1="3" y1="6" x2="21" y2="6" />
+        <line x1="3" y1="12" x2="21" y2="12" />
+        <line x1="3" y1="18" x2="21" y2="18" />
       </svg>
     </button>
   </div>
 
   <div class="menu-movil" id="menu-movil">
     <nav>
-      <a href="home.html" class="nav-link"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 12L12 3L21 12V20a1 1 0 0 1-1 1h-5v-5H9v5H4a1 1 0 0 1-1-1V12z"/></svg>Inicio</a>
-      <a href="community.html" class="nav-link"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="7" r="3"/><circle cx="15" cy="7" r="3"/><path d="M3 21c0-3 2.7-5 6-5h6c3.3 0 6 2 6 5"/></svg>Comunidad</a>
-      <a href="valia.html" class="nav-link"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Valia IA</a>
-      <a href="ranking.html" class="nav-link activo"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg>Ranking</a>
-      <a href="profile.html" class="nav-link"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg>Mi Espacio</a>
+      <a href="home.html" class="nav-link"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="1.8">
+          <path d="M3 12L12 3L21 12V20a1 1 0 0 1-1 1h-5v-5H9v5H4a1 1 0 0 1-1-1V12z" />
+        </svg>Inicio</a>
+      <a href="community.html" class="nav-link"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="1.8">
+          <circle cx="9" cy="7" r="3" />
+          <circle cx="15" cy="7" r="3" />
+          <path d="M3 21c0-3 2.7-5 6-5h6c3.3 0 6 2 6 5" />
+        </svg>Comunidad</a>
+      <a href="valia.html" class="nav-link"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="1.8">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+        </svg>Valia IA</a>
+      <a href="ranking.html" class="nav-link activo"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="1.8">
+          <path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z" />
+        </svg>Ranking</a>
+      <a href="profile.html" class="nav-link"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="1.8">
+          <circle cx="12" cy="8" r="4" />
+          <path d="M4 21c0-4 3.6-7 8-7s8 3 8 7" />
+        </svg>Mi Espacio</a>
       <a href="index.html" class="btn-salir" style="text-decoration:none;">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+          <polyline points="16 17 21 12 16 7" />
+          <line x1="21" y1="12" x2="9" y2="12" />
+        </svg>
         Cerrar sesión
       </a>
     </nav>
@@ -41,11 +66,29 @@ Copiar
     <aside class="sidebar">
       <div class="sidebar-logo"><span>Women<em>Connect</em></span></div>
       <nav>
-        <a href="home.html" class="nav-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 12L12 3L21 12V20a1 1 0 0 1-1 1h-5v-5H9v5H4a1 1 0 0 1-1-1V12z"/></svg>Inicio</a>
-        <a href="community.html" class="nav-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="7" r="3"/><circle cx="15" cy="7" r="3"/><path d="M3 21c0-3 2.7-5 6-5h6c3.3 0 6 2 6 5"/></svg>Comunidad</a>
-        <a href="valia.html" class="nav-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Valia IA</a>
-        <a href="ranking.html" class="nav-link activo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg>Ranking</a>
-        <a href="profile.html" class="nav-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg>Mi Espacio</a>
+        <a href="home.html" class="nav-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="1.8">
+            <path d="M3 12L12 3L21 12V20a1 1 0 0 1-1 1h-5v-5H9v5H4a1 1 0 0 1-1-1V12z" />
+          </svg>Inicio</a>
+        <a href="community.html" class="nav-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="1.8">
+            <circle cx="9" cy="7" r="3" />
+            <circle cx="15" cy="7" r="3" />
+            <path d="M3 21c0-3 2.7-5 6-5h6c3.3 0 6 2 6 5" />
+          </svg>Comunidad</a>
+        <a href="valia.html" class="nav-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="1.8">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+          </svg>Valia IA</a>
+        <a href="ranking.html" class="nav-link activo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="1.8">
+            <path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z" />
+          </svg>Ranking</a>
+        <a href="profile.html" class="nav-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="1.8">
+            <circle cx="12" cy="8" r="4" />
+            <path d="M4 21c0-4 3.6-7 8-7s8 3 8 7" />
+          </svg>Mi Espacio</a>
       </nav>
       <div class="sidebar-footer">
         <div class="sidebar-usuario">
@@ -56,7 +99,11 @@ Copiar
           </div>
         </div>
         <a href="index.html" class="btn-salir" style="text-decoration:none;">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+            <polyline points="16 17 21 12 16 7" />
+            <line x1="21" y1="12" x2="9" y2="12" />
+          </svg>
           Cerrar sesión
         </a>
       </div>
@@ -75,25 +122,35 @@ Copiar
         </div>
 
         <!-- Búsqueda + botón añadir -->
-        <div class="ranking-top-row">
-          <div class="barra-busqueda">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--texto-muted)" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-            <input type="text" placeholder="Buscar empresa...">
+        <div class="ranking-top-row"
+          style="display: flex !important; align-items: center !important; gap: 16px !important; width: 100% !important; margin-bottom: 24px !important;">
+
+          <div class="barra-busqueda search-bar"
+            style="background-color: #FFFFFF !important; border: 1.5px solid #E0E0E0 !important; border-radius: 50px !important; display: flex !important; align-items: center !important; padding: 0 20px !important; flex: 1 !important; height: 46px !important; box-shadow: 0 2px 8px rgba(0,0,0,0.05) !important;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B5476E" stroke-width="2"
+              style="flex-shrink: 0;">
+              <circle cx="11" cy="11" r="8" />
+              <line x1="21" y1="21" x2="16.65" y2="16.65" />
+            </svg>
+            <input type="text" placeholder="Buscar empresa por nombre o sector..."
+              style="border: none !important; background: transparent !important; outline: none !important; color: #333 !important; font-family: inherit !important; font-size: 15px !important; width: 100% !important; height: 100% !important; padding-left: 10px !important;">
           </div>
-          <button class="btn-primario" onclick="abrirModal('modal-empresa')">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-            Añadir empresa
+
+          <button class="btn-principal" onclick="abrirModal('modal-empresa')"
+            style="flex-shrink: 0 !important; white-space: nowrap !important; height: 46px !important; padding: 0 24px !important; border-radius: 50px !important; background: #B5476E !important; color: white !important; border: none !important; font-weight: 600 !important; cursor: pointer !important;">
+            + Añadir empresa
           </button>
         </div>
 
         <!-- Botón filtros avanzados -->
         <button class="btn-filtros-avanzados" onclick="toggleFiltros()" id="btn-filtros">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/>
+            <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3" />
           </svg>
           Filtros Avanzados
-          <svg class="chevron-filtro" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <polyline points="6 9 12 15 18 9"/>
+          <svg class="chevron-filtro" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2">
+            <polyline points="6 9 12 15 18 9" />
           </svg>
         </button>
 
@@ -130,7 +187,9 @@ Copiar
           </div>
           <div class="panel-filtros-footer">
             <button class="btn-primario" onclick="aplicarFiltros()">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
               Aplicar filtros
             </button>
             <button class="btn-limpiar" onclick="limpiarFiltros()">Limpiar</button>
@@ -142,13 +201,14 @@ Copiar
 
           <!-- TechNova — tiene perfil completo, click abre vista-perfil -->
           <div class="empresa-card score-alto" onclick="mostrarPerfil()" style="cursor:pointer;">
-            <div>
+            <div class="rank-number">1</div>
+            <div class="empresa-info">
               <div class="empresa-nombre">TechNova Solutions</div>
-              <div class="empresa-sector">Tecnología · San Isidro, Lima</div>
+              <div class="empresa-sector">Tecnología · Lima</div>
               <div class="empresa-pills">
                 <span class="pill">💰 Salarial ✓</span>
                 <span class="pill">🌱 Crecimiento ✓</span>
-                <span class="pill">🛡 Seguridad ✓</span>
+                <span class="pill">🏠 Flexibilidad ✓</span>
               </div>
             </div>
             <div class="femscore">
@@ -157,45 +217,15 @@ Copiar
             </div>
           </div>
 
-          <div class="empresa-card score-alto">
-            <div>
-              <div class="empresa-nombre">Futuro Digital S.A.</div>
-              <div class="empresa-sector">Tecnología · Lima</div>
-              <div class="empresa-pills">
-                <span class="pill">💰 Salarial ✓</span>
-                <span class="pill">🌱 Crecimiento ✓</span>
-                <span class="pill">🏠 Flex ✓</span>
-              </div>
-            </div>
-            <div class="femscore">
-              <div class="femscore-numero">8.7</div>
-              <div class="femscore-label">FemScore</div>
-            </div>
-          </div>
-
-          <div class="empresa-card score-medio">
-            <div>
-              <div class="empresa-nombre">Grupo Miramar</div>
-              <div class="empresa-sector">Finanzas · Lima</div>
-              <div class="empresa-pills">
-                <span class="pill">🌱 Crecimiento ✓</span>
-                <span class="pill">⚠️ Brecha salarial</span>
-              </div>
-            </div>
-            <div class="femscore">
-              <div class="femscore-numero">6.1</div>
-              <div class="femscore-label">FemScore</div>
-            </div>
-          </div>
-
-          <div class="empresa-card score-alto">
-            <div>
+          <div class="empresa-card">
+            <div class="rank-number">2</div>
+            <div class="empresa-info">
               <div class="empresa-nombre">Salud Integral Perú</div>
               <div class="empresa-sector">Salud · Arequipa</div>
               <div class="empresa-pills">
-                <span class="pill">🛡 Seguridad ✓</span>
+                <span class="pill">🛡️ Seguridad ✓</span>
+                <span class="pill">🤱 Maternidad ✓</span>
                 <span class="pill">💰 Salarial ✓</span>
-                <span class="pill">🏠 Flex ✓</span>
               </div>
             </div>
             <div class="femscore">
@@ -204,20 +234,54 @@ Copiar
             </div>
           </div>
 
-          <div class="empresa-card score-bajo">
-            <div>
-              <div class="empresa-nombre">Construmax Norte</div>
-              <div class="empresa-sector">Construcción · Trujillo</div>
+          <div class="empresa-card">
+            <div class="rank-number">3</div>
+            <div class="empresa-info">
+              <div class="empresa-nombre">EcoAndina Energía</div>
+              <div class="empresa-sector">Energía · Cusco</div>
               <div class="empresa-pills">
-                <span class="pill">⚠️ Brecha salarial</span>
-                <span class="pill">⚠️ Sin políticas</span>
+                <span class="pill">💛 Liderazgo ✓</span>
+                <span class="pill">🌱 Crecimiento ✓</span>
               </div>
             </div>
             <div class="femscore">
-              <div class="femscore-numero">3.4</div>
+              <div class="femscore-numero">8.8</div>
               <div class="femscore-label">FemScore</div>
             </div>
           </div>
+
+          <div class="empresa-card">
+            <div class="rank-number">4</div>
+            <div class="empresa-info">
+              <div class="empresa-nombre">Logística Global</div>
+              <div class="empresa-sector">Transporte · Callao</div>
+              <div class="empresa-pills">
+                <span class="pill">🏠 Flexibilidad ✓</span>
+                <span class="pill">🛡️ Seguridad ✓</span>
+              </div>
+            </div>
+            <div class="femscore">
+              <div class="femscore-numero">8.7</div>
+              <div class="femscore-label">FemScore</div>
+            </div>
+          </div>
+
+          <div class="empresa-card">
+            <div class="rank-number">5</div>
+            <div class="empresa-info">
+              <div class="empresa-nombre">Finanzas Claras</div>
+              <div class="empresa-sector">Finanzas · Lima</div>
+              <div class="empresa-pills">
+                <span class="pill">💰 Salarial ✓</span>
+                <span class="pill">📈 Transparencia ✓</span>
+              </div>
+            </div>
+            <div class="femscore">
+              <div class="femscore-numero">8.5</div>
+              <div class="femscore-label">FemScore</div>
+            </div>
+          </div>
+
 
         </div><!-- /lista-empresas -->
       </div><!-- /vista-lista -->
@@ -231,7 +295,8 @@ Copiar
 
         <button class="back-link" onclick="volverRanking()">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/>
+            <line x1="19" y1="12" x2="5" y2="12" />
+            <polyline points="12 19 5 12 12 5" />
           </svg>
           Volver al ranking
         </button>
@@ -241,18 +306,29 @@ Copiar
           <div class="header-top">
             <div class="perfil-title">
               <h1>TechNova Solutions</h1>
-              <p>Proveedor especializado en soluciones de software B2B, infraestructura cloud y soporte técnico corporativo, impulsando la transformación digital de empresas en la región.</p>
+              <p>Proveedor especializado en soluciones de software B2B, infraestructura cloud y soporte técnico
+                corporativo, impulsando la transformación digital de empresas en la región.</p>
               <div class="empresa-meta">
                 <span class="meta-item">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16c0 1.1.9 2 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/><path d="M14 3v5h5M16 13H8M16 17H8M10 9H8"/></svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16c0 1.1.9 2 2 2h12a2 2 0 0 0 2-2V8l-6-6z" />
+                    <path d="M14 3v5h5M16 13H8M16 17H8M10 9H8" />
+                  </svg>
                   RUC: 20524544789
                 </span>
                 <span class="meta-item">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                    <circle cx="12" cy="10" r="3" />
+                  </svg>
                   Sede: San Isidro, Lima
                 </span>
                 <span class="meta-item">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+                    <line x1="8" y1="21" x2="16" y2="21" />
+                    <line x1="12" y1="17" x2="12" y2="21" />
+                  </svg>
                   Industria: Tecnología y Sistemas
                 </span>
               </div>
@@ -264,8 +340,10 @@ Copiar
                 <div class="femscore-label">FEMSCORE</div>
               </div>
               <button class="btn-fav" id="btnFav" onclick="toggleFav()">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <path
+                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
                 </svg>
                 Guardar
               </button>
@@ -273,10 +351,22 @@ Copiar
           </div>
 
           <div class="metrics-grid">
-            <div class="metric-box"><div class="metric-name">Salarial</div><div class="metric-value">5/5</div></div>
-            <div class="metric-box"><div class="metric-name">Flexibilidad</div><div class="metric-value">4/5</div></div>
-            <div class="metric-box"><div class="metric-name">Seguridad</div><div class="metric-value">5/5</div></div>
-            <div class="metric-box"><div class="metric-name">Crecimiento</div><div class="metric-value">5/5</div></div>
+            <div class="metric-box">
+              <div class="metric-name">Salarial</div>
+              <div class="metric-value">5/5</div>
+            </div>
+            <div class="metric-box">
+              <div class="metric-name">Flexibilidad</div>
+              <div class="metric-value">4/5</div>
+            </div>
+            <div class="metric-box">
+              <div class="metric-name">Seguridad</div>
+              <div class="metric-value">5/5</div>
+            </div>
+            <div class="metric-box">
+              <div class="metric-name">Crecimiento</div>
+              <div class="metric-value">5/5</div>
+            </div>
           </div>
         </div>
 
@@ -285,44 +375,56 @@ Copiar
           <div class="reviews-section">
             <h2 class="section-title">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
               </svg>
               Lo que dicen las mujeres
             </h2>
 
             <div class="review-card">
               <div class="review-header">
-                <div class="user-anon"><div class="user-avatar"></div> Usuario Anónima</div>
+                <div class="user-anon">
+                  <div class="user-avatar"></div> Usuario Anónima
+                </div>
                 <div class="stars">★★★★★</div>
               </div>
-              <p class="review-text">Llevo 2 años aquí y el apoyo a las madres es increíble. Nunca me sentí juzgada por pedir flexibilidad por temas de cuidado. El equipo directivo es muy empático.</p>
+              <p class="review-text">Llevo 2 años aquí y el apoyo a las madres es increíble. Nunca me sentí juzgada por
+                pedir flexibilidad por temas de cuidado. El equipo directivo es muy empático.</p>
               <span class="review-date">Publicado en 2024</span>
             </div>
 
             <div class="review-card">
               <div class="review-header">
-                <div class="user-anon"><div class="user-avatar"></div> Usuario Anónima</div>
+                <div class="user-anon">
+                  <div class="user-avatar"></div> Usuario Anónima
+                </div>
                 <div class="stars">★★★★<span class="star-empty">★</span></div>
               </div>
-              <p class="review-text">Excelente cultura de trabajo. Las oportunidades de promoción interna son reales y transparentes. Solo me gustaría que el seguro de salud tuviera mejor cobertura.</p>
+              <p class="review-text">Excelente cultura de trabajo. Las oportunidades de promoción interna son reales y
+                transparentes. Solo me gustaría que el seguro de salud tuviera mejor cobertura.</p>
               <span class="review-date">Publicado en 2024</span>
             </div>
 
             <div class="review-card">
               <div class="review-header">
-                <div class="user-anon"><div class="user-avatar"></div> Usuario Anónima</div>
+                <div class="user-anon">
+                  <div class="user-avatar"></div> Usuario Anónima
+                </div>
                 <div class="stars">★★★★★</div>
               </div>
-              <p class="review-text">Es la primera empresa en la que trabajo donde la transparencia salarial es un hecho desde el día uno. Sabes exactamente cuál es tu banda salarial y qué necesitas para subir.</p>
+              <p class="review-text">Es la primera empresa en la que trabajo donde la transparencia salarial es un hecho
+                desde el día uno. Sabes exactamente cuál es tu banda salarial y qué necesitas para subir.</p>
               <span class="review-date">Publicado en 2023</span>
             </div>
 
             <div class="review-card">
               <div class="review-header">
-                <div class="user-anon"><div class="user-avatar"></div> Usuario Anónima</div>
+                <div class="user-anon">
+                  <div class="user-avatar"></div> Usuario Anónima
+                </div>
                 <div class="stars">★★★★★</div>
               </div>
-              <p class="review-text">El liderazgo femenino es visible aquí. Tenemos varias directoras de área y eso inspira mucha confianza. Hay un programa de mentoría excelente.</p>
+              <p class="review-text">El liderazgo femenino es visible aquí. Tenemos varias directoras de área y eso
+                inspira mucha confianza. Hay un programa de mentoría excelente.</p>
               <span class="review-date">Publicado en 2023</span>
             </div>
           </div>
@@ -346,168 +448,171 @@ Copiar
       <div class="modal-fondo" id="modal-resena">
         <div class="modal-caja modal-resena-caja">
           <button class="modal-cerrar" onclick="cerrarModal('modal-resena')">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="18" y1="6" x2="6" y2="18" />
+              <line x1="6" y1="6" x2="18" y2="18" />
+            </svg>
           </button>
-          <div class="modal-badge">🔒 Anónima y segura</div>
-          <h2 class="modal-titulo">Escribir Reseña</h2>
-          <p class="modal-sub">TechNova Solutions · Tu experiencia ayuda a otras mujeres</p>
 
-          <div class="modal-privacy-row">
-            <div class="secure-note-modal">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--verde)" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-              <div><strong>100% Anónima</strong><span style="font-size:11px;color:var(--texto-gris)">Tu identidad nunca se revela</span></div>
-            </div>
-            <label class="toggle-wrapper">
-              <span class="toggle-text">Verificar empleo</span>
-              <label class="switch-sm"><input type="checkbox" checked><span class="slider-sm"></span></label>
-            </label>
+          <div class="form-header-centered">
+            <div class="badge-segura rosa">RESEÑA SEGURA</div>
+            <h2 style="font-family: Georgia, serif; font-size: 28px; margin-bottom: 8px;">Califica tu experiencia</h2>
+            <p style="font-size: 14px; color: var(--texto-gris); margin-bottom: 24px;">Tu opinión ayuda a construir un
+              entorno laboral más justo para todas.</p>
           </div>
 
-          <!-- Calificaciones por dimensión -->
-          <p style="font-size:12px;font-weight:600;color:var(--texto-gris);text-transform:uppercase;letter-spacing:1px;margin-bottom:12px;">Califica cada dimensión</p>
-          <div class="rating-grid-modal">
-            <div class="rating-box-modal">
-              <div class="rating-label-modal">💰 Equidad Salarial</div>
-              <div class="stars-row">
-                <button class="star-btn" onclick="setStars(this,1,'sal')">★</button>
-                <button class="star-btn" onclick="setStars(this,2,'sal')">★</button>
-                <button class="star-btn" onclick="setStars(this,3,'sal')">★</button>
-                <button class="star-btn" onclick="setStars(this,4,'sal')">★</button>
-                <button class="star-btn" onclick="setStars(this,5,'sal')">★</button>
+          <div class="rating-grid-nic">
+            <div class="rating-box-nic">
+              <div class="rating-label-nic">Igualdad Salarial</div>
+              <div class="stars-container-nic">
+                <button type="button" class="star-btn" onclick="setStars(this, 1)">★</button>
+                <button type="button" class="star-btn" onclick="setStars(this, 2)">★</button>
+                <button type="button" class="star-btn" onclick="setStars(this, 3)">★</button>
+                <button type="button" class="star-btn" onclick="setStars(this, 4)">★</button>
+                <button type="button" class="star-btn" onclick="setStars(this, 5)">★</button>
               </div>
-              <div class="rating-desc-modal">¿Pagan igual a hombres y mujeres?</div>
+              <div class="rating-desc-nic">¿Ganan lo mismo hombres y mujeres en el mismo cargo?</div>
             </div>
-            <div class="rating-box-modal">
-              <div class="rating-label-modal">🏠 Flexibilidad</div>
-              <div class="stars-row">
-                <button class="star-btn" onclick="setStars(this,1,'flex')">★</button>
-                <button class="star-btn" onclick="setStars(this,2,'flex')">★</button>
-                <button class="star-btn" onclick="setStars(this,3,'flex')">★</button>
-                <button class="star-btn" onclick="setStars(this,4,'flex')">★</button>
-                <button class="star-btn" onclick="setStars(this,5,'flex')">★</button>
+
+            <div class="rating-box-nic">
+              <div class="rating-label-nic">Flexibilidad Laboral</div>
+              <div class="stars-container-nic">
+                <button type="button" class="star-btn" onclick="setStars(this, 1)">★</button>
+                <button type="button" class="star-btn" onclick="setStars(this, 2)">★</button>
+                <button type="button" class="star-btn" onclick="setStars(this, 3)">★</button>
+                <button type="button" class="star-btn" onclick="setStars(this, 4)">★</button>
+                <button type="button" class="star-btn" onclick="setStars(this, 5)">★</button>
               </div>
-              <div class="rating-desc-modal">Horarios, remoto, permisos</div>
+              <div class="rating-desc-nic">Flexibilidad, maternidad y horarios respetados.</div>
             </div>
-            <div class="rating-box-modal">
-              <div class="rating-label-modal">🛡 Seguridad</div>
-              <div class="stars-row">
-                <button class="star-btn" onclick="setStars(this,1,'seg')">★</button>
-                <button class="star-btn" onclick="setStars(this,2,'seg')">★</button>
-                <button class="star-btn" onclick="setStars(this,3,'seg')">★</button>
-                <button class="star-btn" onclick="setStars(this,4,'seg')">★</button>
-                <button class="star-btn" onclick="setStars(this,5,'seg')">★</button>
+
+            <div class="rating-box-nic">
+              <div class="rating-label-nic">Seguridad y Respeto</div>
+              <div class="stars-container-nic">
+                <button type="button" class="star-btn" onclick="setStars(this, 1)">★</button>
+                <button type="button" class="star-btn" onclick="setStars(this, 2)">★</button>
+                <button type="button" class="star-btn" onclick="setStars(this, 3)">★</button>
+                <button type="button" class="star-btn" onclick="setStars(this, 4)">★</button>
+                <button type="button" class="star-btn" onclick="setStars(this, 5)">★</button>
               </div>
-              <div class="rating-desc-modal">Ambiente libre de acoso</div>
+              <div class="rating-desc-nic">Protocolos efectivos contra el acoso y exclusión.</div>
             </div>
-            <div class="rating-box-modal">
-              <div class="rating-label-modal">🌱 Crecimiento</div>
-              <div class="stars-row">
-                <button class="star-btn" onclick="setStars(this,1,'crec')">★</button>
-                <button class="star-btn" onclick="setStars(this,2,'crec')">★</button>
-                <button class="star-btn" onclick="setStars(this,3,'crec')">★</button>
-                <button class="star-btn" onclick="setStars(this,4,'crec')">★</button>
-                <button class="star-btn" onclick="setStars(this,5,'crec')">★</button>
+
+            <div class="rating-box-nic">
+              <div class="rating-label-nic">Oportunidades de Crecimiento</div>
+              <div class="stars-container-nic">
+                <button type="button" class="star-btn" onclick="setStars(this, 1)">★</button>
+                <button type="button" class="star-btn" onclick="setStars(this, 2)">★</button>
+                <button type="button" class="star-btn" onclick="setStars(this, 3)">★</button>
+                <button type="button" class="star-btn" onclick="setStars(this, 4)">★</button>
+                <button type="button" class="star-btn" onclick="setStars(this, 5)">★</button>
               </div>
-              <div class="rating-desc-modal">Oportunidades reales de ascenso</div>
+              <div class="rating-desc-nic">Acceso de mujeres a cargos directivos y ascensos.</div>
             </div>
           </div>
 
-          <!-- Tags -->
-          <p style="font-size:12px;font-weight:600;color:var(--texto-gris);text-transform:uppercase;letter-spacing:1px;margin-bottom:10px;">Selecciona lo que aplica</p>
-          <div class="tags-resena" style="margin-bottom:18px;">
-            <button class="tag-resena pos" onclick="toggleTag(this)">✓ Liderazgo femenino</button>
-            <button class="tag-resena pos" onclick="toggleTag(this)">✓ Flexibilidad real</button>
-            <button class="tag-resena pos" onclick="toggleTag(this)">✓ Sueldo justo</button>
-            <button class="tag-resena neg" onclick="toggleTag(this)">⚠ Machismo</button>
-            <button class="tag-resena neg" onclick="toggleTag(this)">⚠ Sin ascensos</button>
-            <button class="tag-resena neg" onclick="toggleTag(this)">⚠ Acoso</button>
+          <p style="font-size: 13px; font-weight: 600; margin-bottom: 12px;">¿Qué resalta de esta empresa?</p>
+          <div class="tag-selector">
+            <button class="btn-tag verde" onclick="toggleEtiqueta(this)">Sueldo Justo</button>
+            <button class="btn-tag verde" onclick="toggleEtiqueta(this)">Sala Lactancia</button>
+            <button class="btn-tag rosa" onclick="toggleEtiqueta(this)">Ambiente Tóxico</button>
+            <button class="btn-tag verde" onclick="toggleEtiqueta(this)">Liderazgo Femenino</button>
+            <button class="btn-tag rosa" onclick="toggleEtiqueta(this)">Acoso laboral</button>
           </div>
 
-          <!-- Comentario -->
-          <label class="campo-label">Tu experiencia <span style="color:var(--texto-muted);font-weight:400">(opcional)</span></label>
-          <textarea class="campo-input" rows="4" placeholder="Contá tu experiencia trabajando aquí. Tu reseña es completamente anónima..." style="resize:vertical;"></textarea>
+          <div style="margin-bottom: 24px;">
+            <label class="campo-label">Cuéntanos tu experiencia (Opcional)</label>
+            <textarea class="campo-textarea tall-textarea"
+              placeholder="Escribe aquí los detalles que creas importantes para otras mujeres..."></textarea>
+          </div>
 
-          <button class="btn-primario full-width" style="margin-top:18px;" onclick="submitModal('modal-resena')">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-            Enviar Reseña Anónima
-          </button>
-          <button class="btn-cancelar" onclick="cerrarModal('modal-resena')">Cancelar</button>
+          <div class="privacy-box">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+              <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+            </svg>
+            <div class="privacy-box-text">
+              <h4>Encriptación de Identidad Activa</h4>
+              <p>Tus datos no se compartirán con la empresa.</p>
+            </div>
+            <div class="privacy-switch-container">
+              <label class="switch-sm"><input type="checkbox" id="anonResena" checked
+                  onchange="updateToggleText('Resena')"><span class="slider-sm"></span></label>
+              <span class="privacy-label" id="toggleTextResena">ANÓNIMA</span>
+            </div>
+          </div>
+
+          <button class="btn-principal full-width" style="height: 50px; font-size: 16px;"
+            onclick="submitFormulario('modal-resena', '¡Reseña publicada con éxito!')">Enviar Reseña</button>
         </div>
       </div>
-
       <!-- ================================================
            MODAL: AÑADIR EMPRESA
            ================================================ -->
       <div class="modal-fondo" id="modal-empresa">
-        <div class="modal-caja modal-resena-caja">
+        <div class="modal-caja">
           <button class="modal-cerrar" onclick="cerrarModal('modal-empresa')">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="18" y1="6" x2="6" y2="18" />
+              <line x1="6" y1="6" x2="18" y2="18" />
+            </svg>
           </button>
 
-          <div class="modal-badge">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            Registro Seguro
-          </div>
-          <h2 class="modal-titulo">Añadir nueva empresa</h2>
-          <p class="modal-sub">Ayúdanos a mapear el ecosistema laboral en Perú.</p>
-
-          <!-- Nombre -->
-          <div class="form-group-modal">
-            <label class="campo-label">Nombre de la empresa *</label>
-            <input type="text" class="campo-input" placeholder="Ej. TechNova Solutions">
-          </div>
-
-          <!-- RUC -->
-          <div class="form-group-modal">
-            <label class="campo-label">RUC <span style="color:var(--texto-muted);font-weight:400">(Opcional)</span></label>
-            <input type="text" class="campo-input" placeholder="Ej. 20123456789">
-          </div>
-
-          <!-- Ubicación -->
-          <div class="form-group-modal">
-            <label class="campo-label">Ubicación principal *</label>
-            <select class="campo-input campo-select">
-              <option value="" disabled selected>Selecciona una región</option>
-              <option>Lima</option>
-              <option>Arequipa</option>
-              <option>Trujillo</option>
-              <option>Remoto / Varias sedes</option>
-            </select>
-          </div>
-
-          <!-- Industria -->
-          <div class="form-group-modal">
-            <label class="campo-label">Industria / Sector *</label>
-            <select class="campo-input campo-select">
-              <option value="" disabled selected>Selecciona la industria</option>
-              <option>Tecnología</option>
-              <option>Finanzas</option>
-              <option>Salud</option>
-              <option>Construcción</option>
-              <option>Comunicaciones</option>
-            </select>
-          </div>
-
-          <!-- Toggle anonimato -->
-          <div class="modal-privacy-row">
-            <div class="secure-note-modal">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--verde)" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-              <div>
-                <strong>Encriptación de Identidad Activa</strong>
-                <span style="font-size:11px;color:var(--texto-gris);display:block;">Tus datos no se asociarán públicamente.</span>
-              </div>
+          <div class="form-header-centered">
+            <div class="badge-segura rosa">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+              </svg>
+              REGISTRO SEGURO
             </div>
-            <label class="toggle-wrapper">
-              <span class="toggle-text">Registrar como Anónima</span>
-              <label class="switch-sm"><input type="checkbox" checked><span class="slider-sm"></span></label>
-            </label>
+            <h2 class="modal-titulo-nic">Añadir nueva empresa</h2>
+            <p class="modal-sub-nic">Ayúdanos a mapear el ecosistema laboral en Perú.</p>
           </div>
 
-          <button class="btn-primario full-width" style="margin-top:8px;" onclick="submitEmpresa()">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-            Registrar Empresa
-          </button>
-          <button class="btn-cancelar" onclick="cerrarModal('modal-empresa')">Cancelar</button>
+          <div class="form-group-nic">
+            <label class="campo-label">Nombre de la empresa *</label>
+            <input type="text" class="campo-input-nic" placeholder="Ej. TechNova Solutions">
+          </div>
+
+          <div class="form-group-nic">
+            <label class="campo-label">RUC (Opcional)</label>
+            <input type="text" class="campo-input-nic" placeholder="Ej. 20123456789">
+          </div>
+
+          <div class="form-group-nic">
+            <label class="campo-label">Ubicación principal *</label>
+            <select class="campo-input-nic">
+              <option value="">Selecciona una región</option>
+              <option value="lima">Lima</option>
+              <option value="arequipa">Arequipa</option>
+              <option value="cusco">Cusco</option>
+            </select>
+          </div>
+
+          <div class="form-group-nic">
+            <label class="campo-label">Industria / Sector *</label>
+            <select class="campo-input-nic">
+              <option value="">Selecciona la industria</option>
+              <option value="tech">Tecnología</option>
+              <option value="salud">Salud</option>
+              <option value="finanzas">Finanzas</option>
+            </select>
+          </div>
+
+          <div class="privacy-box">
+            <div class="privacy-box-text">
+              <h4>Encriptación de Identidad Activa</h4>
+              <p>Tus datos no se asociarán públicamente a esta empresa.</p>
+            </div>
+            <div class="privacy-switch-container">
+              <label class="switch-sm"><input type="checkbox" id="anonEmp" checked
+                  onchange="updateToggleText('Emp')"><span class="slider-sm"></span></label>
+              <span class="privacy-label" id="toggleTextEmp">ANÓNIMA</span>
+            </div>
+          </div>
+
+          <button class="btn-principal full-width"
+            onclick="submitFormulario('modal-empresa', 'Empresa registrada')">Registrar Empresa</button>
         </div>
       </div>
 
@@ -518,4 +623,5 @@ Copiar
   <script src="js/main.js"></script>
   <script src="js/ranking.js"></script>
 </body>
+
 </html>

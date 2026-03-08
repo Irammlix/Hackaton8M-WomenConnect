@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,368 +8,458 @@
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/community.css">
 </head>
+
 <body>
 
-  <!-- TOPBAR MÓVIL -->
-<div class="topbar">
-  <div class="topbar-logo">
+  <div class="topbar">
     <div class="topbar-logo">Women<em>Connect</em></div>
+    <button class="btn-menu" onclick="abrirMenu()">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="3" y1="6" x2="21" y2="6" />
+        <line x1="3" y1="12" x2="21" y2="12" />
+        <line x1="3" y1="18" x2="21" y2="18" />
+      </svg>
+    </button>
   </div>
-  <button class="btn-menu" onclick="abrirMenu()">
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-      <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
-    </svg>
-  </button>
-</div>
 
-<div class="menu-movil" id="menu-movil">
-  <nav>
-    <a href="home.html" class="nav-link"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 12L12 3L21 12V20a1 1 0 0 1-1 1h-5v-5H9v5H4a1 1 0 0 1-1-1V12z"/></svg>Inicio</a>
-    <a href="community.html" class="nav-link activo"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="7" r="3"/><circle cx="15" cy="7" r="3"/><path d="M3 21c0-3 2.7-5 6-5h6c3.3 0 6 2 6 5"/></svg>Comunidad</a>
-    <a href="valia.html" class="nav-link"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Valia IA</a>
-    <a href="ranking.html" class="nav-link"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg>Ranking</a>
-    <a href="profile.html" class="nav-link"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg>Mi Espacio</a>
-    <a href="index.html" class="btn-salir" style="text-decoration: none;">
-      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
-        Cerrar sesión
-    </a>
-  </nav>
-</div>
-
-<div class="layout chat-layout">
-  <aside class="sidebar">
-      <div class="sidebar-logo"><span>Women<em>Connect</em></span></div>
+  <div class="menu-movil" id="menu-movil">
     <nav>
-      <a href="home.html" class="nav-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 12L12 3L21 12V20a1 1 0 0 1-1 1h-5v-5H9v5H4a1 1 0 0 1-1-1V12z"/></svg>Inicio</a>
-      <a href="community.html" class="nav-link activo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="7" r="3"/><circle cx="15" cy="7" r="3"/><path d="M3 21c0-3 2.7-5 6-5h6c3.3 0 6 2 6 5"/></svg>Comunidad</a>
-      <a href="valia.html" class="nav-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Valia IA</a>
-      <a href="ranking.html" class="nav-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg>Ranking</a>
-      <a href="profile.html" class="nav-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg>Mi Espacio</a>
+      <a href="home.html" class="nav-link"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="1.8">
+          <path d="M3 12L12 3L21 12V20a1 1 0 0 1-1 1h-5v-5H9v5H4a1 1 0 0 1-1-1V12z" />
+        </svg> Inicio</a>
+      <a href="community.html" class="nav-link activo"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="1.8">
+          <circle cx="9" cy="7" r="3" />
+          <circle cx="15" cy="7" r="3" />
+          <path d="M3 21c0-3 2.7-5 6-5h6c3.3 0 6 2 6 5" />
+        </svg> Comunidad</a>
+      <a href="ranking.html" class="nav-link"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="1.8">
+          <path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z" />
+        </svg> Ranking de Empresas</a>
+      <a href="profile.html" class="nav-link"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="1.8">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+          <circle cx="12" cy="7" r="4" />
+        </svg> Mi Espacio</a>
     </nav>
-    <div class="sidebar-footer">
-      <div class="sidebar-usuario">
-        <div class="avatar" id="avatar-letra">U</div>
-        <div class="usuario-info"><span id="nombre-usuario">Usuaria</span><small>🔒 Protegida</small></div>
-      </div>
+  </div>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="sidebar-logo"><span>Women<em>Connect</em></span></div>
+      <nav>
+        <a href="home.html" class="nav-link"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="1.8">
+            <path d="M3 12L12 3L21 12V20a1 1 0 0 1-1 1h-5v-5H9v5H4a1 1 0 0 1-1-1V12z" />
+          </svg> Inicio</a>
+        <a href="community.html" class="nav-link activo"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="1.8">
+            <circle cx="9" cy="7" r="3" />
+            <circle cx="15" cy="7" r="3" />
+            <path d="M3 21c0-3 2.7-5 6-5h6c3.3 0 6 2 6 5" />
+          </svg> Comunidad</a>
+        <a href="valia.html" class="nav-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          Valia IA
+        </a>
+        <a href="ranking.html" class="nav-link"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="1.8">
+            <path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z" />
+          </svg> Ranking</a>
+        <a href="profile.html" class="nav-link"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="1.8">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+            <circle cx="12" cy="7" r="4" />
+          </svg> Mi Espacio</a>
+      </nav>
+      <div class="sidebar-footer">
+        <div class="sidebar-usuario">
+          <div class="avatar" id="avatar-letra">U</div>
+          <div class="usuario-info">
+            <span id="nombre-usuario">Usuaria</span>
+            <small>🔒 Protegida</small>
+          </div>
+        </div>
         <a href="index.html" class="btn-salir" style="text-decoration: none;">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
           Cerrar sesión
         </a>
-    </div>
-  </aside>
+      </div>
+    </aside>
 
-    <!-- CONTENIDO PRINCIPAL -->
     <main class="contenido animar">
-      <div class="main-container">
+      <div class="pagina-titulo">
+        <h1>Comunidad</h1>
+        <p>Espacio seguro. Tú decides cómo participar.</p>
+      </div>
 
-        <header class="page-header comunidad-header">
-          <h1 class="page-title">Comunidad</h1>
-          <p class="page-sub">Espacio seguro. Tú decides cómo participar.</p>
-        </header>
-
-        <div class="comunidad-actions-wrapper">
-          <div class="comunidad-top-row">
-            <div class="search-bar">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
-              </svg>
-              <input type="text" placeholder="Buscar temas, palabras clave o etiquetas...">
-            </div>
-            <!-- Ahora abre modal en vez de ir a otra página -->
-            <button class="btn-principal btn-compartir" onclick="abrirModal('modal-experiencia')">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
-              </svg>
-              Compartir experiencia
-            </button>
+      <div class="comunidad-actions-wrapper">
+        <div class="comunidad-top-row">
+          <div class="search-bar">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8" />
+              <line x1="21" y1="21" x2="16.65" y2="16.65" />
+            </svg>
+            <input type="text" placeholder="Buscar temas, palabras clave o etiquetas...">
           </div>
-          <div class="filter-tags">
-            <button class="ftag active" onclick="filtrarTag(this)">Todas</button>
-            <button class="ftag" onclick="filtrarTag(this)">#ReinicioLaboral</button>
-            <button class="ftag" onclick="filtrarTag(this)">#Experiencia</button>
-            <button class="ftag" onclick="filtrarTag(this)">#Entrevistas</button>
-            <button class="ftag" onclick="filtrarTag(this)">#Maternidad</button>
-            <button class="ftag" onclick="filtrarTag(this)">#Salarial</button>
-            <button class="ftag" onclick="filtrarTag(this)">#AmbienteLaboral</button>
-            <button class="ftag" onclick="filtrarTag(this)">#Consejos</button>
+          <button class="btn-principal" onclick="abrirModal('modal-experiencia')">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              style="margin-right:6px;">
+              <line x1="12" y1="5" x2="12" y2="19" />
+              <line x1="5" y1="12" x2="19" y2="12" />
+            </svg>
+            Compartir experiencia
+          </button>
+        </div>
+
+        <div class="filter-tags">
+          <button class="ftag active" onclick="filtrarTag(this)">Todas</button>
+          <button class="ftag" onclick="filtrarTag(this)">#ReinicioLaboral</button>
+          <button class="ftag" onclick="filtrarTag(this)">#Experiencia</button>
+          <button class="ftag" onclick="filtrarTag(this)">#Entrevistas</button>
+          <button class="ftag" onclick="filtrarTag(this)">#Salarial</button>
+          <button class="ftag" onclick="filtrarTag(this)">#AmbienteLaboral</button>
+          <button class="ftag" onclick="filtrarTag(this)">#Consejos</button>
+        </div>
+      </div>
+
+      <div id="community-feed">
+
+        <div class="post-card" id="post-1">
+          <div class="post-header">
+            <div class="post-author">
+              <div class="author-avatar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                  <circle cx="12" cy="7" r="4" />
+                </svg></div>
+              <div class="author-info">
+                <div class="author-name"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                    stroke="var(--verde)" stroke-width="2">
+                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                    <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                  </svg> Usuario Anónima</div>
+                <div class="author-time">Publicado hace 2 horas</div>
+              </div>
+            </div>
+            <button class="btn-report" onclick="mostrarToast('Reportado')"><svg width="14" height="14"
+                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z" />
+                <line x1="4" y1="22" x2="4" y2="15" />
+              </svg></button>
+          </div>
+          <span class="post-tag">#ReinicioLaboral</span>
+          <p class="post-text">Volví al mercado laboral después de 4 años cuidando a mis hijos. Lo primero que noté fue
+            que muchas ofertas seguían igual de confusas. Gracias al Escudo detecté una que era fraude. No estamos
+            solas, revisen siempre el FemScore.</p>
+          <div class="post-footer">
+            <div class="post-reactions">
+              <button class="reaction-btn" onclick="toggleLike(this)"><svg width="16" height="16" viewBox="0 0 24 24"
+                  fill="none" stroke="currentColor" stroke-width="2">
+                  <path
+                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                </svg><span>48</span></button>
+              <button class="reaction-btn" onclick="toggleComments('1')">💬 <span>2</span></button>
+              <button class="reaction-btn" onclick="abrirModal('modal-apoyo')">🤝 Apoyar</button>
+            </div>
+          </div>
+          <div class="comments-section" id="comments-1" style="display:block;">
+            <div class="comment-item">
+              <div class="comment-text">Yo pasé por lo mismo. Usé el analizador de ofertas y me salvó de 2 empresas que
+                pedían "inversión inicial".</div>
+              <div class="comment-meta" style="display:flex; justify-content:space-between; align-items:center;">
+                <span>🔒 Anónima</span>
+                <span class="comment-like" onclick="toggleCommentLike(this)"
+                  style="cursor:pointer; display:inline-flex; align-items:center; gap:4px; transition:0.2s;">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path
+                      d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                  </svg>
+                  <span>12</span>
+                </span>
+              </div>
+            </div>
+            <div class="comment-item">
+              <div class="comment-text">Es súper difícil volver. Te recomiendo destacar las habilidades que ganaste en
+                casa.</div>
+              <div class="comment-meta" style="display:flex; justify-content:space-between; align-items:center;">
+                <span>👤 Daniela R.</span>
+                <span class="comment-like" onclick="toggleCommentLike(this)"
+                  style="cursor:pointer; display:inline-flex; align-items:center; gap:4px; transition:0.2s;">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path
+                      d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                  </svg>
+                  <span>8</span>
+                </span>
+              </div>
+            </div>
+
+            <div class="comment-box-nic">
+              <div class="comment-box-header">
+                <label class="switch-sm">
+                  <input type="checkbox" id="anonToggle1" checked onchange="updateToggleText('1')">
+                  <span class="slider-sm"></span>
+                </label>
+                <span id="toggleText1" class="privacy-label-text">Anónima</span>
+              </div>
+
+              <div class="comment-input-wrapper">
+                <input class="comment-input" id="commentInput1" type="text"
+                  placeholder="Escribe un comentario anónimo...">
+                <button class="btn-send-comment" onclick="enviarComentario(this)">Enviar</button>
+              </div>
+            </div>
           </div>
         </div>
 
-        <!-- FEED -->
-        <div id="community-feed">
-
-          <div class="post-card" id="post-1">
-            <div class="post-header">
-              <div class="post-author">
-                <div class="author-avatar">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-                </div>
-                <div class="author-info">
-                  <div class="author-name">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--verde)" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-                    Usuario Anónima
-                  </div>
-                  <div class="author-time">Publicado hace 2 horas</div>
-                </div>
-              </div>
-              <button class="btn-report" onclick="alert('Post reportado al equipo de moderación')">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
-                Reportar
-              </button>
-            </div>
-            <span class="post-tag">#ReinicioLaboral</span>
-            <p class="post-text">Volví al mercado laboral después de 4 años cuidando a mis hijos. Lo primero que noté fue que muchas ofertas seguían igual de confusas. Gracias al Escudo detecté una que era fraude. No estamos solas, revisen siempre el FemScore.</p>
-            <div class="post-footer">
-              <div class="post-reactions">
-                <button class="reaction-btn" onclick="toggleLike(this)">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-                  <span>48</span>
-                </button>
-                <button class="reaction-btn" onclick="toggleComments('1')">💬 <span>3</span></button>
-                <!-- Ahora abre modal en vez de ir a otra página -->
-                <button class="reaction-btn" onclick="abrirModal('modal-apoyo')">🤝 Apoyar</button>
-              </div>
-            </div>
-            <div class="comments-section" id="comments-1">
-              <div class="comment-item">
-                <div class="comment-text">Yo pasé por lo mismo. Usé el analizador de ofertas y me salvó de 2 empresas que pedían "inversión inicial".</div>
-                <div class="comment-meta"><span>🔒 Anónima</span>
-                  <span class="comment-like" onclick="toggleCommentLike(this)">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-                    <span>12</span>
-                  </span>
-                </div>
-              </div>
-              <div class="comment-item">
-                <div class="comment-text">Es súper difícil volver, pero no imposible. Te recomiendo destacar esas habilidades de organización que ganaste en casa.</div>
-                <div class="comment-meta"><span>👤 Daniela R.</span>
-                  <span class="comment-like" onclick="toggleCommentLike(this)">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-                    <span>8</span>
-                  </span>
-                </div>
-              </div>
-              <div class="comment-box-container">
-                <div class="comment-input-wrapper">
-                  <input class="comment-input" type="text" placeholder="Escribe un comentario...">
-                  <button class="btn-send-comment" onclick="enviarComentario(this)">Enviar</button>
-                </div>
+        <div class="post-card" id="post-2">
+          <div class="post-header">
+            <div class="post-author">
+              <div class="author-avatar" style="background: var(--rosa-medio); color: white;">V</div>
+              <div class="author-info">
+                <div class="author-name">Valeria C.</div>
+                <div class="author-time">Publicado hace 3 horas</div>
               </div>
             </div>
           </div>
+          <span class="post-tag">#Entrevistas</span>
+          <p class="post-text">Chicas, hoy tuve mi primera entrevista presencial en meses. Les comparto mi outfit.
+            Recuerden que la seguridad empieza por cómo nos sentimos. ¡Deséenme suerte!</p>
+          <img src="assets/outfit.jpg" alt="Outfit de entrevista"
+            style="width: 100%; max-height: 400px; object-fit: cover; border-radius: 12px; margin-bottom: 16px; border: 1px solid var(--borde);">
+          <div class="post-footer">
+            <div class="post-reactions">
+              <button class="reaction-btn" onclick="toggleLike(this)"><svg width="16" height="16" viewBox="0 0 24 24"
+                  fill="none" stroke="currentColor" stroke-width="2">
+                  <path
+                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                </svg><span>137</span></button>
+              <button class="reaction-btn" onclick="toggleComments('2')">💬 <span>24</span></button>
+              <button class="reaction-btn" onclick="abrirModal('modal-apoyo')">🤝 Apoyar</button>
+            </div>
+          </div>
+          <div class="comments-section" id="comments-2"></div>
+        </div>
 
-          <div class="post-card" id="post-2">
-            <div class="post-header">
-              <div class="post-author">
-                <div class="author-avatar">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-                </div>
-                <div class="author-info">
-                  <div class="author-name">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--verde)" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-                    Usuario Anónima
-                  </div>
-                  <div class="author-time">Publicado hace 5 horas</div>
-                </div>
-              </div>
-              <button class="btn-report" onclick="alert('Post reportado')">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
-                Reportar
-              </button>
-            </div>
-            <span class="post-tag">#Salarial</span>
-            <p class="post-text">Me enteré que mi colega con menos experiencia ganaba 20% más. Usé el FemScore como argumento con RRHH. Me escucharon.</p>
-            <div class="post-footer">
-              <div class="post-reactions">
-                <button class="reaction-btn" onclick="toggleLike(this)">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-                  <span>93</span>
-                </button>
-                <button class="reaction-btn" onclick="toggleComments('2')">💬 <span>7</span></button>
-                <button class="reaction-btn" onclick="abrirModal('modal-apoyo')">🤝 Apoyar</button>
-              </div>
-            </div>
-            <div class="comments-section" id="comments-2">
-              <div class="comment-box-container">
-                <div class="comment-input-wrapper">
-                  <input class="comment-input" type="text" placeholder="Escribe un comentario...">
-                  <button class="btn-send-comment" onclick="enviarComentario(this)">Enviar</button>
-                </div>
+        <div class="post-card" id="post-3">
+          <div class="post-header">
+            <div class="post-author">
+              <div class="author-avatar" style="background: var(--rosa-fuerte); color: white;">C</div>
+              <div class="author-info">
+                <div class="author-name">Camila R.</div>
+                <div class="author-time">Publicado hace 5 horas</div>
               </div>
             </div>
           </div>
+          <span class="post-tag">#Salarial</span>
+          <p class="post-text">Finalmente me atreví a pedir el aumento. Me basé en los rangos salariales transparentes
+            que vi en el ranking de Escudo para mi área. Me lo aprobaron sin peros. La información es poder.</p>
+          <div class="post-footer">
+            <div class="post-reactions">
+              <button class="reaction-btn" onclick="toggleLike(this)"><svg width="16" height="16" viewBox="0 0 24 24"
+                  fill="none" stroke="currentColor" stroke-width="2">
+                  <path
+                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                </svg><span>40</span></button>
+              <button class="reaction-btn" onclick="toggleComments('3')">💬 <span>15</span></button>
+              <button class="reaction-btn" onclick="abrirModal('modal-apoyo')">🤝 Apoyar</button>
+            </div>
+          </div>
+          <div class="comments-section" id="comments-3"></div>
+        </div>
 
-          <div class="post-card" id="post-3">
-            <div class="post-header">
-              <div class="post-author">
-                <div class="author-avatar" style="background: var(--verde); color: white; font-weight: bold; display:flex; align-items:center; justify-content:center;">S</div>
-                <div class="author-info">
-                  <div class="author-name">Sofia T.</div>
-                  <div class="author-time">Publicado ayer</div>
-                </div>
-              </div>
-              <button class="btn-report" onclick="alert('Post reportado')">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
-                Reportar
-              </button>
-            </div>
-            <span class="post-tag">#Maternidad</span>
-            <p class="post-text">El periodo de lactancia no debería ser un tabú. Hoy mi jefa me asignó un espacio privado en la oficina sin que yo se lo tuviera que exigir. Pequeños cambios que hacen una gran empresa.</p>
-            <div class="post-footer">
-              <div class="post-reactions">
-                <button class="reaction-btn" onclick="toggleLike(this)">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-                  <span>39</span>
-                </button>
-                <button class="reaction-btn" onclick="toggleComments('3')">💬 <span>18</span></button>
-                <button class="reaction-btn" onclick="abrirModal('modal-apoyo')">🤝 Apoyar</button>
-              </div>
-            </div>
-            <div class="comments-section" id="comments-3">
-              <div class="comment-box-container">
-                <div class="comment-input-wrapper">
-                  <input class="comment-input" type="text" placeholder="Escribe un comentario...">
-                  <button class="btn-send-comment" onclick="enviarComentario(this)">Enviar</button>
-                </div>
+        <div class="post-card" id="post-4">
+          <div class="post-header">
+            <div class="post-author">
+              <div class="author-avatar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                  <circle cx="12" cy="7" r="4" />
+                </svg></div>
+              <div class="author-info">
+                <div class="author-name"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                    stroke="var(--verde)" stroke-width="2">
+                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                    <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                  </svg> Usuario Anónima</div>
+                <div class="author-time">Publicado ayer</div>
               </div>
             </div>
           </div>
+          <span class="post-tag">#AmbienteLaboral</span>
+          <p class="post-text">Tengan mucho cuidado con las ofertas que prometen "trabajo desde casa con ganancias
+            ilimitadas". Analicé esta captura con la IA y resultó ser una red de estafa piramidal. Les dejo la evidencia
+            borrando datos.</p>
+          <img src="assets/oferta-piramide.jpg" alt="Captura de oferta falsa"
+            style="width: 100%; max-height: 400px; object-fit: contain; border-radius: 12px; margin-bottom: 16px; border: 1px dashed var(--rojo); background-color: #FFF;">
+          <div class="post-footer">
+            <div class="post-reactions">
+              <button class="reaction-btn" onclick="toggleLike(this)"><svg width="16" height="16" viewBox="0 0 24 24"
+                  fill="none" stroke="currentColor" stroke-width="2">
+                  <path
+                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                </svg><span>74</span></button>
+              <button class="reaction-btn" onclick="toggleComments('4')">💬 <span>42</span></button>
+              <button class="reaction-btn" onclick="abrirModal('modal-apoyo')">🤝 Apoyar</button>
+            </div>
+          </div>
+          <div class="comments-section" id="comments-4"></div>
+        </div>
 
-          <div class="post-card" id="post-4">
-            <div class="post-header">
-              <div class="post-author">
-                <div class="author-avatar">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-                </div>
-                <div class="author-info">
-                  <div class="author-name">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--verde)" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-                    Usuario Anónima
-                  </div>
-                  <div class="author-time">Publicado hace 2 días</div>
-                </div>
-              </div>
-              <button class="btn-report" onclick="alert('Post reportado')">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
-                Reportar
-              </button>
-            </div>
-            <span class="post-tag">#Consejos</span>
-            <p class="post-text">¿Alguien más siente que en el área de tecnología te descartan rápido si tienes vacíos en el CV? ¿Cómo lo han manejado en las entrevistas de RRHH?</p>
-            <div class="post-footer">
-              <div class="post-reactions">
-                <button class="reaction-btn" onclick="toggleLike(this)">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-                  <span>58</span>
-                </button>
-                <button class="reaction-btn" onclick="toggleComments('4')">💬 <span>22</span></button>
-                <button class="reaction-btn" onclick="abrirModal('modal-apoyo')">🤝 Apoyar</button>
-              </div>
-            </div>
-            <div class="comments-section" id="comments-4">
-              <div class="comment-box-container">
-                <div class="comment-input-wrapper">
-                  <input class="comment-input" type="text" placeholder="Escribe un comentario...">
-                  <button class="btn-send-comment" onclick="enviarComentario(this)">Enviar</button>
-                </div>
+        <div class="post-card" id="post-5">
+          <div class="post-header">
+            <div class="post-author">
+              <div class="author-avatar" style="background: var(--verde); color: white;">S</div>
+              <div class="author-info">
+                <div class="author-name">Sofia T.</div>
+                <div class="author-time">Publicado ayer</div>
               </div>
             </div>
           </div>
+          <span class="post-tag">#Maternidad</span>
+          <p class="post-text">El periodo de lactancia no debería ser un tabú. Hoy mi jefa (nueva en el área) me asignó
+            un espacio privado en la oficina sin que yo se lo tuviera que exigir. Pequeños cambios que hacen una gran
+            empresa.</p>
+          <div class="post-footer">
+            <div class="post-reactions">
+              <button class="reaction-btn" onclick="toggleLike(this)"><svg width="16" height="16" viewBox="0 0 24 24"
+                  fill="none" stroke="currentColor" stroke-width="2">
+                  <path
+                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                </svg><span>39</span></button>
+              <button class="reaction-btn" onclick="toggleComments('5')">💬 <span>18</span></button>
+              <button class="reaction-btn" onclick="abrirModal('modal-apoyo')">🤝 Apoyar</button>
+            </div>
+          </div>
+          <div class="comments-section" id="comments-5"></div>
+        </div>
 
-        </div><!-- /feed -->
+        <div class="post-card" id="post-6">
+          <div class="post-header">
+            <div class="post-author">
+              <div class="author-avatar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                  <circle cx="12" cy="7" r="4" />
+                </svg></div>
+              <div class="author-info">
+                <div class="author-name"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                    stroke="var(--verde)" stroke-width="2">
+                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                    <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                  </svg> Usuario Anónima</div>
+                <div class="author-time">Publicado hace 2 días</div>
+              </div>
+            </div>
+          </div>
+          <span class="post-tag">#Consejos</span>
+          <p class="post-text">¿Alguien más siente que en el área de tecnología te descartan rápido si tienes vacíos en
+            el CV? ¿Cómo lo han manejado ustedes en las entrevistas de RRHH?</p>
+          <div class="post-footer">
+            <div class="post-reactions">
+              <button class="reaction-btn" onclick="toggleLike(this)"><svg width="16" height="16" viewBox="0 0 24 24"
+                  fill="none" stroke="currentColor" stroke-width="2">
+                  <path
+                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                </svg><span>58</span></button>
+              <button class="reaction-btn" onclick="toggleComments('6')">💬 <span>22</span></button>
+              <button class="reaction-btn" onclick="abrirModal('modal-apoyo')">🤝 Apoyar</button>
+            </div>
+          </div>
+          <div class="comments-section" id="comments-6"></div>
+        </div>
+
       </div>
     </main>
-  </div><!-- /layout -->
+  </div>
 
-
-  <!-- ================================================
-       MODAL: COMPARTIR EXPERIENCIA (antes formulario-experiencia.html)
-       ================================================ -->
   <div class="modal-fondo" id="modal-experiencia">
-    <div class="modal-caja modal-grande">
-      <button class="modal-cerrar" onclick="cerrarModal('modal-experiencia')">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-      </button>
-      <div class="modal-badge">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        Comunidad Segura
-      </div>
-      <div class="modal-titulo">Compartir experiencia</div>
+    <div class="modal-caja">
+      <button class="modal-cerrar" onclick="cerrarModal('modal-experiencia')">✕</button>
 
-      <label class="campo-label">Selecciona una etiqueta</label>
-      <div class="tag-selector">
+      <h2 class="modal-titulo-nic">Compartir experiencia</h2>
+
+      <label class="campo-label-nic">Selecciona una etiqueta principal</label>
+      <div class="tag-selector-nic">
         <button class="btn-tag activo-tag" onclick="seleccionarEtiqueta(this)">#ReinicioLaboral</button>
-        <button class="btn-tag" onclick="seleccionarEtiqueta(this)">#Experiencia</button>
-        <button class="btn-tag" onclick="seleccionarEtiqueta(this)">#Entrevistas</button>
         <button class="btn-tag" onclick="seleccionarEtiqueta(this)">#Maternidad</button>
         <button class="btn-tag" onclick="seleccionarEtiqueta(this)">#Salarial</button>
-        <button class="btn-tag" onclick="seleccionarEtiqueta(this)">#AmbienteLaboral</button>
         <button class="btn-tag" onclick="seleccionarEtiqueta(this)">#Consejos</button>
+        <button class="btn-tag" onclick="seleccionarEtiqueta(this)">#Entrevistas</button>
       </div>
 
-      <label class="campo-label">Tu experiencia</label>
-      <textarea class="campo-textarea tall-textarea" id="texto-experiencia" placeholder="Escribe tu historia aquí. Recuerda no dar nombres específicos si quieres mantener el anonimato total..."></textarea>
+      <label class="campo-label-nic">Tu experiencia</label>
+      <textarea class="campo-textarea-nic" placeholder="Escribe tu historia aquí..."></textarea>
+      <div class="upload-area-nic">
+        <button class="btn-upload-nic" onclick="document.getElementById('file-post').click()">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+            <circle cx="8.5" cy="8.5" r="1.5" />
+            <polyline points="21 15 16 10 5 21" />
+          </svg>
+          Añadir foto o evidencia
+        </button>
+        <input type="file" id="file-post" style="display:none">
+        <p style="font-size:11px; color:var(--texto-muted); margin-top:12px;">Se eliminarán los metadatos por tu
+          seguridad.</p>
+      </div>
 
-      <div class="modal-privacy-row">
-        <div class="toggle-wrapper">
-          <label class="switch-sm">
-            <input type="checkbox" id="anon-exp" checked>
-            <span class="slider-sm"></span>
-          </label>
-          <span class="toggle-text">Publicar como Anónima</span>
+      <div class="privacy-box-nic">
+        <div class="privacy-box-text">
+          <h4>Privacidad Garantizada</h4>
+          <p>Tu identidad real no será visible.</p>
         </div>
-        <p class="privacy-note">🔒 Tu identidad real no será visible.</p>
+        <div class="privacy-switch-container">
+          <label class="switch-sm"><input type="checkbox" id="anonExp" checked onchange="updateToggleText('Exp')"><span
+              class="slider-sm"></span></label>
+          <span class="privacy-label" id="toggleTextExp">ANÓNIMA</span>
+        </div>
       </div>
 
-      <button class="btn-principal full-width" onclick="submitModal('modal-experiencia', 'Publicación compartida con éxito')">Publicar en Comunidad</button>
-      <button class="btn-cancelar" onclick="cerrarModal('modal-experiencia')">Cancelar</button>
+      <button class="btn-principal full-width"
+        onclick="submitModal('modal-experiencia', '¡Publicado con éxito!')">Publicar en Comunidad</button>
     </div>
   </div>
 
-  <!-- ================================================
-       MODAL: ENVIAR APOYO (antes formulario-apoyo.html)
-       ================================================ -->
   <div class="modal-fondo" id="modal-apoyo">
     <div class="modal-caja">
-      <button class="modal-cerrar" onclick="cerrarModal('modal-apoyo')">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-      </button>
-      <div class="modal-badge">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-        Mensaje Privado
-      </div>
-      <div class="modal-titulo">Enviar apoyo</div>
-      <p class="modal-sub">Elige cómo quieres apoyar a esta compañera.</p>
+      <button class="modal-cerrar" onclick="cerrarModal('modal-apoyo')">✕</button>
 
-      <label class="campo-label">Reacciones rápidas</label>
-      <div class="tag-selector">
+      <h2 class="modal-titulo-nic">Enviar apoyo</h2>
+
+      <label class="campo-label-nic">Reacciones rápidas</label>
+      <div class="tag-selector-nic">
         <button class="btn-tag" onclick="seleccionarEtiqueta(this)">💙 Te entiendo</button>
         <button class="btn-tag" onclick="seleccionarEtiqueta(this)">💪 Eres fuerte</button>
-        <button class="btn-tag" onclick="seleccionarEtiqueta(this)">🌱 Sigue adelante</button>
         <button class="btn-tag" onclick="seleccionarEtiqueta(this)">🤝 No estás sola</button>
       </div>
 
-      <label class="campo-label">Mensaje personalizado (Opcional)</label>
-      <textarea class="campo-textarea" placeholder="Escribe unas palabras de ánimo..."></textarea>
+      <label class="campo-label-nic">Mensaje personalizado</label>
+      <textarea class="campo-textarea-nic" style="min-height: 100px;"
+        placeholder="Escribe unas palabras de ánimo..."></textarea>
 
-      <div class="modal-privacy-row">
-        <div class="toggle-wrapper">
-          <label class="switch-sm">
-            <input type="checkbox" id="anon-apoyo" checked>
-            <span class="slider-sm"></span>
-          </label>
-          <span class="toggle-text">Enviar como Anónima</span>
+      <div class="privacy-box-nic">
+        <div class="privacy-box-text">
+          <h4>Encriptación de Identidad</h4>
+          <p>Tus datos no se compartirán.</p>
         </div>
-        <p class="privacy-note">🔒 Tus datos no se compartirán.</p>
+        <div class="privacy-switch-container">
+          <label class="switch-sm"><input type="checkbox" id="anonApoyo" checked
+              onchange="updateToggleText('Apoyo')"><span class="slider-sm"></span></label>
+          <span class="privacy-label" id="toggleTextApoyo">ANÓNIMA</span>
+        </div>
       </div>
 
-      <button class="btn-principal full-width" onclick="submitModal('modal-apoyo', 'Tu apoyo ha sido enviado de forma privada')">Enviar Apoyo</button>
-      <button class="btn-cancelar" onclick="cerrarModal('modal-apoyo')">Cancelar</button>
+      <button class="btn-principal full-width" onclick="submitModal('modal-apoyo', '¡Apoyo enviado!')">Enviar
+        Apoyo</button>
     </div>
   </div>
 
-  <div id="toast"></div>
   <script src="js/main.js"></script>
   <script src="js/community.js"></script>
+  <script src="js/form.js"></script>
+  <div id="toast"></div>
+
 </body>
+
 </html>
