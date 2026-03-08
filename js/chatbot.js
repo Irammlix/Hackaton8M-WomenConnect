@@ -138,7 +138,7 @@ function manejarArchivo(input, tipo) {
     const lector = new FileReader();
     
     lector.onload = async function(evento) {
-        // Convertimos el archivo al lenguaje Base64 que entiende la IA
+        // Convertimos el archivo al lenguaje Base64
         const base64Completo = evento.target.result;
         const mimeType = base64Completo.split(';')[0].split(':')[1];
         const base64Data = base64Completo.split(',')[1];
@@ -265,7 +265,7 @@ function compartirAlerta() {
     mostrarMensaje("Quiero generar una alerta en la Comunidad.", 'usuario');
     mostrarCargando();
     
-    // demo: Este es el borrador pre-armado de post
+    // demo: Este es el pre-armado de post
     const borrador = "¡Hola compañeras! Acabo de analizar una oferta con Valia y detectamos bandera rojas (ej. piden dinero por adelantado/falta información). Tengan mucho cuidado con esta vacante. #AlertaLaboral";
     
     // guardar en la memoria temporal del navegador
