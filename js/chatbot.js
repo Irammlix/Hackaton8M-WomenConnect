@@ -1,6 +1,6 @@
 // Configuración de VALIA con la API de Google AI Studio
 
-const API_KEY = 'AIzaSyDyKlUrT9j4bsWV-U_QTeCFzcAOO0Hpn3w'; 
+const API_KEY = 'AIzaSyBHpxNevadV9Q_hX-4PJfwZe5DOck3K6mY'; 
 
 // 2. el prompt
 // 2. el prompt
