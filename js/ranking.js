@@ -1,4 +1,4 @@
-/* ---- Navegación lista <-> perfil ---- */
+/* ---- Navegación lista l ---- */
 function mostrarPerfil() {
   document.getElementById('vista-lista').style.display = 'none';
   document.getElementById('vista-perfil').style.display = 'block';
@@ -36,7 +36,7 @@ function toggleFav() {
   mostrarToast(btn.classList.contains('activo') ? '❤️ Empresa guardada' : 'Empresa eliminada de guardados');
 }
 
-/* ---- Estrellas Actualizado (Nic) ---- */
+/* ---- Estrellas Actualizado  ---- */
 function setStars(btn, n) {
   // Buscamos el contenedor de estrellas más cercano
   const container = btn.closest('.stars-container-nic');
@@ -122,7 +122,6 @@ function updateToggleText(id) {
     text.style.color = "var(--texto-muted)"; // Gris cuando está desactivado
   }
 }
-
 
 // Carga de datos de la usuaria
 
