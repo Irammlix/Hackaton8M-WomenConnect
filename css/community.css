@@ -1,6 +1,3 @@
-/* =========================================================
-   COMUNIDAD.CSS — Código Completo y Corregido (Diseño Nic)
-   ========================================================= */
 
 /* ----- HEADER Y ACCIONES ----- */
 .comunidad-header {
@@ -79,7 +76,7 @@
 }
 
 /* =========================================================
-   TARJETAS DE PUBLICACIÓN (DISEÑO NIC)
+   TARJETAS DE PUBLICACIÓN 
    ========================================================= */
 .post-card {
   background: var(--blanco);
@@ -190,7 +187,7 @@
   margin-bottom: 16px;
 }
 
-/* ----- FOOTER DEL POST (BOTONES CON RECUADRO) ----- */
+/* ----- FOOTER DEL POST ----- */
 .post-footer {
   display: flex;
   justify-content: space-between;
@@ -207,7 +204,7 @@
   gap: 12px;
 }
 
-/* Los botones tipo "pastilla" (Like, Comentar, Apoyar) */
+/* Los botones (Like, Comentar, Apoyar) */
 .reaction-btn {
   background: var(--blanco);
   border: 1px solid var(--borde);
@@ -254,7 +251,7 @@
 }
 
 /* =========================================================
-   COMENTARIOS (Burbujas Restauradas)
+   COMENTARIOS 
    ========================================================= */
 .comments-section {
   display: none;
@@ -365,9 +362,7 @@
 .comment-box-nic .campo-input {
   flex: 1;
   height: 40px;
-  /* Altura exacta */
   margin: 0;
-  /* Resetea márgenes del navegador */
   border-radius: 50px;
   border: 1px solid var(--borde);
   padding: 0 16px;
@@ -386,9 +381,7 @@
 
 .comment-box-nic .btn-principal {
   height: 40px;
-  /* Misma altura exacta que el input */
   margin: 0;
-  /* Resetea márgenes del navegador */
   border-radius: 50px;
   padding: 0 20px;
   border: none;
@@ -403,7 +396,6 @@
   justify-content: center;
   box-sizing: border-box;
   line-height: 1;
-  /* Centra el texto del botón perfectamente */
   transition: 0.3s;
 }
 
@@ -481,7 +473,7 @@ input:checked+.slider-sm:before {
 }
 
 /* =========================================================
-   MODALES UNIFICADOS — ESTILO NIC (WomenConnect)
+   MODALES UNIFICADOS 
    ========================================================= */
 
 .modal-fondo {
@@ -591,7 +583,6 @@ input:checked+.slider-sm:before {
 .campo-textarea-nic {
   width: 100%;
   min-height: 140px;
-  /* Más espacio para escribir */
   background: var(--rosa-claro) !important;
   border: 1.5px solid var(--borde) !important;
   border-radius: 16px !important;
@@ -603,7 +594,6 @@ input:checked+.slider-sm:before {
   outline: none;
   transition: 0.3s;
   resize: none;
-  /* Evita que el usuario deforme el modal */
   box-sizing: border-box;
   margin-bottom: 20px;
 }
@@ -614,7 +604,7 @@ input:checked+.slider-sm:before {
   box-shadow: 0 0 0 4px rgba(181, 71, 110, 0.1) !important;
 }
 
-/* CAJA DE PRIVACIDAD ESTILO "AÑADIR EMPRESA" */
+/* CAJA DE PRIVACIDAD  */
 .privacy-box-nic {
   display: flex;
   align-items: center;
@@ -716,7 +706,6 @@ input:checked+.slider-sm:before {
   width: 100%;
   min-height: 120px;
   background: #FFF9FA !important;
-  /* Fondo rosa pálido */
   border: 1.5px solid var(--borde) !important;
   border-radius: 16px;
   padding: 16px;

@@ -1,6 +1,3 @@
-/* =========================================================
-   js/community.js — Lógica Unificada y Corregida
-   ========================================================= */
 
 // 1. GESTIÓN DE MODALES
 function abrirModal(id) {

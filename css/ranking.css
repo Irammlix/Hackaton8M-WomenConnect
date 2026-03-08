@@ -32,7 +32,6 @@
   color: var(--texto) !important;
   font-family: inherit !important;
   font-size: 14px !important;
-  /* OCUPA TODO EL LARGO DE LA BARRA BLANCA */
   width: 100% !important;
   padding-left: 8px !important;
 }
@@ -51,7 +50,6 @@
   padding: 0 24px !important;
   border-radius: 50px !important;
   flex-shrink: 0 !important;
-  /* Evita que el botón se aplaste */
 }
 
 /* ---- LISTA DE EMPRESAS ---- */
@@ -63,11 +61,9 @@
 
 #lista-empresas {
   margin-top: 24px;
-  /* Ajusta este número si quieres más o menos espacio */
   display: flex;
   flex-direction: column;
   gap: 16px;
-  /* Mantiene la separación constante entre todas las tarjetas */
 }
 
 /* =========================================================
@@ -78,7 +74,6 @@
 .rank-number {
   font-family: Georgia, serif;
   font-size: 32px;
-  /* Tamaño grande para impacto visual */
   font-weight: 700;
   color: var(--rosa-fuerte);
   opacity: 0.25;
@@ -88,7 +83,6 @@
   transition: all 0.3s ease;
 }
 
-/* El número resalta cuando pasas el mouse por la tarjeta */
 .empresa-card:hover .rank-number {
   opacity: 1;
   transform: scale(1.1);
@@ -396,7 +390,6 @@
   font-weight: 600;
 }
 
-/* CTA lateral rosado */
 .cta-box {
   background: linear-gradient(135deg, var(--rosa-medio), var(--rosa-fuerte));
   border-radius: var(--radio);
@@ -439,7 +432,7 @@
 }
 
 /* =========================================================
-   MODALES — Estructura Centrada Flotante
+   MODALES 
    ========================================================= */
 .modal-fondo {
   display: none;
@@ -508,7 +501,7 @@
 }
 
 /* =========================================================
-   CABECERAS DE FORMULARIO (Nic)
+   CABECERAS DE FORMULARIO 
    ========================================================= */
 .form-header-centered {
   text-align: center;
@@ -636,7 +629,7 @@
 }
 
 /* =========================================================
-   CAJA DE PRIVACIDAD (Diseño Nic)
+   CAJA DE PRIVACIDAD 
    ========================================================= */
 .privacy-box {
   display: flex;
@@ -898,7 +891,7 @@ input:checked+.slider-sm:before {
   }
 }
 
-/* --- ESTILOS DE TAGS Y TEXTAREA (Nic) --- */
+/* --- ESTILOS DE TAGS Y TEXTAREA --- */
 .tag-selector {
   display: flex;
   flex-wrap: wrap;
@@ -930,7 +923,7 @@ input:checked+.slider-sm:before {
   font-weight: 600;
 }
 
-/* Tags rosas (críticos) */
+/* Tags rosas */
 .btn-tag.rosa {
   border-color: var(--rosa-fuerte);
   color: var(--rosa-fuerte);
