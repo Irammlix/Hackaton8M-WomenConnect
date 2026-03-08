@@ -1,26 +1,28 @@
 // Configuración de VALIA con la API de Google AI Studio
 
-const API_KEY = 'AIzaSyADBANyUyPisg1kcCNcCKnlcXwhCIPf_8c'; 
+const API_KEY = 'AIzaSyDyKlUrT9j4bsWV-U_QTeCFzcAOO0Hpn3w'; 
 
+// 2. el prompt
 // 2. el prompt
 const promptDelSistema = `Eres Valia, la asistente virtual de confianza de la plataforma "Women Connect" (escudo). Tu objetivo principal es proteger, orientar y empoderar a las mujeres en su vida laboral.
 REGLA 1: Eres empática y validadora.
 
-REGLA 2 (EL PASO PREVIO): Si la usuaria te dice "Quiero verificar una oferta de trabajo" o pide ayuda para analizar una vacante, PERO NO incluye el texto ni el enlace, responde amablemente pidiendo que te pegue la información (ej. "¡Claro que sí! Por favor, pega aquí el enlace o el texto de la oferta que quieres que analice").
+REGLA 2: Si la usuaria te dice "Quiero verificar una oferta de trabajo" pero no incluye el texto/enlace, pide amablemente que lo pegue.
 
-REGLA 3 (LA TARJETA DE ALERTA): SOLO CUANDO la usuaria te comparta el texto de una oferta o un enlace laboral, DEBES responder ÚNICAMENTE con este bloque HTML exacto (reemplazando los corchetes con tu análisis real, sin usar markdown extra):
+REGLA 3: SOLO CUANDO la usuaria comparta una oferta, DEBES responder ÚNICAMENTE con este bloque HTML exacto (reemplaza los corchetes con tu análisis real, sin usar markdown extra):
 <div class="tarjeta-riesgo">
   <div class="tr-header">
     <span class="tr-icon">⚠️</span>
     <div>
-      <h3>Riesgo [Medio/Alto/Bajo]</h3>
-      <p>Requiere verificación adicional</p>
+      <h3 class="nivel-riesgo">Riesgo [Alto/Medio/Bajo]</h3>
+      <p class="nombre-puesto">Oferta: "[Título del Puesto]"</p>
     </div>
   </div>
+  <p class="tr-desc">[Escribe aquí una breve descripción de 2 líneas sobre por qué tiene este nivel de riesgo]</p>
   <ul class="tr-lista">
-    <li>[Escribe aquí la bandera roja 1 detectada]</li>
-    <li>[Escribe aquí la bandera roja 2 detectada]</li>
-    <li>[Escribe aquí la bandera roja 3 detectada]</li>
+    <li>[Bandera roja 1 o punto a favor]</li>
+    <li>[Bandera roja 2 o punto a favor]</li>
+    <li>[Bandera roja 3 o punto a favor]</li>
   </ul>
   <div class="tr-tip">💡 <span>Investiga la empresa antes de continuar. Solicita siempre contrato por escrito.</span></div>
   <div class="tr-botones">
@@ -29,8 +31,7 @@ REGLA 3 (LA TARJETA DE ALERTA): SOLO CUANDO la usuaria te comparta el texto de u
   </div>
 </div>
 
-REGLA 4: Para cualquier otra consulta (apoyo emocional, CV, salario), responde normalmente con texto conciso y viñetas.`;
-
+REGLA 4: Para cualquier otra consulta, responde normalmente con texto conciso.`;
 // LÓGICA GENERAL
 
 const usuario = JSON.parse(localStorage.getItem('wc_usuario') || '{}');
@@ -228,57 +229,91 @@ function guardarOferta() {
     mostrarMensaje("Quiero guardar esta oferta como evidencia.", 'usuario');
     mostrarCargando();
     
-    // 1. Leemos el nivel de riesgo de la última tarjeta
-    const tarjetas = document.querySelectorAll('.tarjeta-riesgo h3');
-    let nivelRiesgo = "Riesgo Alto"; 
-    if (tarjetas.length > 0) {
-        nivelRiesgo = tarjetas[tarjetas.length - 1].innerText; 
+    // 1. Buscamos la última tarjeta renderizada en el chat
+    const tarjetas = document.querySelectorAll('.tarjeta-riesgo');
+    if (tarjetas.length === 0) {
+        quitarCargando();
+        return;
     }
+    const ultimaTarjeta = tarjetas[tarjetas.length - 1];
     
-    // 2. ¡NUEVO! Buscamos el título oculto que Valia generó
-    const puestosOcultos = document.querySelectorAll('.nombre-puesto');
-    let tituloDinamico = "Oferta Evaluada por Valia"; // Título por defecto por si falla
-    if (puestosOcultos.length > 0) {
-        // Tomamos el último título generado y le damos el formato de tu diseño
-        const nombreExtraido = puestosOcultos[puestosOcultos.length - 1].innerText;
-        tituloDinamico = `Oferta: "${nombreExtraido}"`; 
-    }
+    // 2. Extraemos los datos generados por Valia
+    const nivelRiesgo = ultimaTarjeta.querySelector('.nivel-riesgo') ? ultimaTarjeta.querySelector('.nivel-riesgo').innerText : "Riesgo Alto";
+    const tituloPuesto = ultimaTarjeta.querySelector('.nombre-puesto') ? ultimaTarjeta.querySelector('.nombre-puesto').innerText : "Oferta sin título";
+    const descripcion = ultimaTarjeta.querySelector('.tr-desc') ? ultimaTarjeta.querySelector('.tr-desc').innerText : "Análisis guardado por la usuaria.";
     
-    // 3. Guardamos en la memoria
+    // Extraemos las viñetas como "etiquetas" (signals)
+    const listaItems = ultimaTarjeta.querySelectorAll('.tr-lista li');
+    const etiquetas = Array.from(listaItems).map(li => li.innerText);
+    
+    // 3. Formateamos la fecha actual (ej. "14 feb 2024")
+    const opcionesFecha = { day: 'numeric', month: 'short', year: 'numeric' };
+    const fechaActual = new Date().toLocaleDateString('es-ES', opcionesFecha);
+    
+    // 4. Guardamos en la memoria (agregamos al inicio para que salga primero)
     let ofertasGuardadas = JSON.parse(localStorage.getItem('wc_ofertas_guardadas') || '[]');
-    ofertasGuardadas.push({
-        fecha: new Date().toLocaleDateString(),
-        tipo: tituloDinamico, // Aquí inyectamos el título real que leyó la IA
-        estado: nivelRiesgo 
+    ofertasGuardadas.unshift({
+        id: Date.now(), // Identificador único
+        titulo: tituloPuesto,
+        estado: nivelRiesgo,
+        descripcion: descripcion,
+        etiquetas: etiquetas,
+        fecha: fechaActual
     });
     
     localStorage.setItem('wc_ofertas_guardadas', JSON.stringify(ofertasGuardadas));
 
     setTimeout(() => {
         quitarCargando();
-        mostrarMensaje("✅ ¡Listo, Ana! He guardado el diagnóstico detallado en tu **Espacio Seguro**.", 'valia');
+        mostrarMensaje("✅ ¡Listo! He guardado el diagnóstico detallado en tu **Espacio Seguro**.", 'valia');
     }, 1000);
 }
-
 //enviar a la usuaria a comunidad con un mensaje pre-armado para que lo publique y alerte a otras mujeres (usando memoria del navegador para pasar el mensaje)
+// Función para compartir en la Comunidad
 function compartirAlerta() {
     mostrarMensaje("Quiero generar una alerta en la Comunidad.", 'usuario');
     mostrarCargando();
     
-    // demo: Este es el pre-armado de post
-    const borrador = "¡Hola compañeras! Acabo de analizar una oferta con Valia y detectamos bandera rojas (ej. piden dinero por adelantado/falta información). Tengan mucho cuidado con esta vacante. #AlertaLaboral";
+    // 1. Buscamos la última tarjeta de Valia
+    const tarjetas = document.querySelectorAll('.tarjeta-riesgo');
+    if (tarjetas.length === 0) {
+        quitarCargando();
+        return;
+    }
+    const ultimaTarjeta = tarjetas[tarjetas.length - 1];
     
-    // guardar en la memoria temporal del navegador
-    localStorage.setItem('wc_borrador_alerta', borrador);
+    // 2. Extraemos los datos del análisis
+    const nivelRiesgoTexto = ultimaTarjeta.querySelector('.nivel-riesgo') ? ultimaTarjeta.querySelector('.nivel-riesgo').innerText.toLowerCase() : "alto";
+    const tituloPuesto = ultimaTarjeta.querySelector('.nombre-puesto') ? ultimaTarjeta.querySelector('.nombre-puesto').innerText : "Oferta sin título";
+    const descripcion = ultimaTarjeta.querySelector('.tr-desc') ? ultimaTarjeta.querySelector('.tr-desc').innerText : "Revisen esto chicas.";
+    
+    // 3. Armamos el borrador inteligente según el riesgo
+    let borrador = "";
+    let etiquetaSugerida = "";
 
+    if (nivelRiesgoTexto.includes('alto')) {
+        borrador = `⚠️ ¡Chicas, alerta de posible estafa! Analicé esta oferta con la IA y detectó banderas rojas importantes. Tengan mucho cuidado.\n\n📌 ${tituloPuesto}\n📝 ${descripcion}`;
+        etiquetaSugerida = "#OfertaFalsa"; 
+    } else if (nivelRiesgoTexto.includes('medio')) {
+        borrador = `⚡ Chicas, tengan cuidado con esta oferta. Tiene algunos puntos dudosos que Valia me ayudó a detectar. Mejor pregunten bien antes de firmar.\n\n📌 ${tituloPuesto}\n📝 ${descripcion}`;
+        etiquetaSugerida = "#Consejos";
+    } else {
+        borrador = `✅ ¡Hola chicas! Encontré esta oferta y según el análisis del Escudo se ve bastante segura. Se las comparto por si alguna está buscando en esta área:\n\n📌 ${tituloPuesto}\n📝 ${descripcion}`;
+        etiquetaSugerida = "#ReinicioLaboral";
+    }
+    
+    // 4. Guardamos todo en la memoria temporal
+    const datosBorrador = { texto: borrador, etiqueta: etiquetaSugerida };
+    localStorage.setItem('wc_alerta_pendiente', JSON.stringify(datosBorrador));
+
+    // 5. Redirigimos
     setTimeout(() => {
         quitarCargando();
-        mostrarMensaje("📢 ¡Excelente decisión! He preparado un borrador. Te estoy redirigiendo a la **Comunidad** para que lo revises y lo publiques cuando estés lista...", 'valia');
+        mostrarMensaje("📢 ¡Excelente decisión! He preparado tu borrador. Te estoy redirigiendo a la **Comunidad** para que lo revises y le añadas la foto si deseas...", 'valia');
         
-        // Redirigir a la página de comunidad
         setTimeout(() => {
             window.location.href = 'community.html';
-        }, 2000);
+        }, 2200);
         
     }, 1200);
 }

@@ -115,14 +115,15 @@
         </div>
 
         <div class="filter-tags">
-          <button class="ftag active" onclick="filtrarTag(this)">Todas</button>
-          <button class="ftag" onclick="filtrarTag(this)">#ReinicioLaboral</button>
-          <button class="ftag" onclick="filtrarTag(this)">#Experiencia</button>
-          <button class="ftag" onclick="filtrarTag(this)">#Entrevistas</button>
-          <button class="ftag" onclick="filtrarTag(this)">#Salarial</button>
-          <button class="ftag" onclick="filtrarTag(this)">#AmbienteLaboral</button>
-          <button class="ftag" onclick="filtrarTag(this)">#Consejos</button>
-        </div>
+        <button class="ftag active" onclick="filtrarTag(this)">Todas</button>
+        <button class="ftag" onclick="filtrarTag(this)">#ReinicioLaboral</button>
+        <button class="ftag" onclick="filtrarTag(this)">#Experiencia</button>
+        <button class="ftag" onclick="filtrarTag(this)">#Entrevistas</button>
+        <button class="ftag" onclick="filtrarTag(this)">#Salarial</button>
+        <button class="ftag" onclick="filtrarTag(this)">#AmbienteLaboral</button>
+        <button class="ftag" onclick="filtrarTag(this)">#Consejos</button>
+        <button class="ftag" onclick="filtrarTag(this)">#AlertaLaboral</button>
+      </div>
       </div>
 
       <div id="community-feed">
@@ -240,7 +241,21 @@
               <button class="reaction-btn" onclick="abrirModal('modal-apoyo')">🤝 Apoyar</button>
             </div>
           </div>
-          <div class="comments-section" id="comments-2"></div>
+          <div class="comments-section" id="comments-2">
+            <div class="comment-box-nic">
+              <div class="comment-box-header">
+                <label class="switch-sm">
+                  <input type="checkbox" id="anonToggle2" checked onchange="updateToggleText('2')">
+                  <span class="slider-sm"></span>
+                </label>
+                <span id="toggleText2" class="privacy-label-text">Anónima</span>
+              </div>
+              <div class="comment-input-wrapper">
+                <input class="comment-input" id="commentInput2" type="text" placeholder="Escribe un comentario anónimo...">
+                <button class="btn-send-comment" onclick="enviarComentario(this)">Enviar</button>
+              </div>
+            </div>
+            </div>
         </div>
 
         <div class="post-card" id="post-3">
@@ -267,7 +282,21 @@
               <button class="reaction-btn" onclick="abrirModal('modal-apoyo')">🤝 Apoyar</button>
             </div>
           </div>
-          <div class="comments-section" id="comments-3"></div>
+          <div class="comments-section" id="comments-3">
+            <div class="comment-box-nic">
+              <div class="comment-box-header">
+                <label class="switch-sm">
+                  <input type="checkbox" id="anonToggle2" checked onchange="updateToggleText('2')">
+                  <span class="slider-sm"></span>
+                </label>
+                <span id="toggleText2" class="privacy-label-text">Anónima</span>
+              </div>
+              <div class="comment-input-wrapper">
+                <input class="comment-input" id="commentInput2" type="text" placeholder="Escribe un comentario anónimo...">
+                <button class="btn-send-comment" onclick="enviarComentario(this)">Enviar</button>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div class="post-card" id="post-4">
@@ -304,7 +333,21 @@
               <button class="reaction-btn" onclick="abrirModal('modal-apoyo')">🤝 Apoyar</button>
             </div>
           </div>
-          <div class="comments-section" id="comments-4"></div>
+          <div class="comments-section" id="comments-4">
+            <div class="comment-box-nic">
+              <div class="comment-box-header">
+                <label class="switch-sm">
+                  <input type="checkbox" id="anonToggle2" checked onchange="updateToggleText('2')">
+                  <span class="slider-sm"></span>
+                </label>
+                <span id="toggleText2" class="privacy-label-text">Anónima</span>
+              </div>
+              <div class="comment-input-wrapper">
+                <input class="comment-input" id="commentInput2" type="text" placeholder="Escribe un comentario anónimo...">
+                <button class="btn-send-comment" onclick="enviarComentario(this)">Enviar</button>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div class="post-card" id="post-5">
@@ -332,7 +375,21 @@
               <button class="reaction-btn" onclick="abrirModal('modal-apoyo')">🤝 Apoyar</button>
             </div>
           </div>
-          <div class="comments-section" id="comments-5"></div>
+          <div class="comments-section" id="comments-5">
+            <div class="comment-box-nic">
+              <div class="comment-box-header">
+                <label class="switch-sm">
+                  <input type="checkbox" id="anonToggle2" checked onchange="updateToggleText('2')">
+                  <span class="slider-sm"></span>
+                </label>
+                <span id="toggleText2" class="privacy-label-text">Anónima</span>
+              </div>
+              <div class="comment-input-wrapper">
+                <input class="comment-input" id="commentInput2" type="text" placeholder="Escribe un comentario anónimo...">
+                <button class="btn-send-comment" onclick="enviarComentario(this)">Enviar</button>
+              </div>
+            </div>
+            </div>
         </div>
 
         <div class="post-card" id="post-6">
@@ -366,7 +423,21 @@
               <button class="reaction-btn" onclick="abrirModal('modal-apoyo')">🤝 Apoyar</button>
             </div>
           </div>
-          <div class="comments-section" id="comments-6"></div>
+          <div class="comments-section" id="comments-6">
+            <div class="comment-box-nic">
+              <div class="comment-box-header">
+                <label class="switch-sm">
+                  <input type="checkbox" id="anonToggle2" checked onchange="updateToggleText('2')">
+                  <span class="slider-sm"></span>
+                </label>
+                <span id="toggleText2" class="privacy-label-text">Anónima</span>
+              </div>
+              <div class="comment-input-wrapper">
+                <input class="comment-input" id="commentInput2" type="text" placeholder="Escribe un comentario anónimo...">
+                <button class="btn-send-comment" onclick="enviarComentario(this)">Enviar</button>
+              </div>
+            </div>
+            </div>
         </div>
 
       </div>
@@ -383,9 +454,11 @@
       <div class="tag-selector-nic">
         <button class="btn-tag activo-tag" onclick="seleccionarEtiqueta(this)">#ReinicioLaboral</button>
         <button class="btn-tag" onclick="seleccionarEtiqueta(this)">#Maternidad</button>
+        <button class="btn-tag" onclick="seleccionarEtiqueta(this)">#Experiencia</button>
         <button class="btn-tag" onclick="seleccionarEtiqueta(this)">#Salarial</button>
         <button class="btn-tag" onclick="seleccionarEtiqueta(this)">#Consejos</button>
         <button class="btn-tag" onclick="seleccionarEtiqueta(this)">#Entrevistas</button>
+        <button class="btn-tag" onclick="seleccionarEtiqueta(this)">#AlertaLaboral</button>
       </div>
 
       <label class="campo-label-nic">Tu experiencia</label>

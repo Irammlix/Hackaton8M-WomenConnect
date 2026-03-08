@@ -394,3 +394,19 @@
   border-radius: 50%;
   transform: rotate(-25deg);
 }
+
+/* Estilos para los nuevos elementos de la tarjeta de Valia */
+.nombre-puesto {
+  font-weight: 500;
+  font-size: 0.95rem;
+  margin-top: 4px;
+  color: #333;
+}
+
+.tr-desc {
+  font-size: 0.9rem;
+  color: #555;
+  margin: 10px 0;
+  line-height: 1.4;
+  font-style: italic;
+}
