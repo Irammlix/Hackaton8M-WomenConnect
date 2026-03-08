@@ -93,61 +93,12 @@ function cargarPublicacionesEnComunidad() {
     const publicaciones = JSON.parse(localStorage.getItem('wc_mis_publicaciones') || '[]');
     
     let htmlNuevo = "";
-    /*
     publicaciones.forEach((pub, index) => {
         const nombreAutor = pub.esAnonima ? "🔒 Usuario Anónima" : "👤 Mi Cuenta";
         const colorAvatar = pub.esAnonima ? "var(--rosa-fuerte)" : "var(--lila-claro)";
         const letraAvatar = pub.esAnonima ? "U" : "M";
         const idUnico = `dinamico-${index}`; 
 
-        htmlNuevo += `
-        <div class="post-card" style="border: 1px solid var(--rosa-medio); box-shadow: 0 4px 10px rgba(183,28,99,0.1);">
-          <div class="post-header">
-            <div class="post-author">
-              <div class="author-avatar" style="background: ${colorAvatar}; color: white;">${letraAvatar}</div>
-              <div class="author-info">
-                <div class="author-name">${nombreAutor}</div>
-                <div class="author-time">${pub.fecha}</div>
-              </div>
-            </div>
-            <span style="background: var(--rosa-claro); color: var(--rosa-fuerte); padding: 4px 8px; border-radius: 12px; font-size: 0.75rem; font-weight: bold; margin-left: auto;">¡Nuevo!</span>
-          </div>
-          <span class="post-tag">${pub.etiqueta}</span>
-          <p class="post-text">${pub.texto}</p>
-          <div class="post-footer">
-            <div class="post-reactions">
-              <button class="reaction-btn" onclick="toggleLike(this)">❤️ <span>${pub.likes || 0}</span></button>
-              <button class="reaction-btn" onclick="toggleComments('${idUnico}')">💬 <span>${pub.comentarios || 0}</span></button>
-              <button class="reaction-btn" onclick="abrirModal('modal-apoyo')">🤝 Apoyar</button>
-            </div>
-          </div>
-          
-          <div class="comments-section" id="comments-${idUnico}">
-            <div class="comment-box-nic">
-              <div class="comment-box-header">
-                <label class="switch-sm">
-                  <input type="checkbox" id="anonToggle${idUnico}" checked onchange="updateToggleText('${idUnico}')">
-                  <span class="slider-sm"></span>
-                </label>
-                <span id="toggleText${idUnico}" class="privacy-label-text">Anónima</span>
-              </div>
-              <div class="comment-input-wrapper">
-                <input class="comment-input" id="commentInput${idUnico}" type="text" placeholder="Escribe un comentario anónimo...">
-                <button class="btn-send-comment" onclick="enviarComentario(this)">Enviar</button>
-              </div>
-            </div>
-          </div>
-
-        </div>`;
-    });
-    */
-    publicaciones.forEach((pub, index) => {
-        const nombreAutor = pub.esAnonima ? "🔒 Usuario Anónima" : "👤 Mi Cuenta";
-        const colorAvatar = pub.esAnonima ? "var(--rosa-fuerte)" : "var(--lila-claro)";
-        const letraAvatar = pub.esAnonima ? "U" : "M";
-        const idUnico = `dinamico-${index}`; 
-
-        // --- PREPARAMOS EL HTML DEL ADJUNTO SI EXISTE ---
         let adjuntoHTML = "";
         if (pub.archivoDato) {
             if (pub.tipoArchivo === 'imagen') {
@@ -205,60 +156,11 @@ function cargarPublicacionesEnComunidad() {
     feed.insertAdjacentHTML('afterbegin', htmlNuevo);
 }
 
-// 3. ENVÍO DE FORMULARIOS Y GUARDADO DE PUBLICACIONES
-/*
-function submitModal(idModal, mensaje) {
-    const textarea = document.querySelector(`#${idModal} textarea`);
 
-    // Validación simple
-    if (textarea && textarea.value.trim() === "") {
-        alert("Por favor, escribe tu experiencia antes de publicar.");
-        return;
-    }
-    // SI ES EL MODAL DE EXPERIENCIA, GUARDAMOS EL POST
-    if (idModal === 'modal-experiencia') {
-        const textoPost = textarea.value.trim();
-        
-        // 1. Buscar qué etiqueta está seleccionada
-        const tagSeleccionado = document.querySelector(`#${idModal} .btn-tag.activo-tag`);
-        const textoTag = tagSeleccionado ? tagSeleccionado.innerText : "#Experiencia";
-        
-        // 2. Revisar si publicaste como Anónima
-        const toggleAnon = document.getElementById('anonExp');
-        const esAnonima = toggleAnon ? toggleAnon.checked : true;
-        
-        // 3. Obtener la fecha de hoy
-        const opcionesFecha = { day: 'numeric', month: 'short', year: 'numeric' };
-        const fechaHoy = new Date().toLocaleDateString('es-ES', opcionesFecha);
-        
-        // 4. Guardar en el LocalStorage
-        let misPublicaciones = JSON.parse(localStorage.getItem('wc_mis_publicaciones') || '[]');
-        misPublicaciones.unshift({
-            id: Date.now(),
-            texto: textoPost,
-            etiqueta: textoTag,
-            fecha: `Publicado el ${fechaHoy}`,
-            esAnonima: esAnonima,
-            likes: 0,
-            comentarios: 0
-        });
-        localStorage.setItem('wc_mis_publicaciones', JSON.stringify(misPublicaciones));
-    }
-
-    // Cerramos el modal y mostramos el mensaje de éxito
-    cerrarModal(idModal);
-    mostrarToast(mensaje, idModal); // <-- ¡Aquí faltaba el idModal!
-
-    // Limpieza
-    if (textarea) textarea.value = "";
-    document.querySelectorAll('.btn-tag').forEach(b => b.classList.remove('activo-tag'));
-}
-*/
 // 3. ENVÍO DE FORMULARIOS Y GUARDADO DE PUBLICACIONES
 function submitModal(idModal, mensaje) {
     const textarea = document.querySelector(`#${idModal} textarea`);
 
-    // Validación simple
     if (textarea && textarea.value.trim() === "") {
         alert("Por favor, escribe tu experiencia antes de publicar.");
         return;
@@ -274,8 +176,6 @@ function submitModal(idModal, mensaje) {
         const opcionesFecha = { day: 'numeric', month: 'short', year: 'numeric' };
         const fechaHoy = new Date().toLocaleDateString('es-ES', opcionesFecha);
 
-        // --- MAGIA PARA LEER EL ARCHIVO ---
-        // Buscamos si hay un input de tipo archivo dentro del modal
         const inputArchivo = document.querySelector(`#${idModal} input[type="file"]`);
         
         if (inputArchivo && inputArchivo.files.length > 0) {
@@ -291,11 +191,9 @@ function submitModal(idModal, mensaje) {
             };
             lector.readAsDataURL(archivo);
         } else {
-            // Si no hay archivo, guardamos normalmente
             guardarPublicacionEnMemoria(textoPost, textoTag, fechaHoy, esAnonima, null, null);
         }
     } else {
-        // Para otros modales que no sean el de experiencia
         cerrarModal(idModal);
         mostrarToast(mensaje, idModal);
     }
