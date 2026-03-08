@@ -4,43 +4,81 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>WomenConnect — Mi Espacio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300&family=Roboto+Serif:ital,wght@0,300;0,400;0,600&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/profile.css">
 </head>
 <body>
 
-  <div class="topbar">
+  <!-- TOPBAR MÓVIL -->
+  <div class="topbar-movil" id="topbar-movil">
     <div class="topbar-logo">Women<em>Connect</em></div>
     <button class="btn-menu" onclick="abrirMenu()">
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+        <line x1="3" y1="6" x2="21" y2="6"/>
+        <line x1="3" y1="12" x2="21" y2="12"/>
+        <line x1="3" y1="18" x2="21" y2="18"/>
       </svg>
     </button>
   </div>
 
+  <!-- MENÚ MÓVIL -->
   <div class="menu-movil" id="menu-movil">
     <nav>
-      <a href="home.html" class="nav-link"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 12L12 3L21 12V20a1 1 0 0 1-1 1h-5v-5H9v5H4a1 1 0 0 1-1-1V12z"/></svg>Inicio</a>
-      <a href="community.html" class="nav-link"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="7" r="3"/><circle cx="15" cy="7" r="3"/><path d="M3 21c0-3 2.7-5 6-5h6c3.3 0 6 2 6 5"/></svg>Comunidad</a>
-      <a href="valia.html" class="nav-link"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Valia IA</a>
-      <a href="ranking.html" class="nav-link"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg>Ranking</a>
-      <a href="profile.html" class="nav-link activo"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg>Mi Espacio</a>
-      <a href="index.html" class="btn-salir" style="text-decoration: none;">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
-          Cerrar sesión
-        </a>
+      <a href="home.html" class="nav-link">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 12L12 3L21 12V20a1 1 0 0 1-1 1h-5v-5H9v5H4a1 1 0 0 1-1-1V12z"/></svg>
+        Inicio
+      </a>
+      <a href="community.html" class="nav-link">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="7" r="3"/><circle cx="15" cy="7" r="3"/><path d="M3 21c0-3 2.7-5 6-5h6c3.3 0 6 2 6 5"/></svg>
+        Comunidad
+      </a>
+      <a href="valia.html" class="nav-link">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        Valia IA
+      </a>
+      <a href="ranking.html" class="nav-link">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg>
+        Ranking
+      </a>
+      <a href="profile.html" class="nav-link activo">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+        Mi Espacio
+      </a>
+      <button class="btn-salir" id="btnCerrarSesionMovil">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+        Cerrar sesión
+      </button>
     </nav>
   </div>
 
+  <!-- LAYOUT PRINCIPAL -->
   <div class="layout">
+
+    <!-- SIDEBAR -->
     <aside class="sidebar">
       <div class="sidebar-logo"><span>Women<em>Connect</em></span></div>
       <nav>
-        <a href="home.html" class="nav-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 12L12 3L21 12V20a1 1 0 0 1-1 1h-5v-5H9v5H4a1 1 0 0 1-1-1V12z"/></svg>Inicio</a>
-        <a href="community.html" class="nav-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="7" r="3"/><circle cx="15" cy="7" r="3"/><path d="M3 21c0-3 2.7-5 6-5h6c3.3 0 6 2 6 5"/></svg>Comunidad</a>
-        <a href="valia.html" class="nav-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Valia IA</a>
-        <a href="ranking.html" class="nav-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg>Ranking</a>
-        <a href="profile.html" class="nav-link activo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg>Mi Espacio</a>
+        <a href="home.html" class="nav-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 12L12 3L21 12V20a1 1 0 0 1-1 1h-5v-5H9v5H4a1 1 0 0 1-1-1V12z"/></svg>
+          Inicio
+        </a>
+        <a href="community.html" class="nav-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="7" r="3"/><circle cx="15" cy="7" r="3"/><path d="M3 21c0-3 2.7-5 6-5h6c3.3 0 6 2 6 5"/></svg>
+          Comunidad
+        </a>
+        <a href="valia.html" class="nav-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          Valia IA
+        </a>
+        <a href="ranking.html" class="nav-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg>
+          Ranking
+        </a>
+        <a href="profile.html" class="nav-link activo">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+          Mi Espacio
+        </a>
       </nav>
       <div class="sidebar-footer">
         <div class="sidebar-usuario">
@@ -50,176 +88,503 @@
             <small>🔒 Protegida</small>
           </div>
         </div>
-        <a href="index.html" class="btn-salir" style="text-decoration: none;">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
-          Cerrar sesión
-        </a>
+          <a href="index.html" class="btn-salir" style="text-decoration: none;">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+        Cerrar sesión
+    </a>
       </div>
     </aside>
 
-    <main class="contenido animar">
+    <!-- ÁREA DE CONTENIDO (scroll independiente) -->
+    <main class="contenido" id="main-contenido">
 
-      <!-- Cabecera oscura -->
-      <div class="card-hero" style="margin-bottom:28px;">
-        <h2>Mi Espacio Seguro</h2>
-        <p>Tu información, bajo tu control. Nadie más tiene acceso.</p>
-        <div style="display:inline-flex;align-items:center;gap:6px;background:var(--verde-fondo);color:var(--verde);border-radius:50px;padding:6px 14px;font-size:12px;">
-          🔒 Datos protegidos
-        </div>
-      </div>
+      <!-- ══════════════════════════════════════════
+           PÁGINA 1: PERFIL PRINCIPAL
+      ══════════════════════════════════════════ -->
+      <div id="pagina-perfil" class="pagina activa">
 
-      <!-- Mis verificaciones -->
-      <div class="seccion-titulo">Mis verificaciones</div>
-      
-      <div id="lista-guardadas"></div>
-
-      <div class="mini-item">
-        <div class="mini-item-izq">
-          <div class="mini-icono">🛡</div>
-          <div>
-            <div class="mini-titulo">Oferta: "Vendedora desde casa"</div>
-            <div class="mini-sub" style="color:var(--rojo);">⚠ Riesgo alto detectado. Guardado el 1/03/2026</div>
+        <!-- Header degradado con foto y nombre -->
+        <div class="profile-header">
+          <div class="avatar-wrapper">
+            <img
+              src="assets/FOTO_PERFIL.jpg"
+              alt="Foto de perfil"
+              class="avatar-img"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+            />
+            <div class="avatar-placeholder"><span>👤</span></div>
+          </div>
+          <div class="profile-info">
+            <h1 class="profile-name">Laura Fernandez López</h1>
+            <div class="profile-chips">
+              <span class="chip">📍 Lima, Perú</span>
+              <span class="chip">💼 10 años de experiencia</span>
+              <span class="chip">🎓 Ingeniería de Sistemas de Información</span>
+              <span class="chip chip-verified">✔ Perfil verificado</span>
+            </div>
           </div>
         </div>
-        <span style="color:var(--texto-muted);">›</span>
-      </div>
 
-      <div class="mini-item">
-        <div class="mini-item-izq">
-          <div class="mini-icono">✅</div>
-          <div>
-            <div class="mini-titulo">Oferta: "Analista de datos Jr."</div>
-            <div class="mini-sub" style="color:var(--verde);">✓ Bajo riesgo. Guardado el 27/02/2026</div>
+        <!-- Cuerpo de la página principal -->
+        <div class="pagina-body">
+
+          <!-- Banner Mi Espacio Seguro -->
+          <br>
+          <div class="safe-space-banner">
+            <div class="safe-space-text">
+              <h2 class="safe-title">Mi Espacio Seguro</h2>
+              <p class="safe-subtitle">Tu información, bajo tu control.<br>Nadie más tiene acceso.</p>
+            </div>
+            <div class="safe-stats">
+              <div class="stat-box">
+                <span class="stat-num">12</span>
+                <span class="stat-label">RESEÑAS PUBLICADAS</span>
+              </div>
+              <div class="stat-box">
+                <span class="stat-num">+450</span>
+                <span class="stat-label">MUJERES APOYADAS</span>
+              </div>
+              <div class="stat-box stat-box--outline">
+                <span class="stat-icon">🔒</span>
+                <span class="stat-label">Datos protegidos</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Ocupación Actual -->
+          <div class="section-card">
+            <h3 class="section-label">Ocupación actual</h3>
+            <div class="occupation-box">
+              <img
+                src="assets/EMPRESA.jpg"
+                alt="Empresa"
+                class="empresa-icon"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+              />
+              <div class="company-icon-placeholder" style="display:none;">🏢</div>
+              <div class="occupation-info">
+                <span class="occupation-title">Analista de Datos Senior</span>
+                <span class="occupation-company">TechNova Solutions · Tiempo completo</span>
+                <span class="occupation-since">Desde marzo 2025</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Mis Verificaciones -->
+          <div class="section-card">
+            <div class="section-header">
+              <h3 class="section-label">Mis verificaciones</h3>
+              <a href="#" class="link-ver" data-destino="pagina-verificaciones">Ver todas →</a>
+            </div>
+
+            <div class="verify-item verify-item--danger">
+              <div class="verify-icon-placeholder danger">⚠</div>
+              <div class="verify-info">
+                <span class="verify-name">Oferta: "Generar ingresos con mínimo esfuerzo"</span>
+                <span class="verify-risk danger">⚠ Riesgo alto detectado</span>
+              </div>
+              <span class="verify-arrow">›</span>
+            </div>
+
+            <div class="verify-item verify-item--safe">
+              <div class="verify-icon-placeholder safe">✔</div>
+              <div class="verify-info">
+                <span class="verify-name">Oferta: "Analista de datos Jr."</span>
+                <span class="verify-risk safe">✓ Bajo riesgo</span>
+              </div>
+              <span class="verify-arrow">›</span>
+            </div>
+          </div>
+
+          <!-- Empresas Guardadas -->
+          <div class="section-card">
+            <div class="section-header">
+              <h3 class="section-label">Empresas guardadas</h3>
+              <a href="#" class="link-ver" data-destino="pagina-empresas">Ver →</a>
+            </div>
+
+            <div class="company-item">
+              <div class="company-icon-placeholder">
+                <img
+                src="assets/EMPRESA.jpg"
+                alt="Empresa"
+                class="empresa-icon"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+              />
+              </div>
+              <div class="company-info">
+                <span class="company-name">TechNova Solutions</span>
+                <span class="company-score">FemScore: <strong>9.5</strong></span>
+              </div>
+              <span class="verify-arrow">›</span>
+            </div>
+
+            <div class="company-item">
+              <div class="company-icon-placeholder">
+                <img
+                src="assets/EMPRESA2.jpg"
+                alt="Empresa"
+                class="empresa-icon"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+              />
+              </div>
+              <div class="company-info">
+                <span class="company-name">Salud Integral Perú</span>
+                <span class="company-score">FemScore: <strong>9.2</strong></span>
+              </div>
+              <span class="verify-arrow">›</span>
+            </div>
+          </div>
+
+          <!-- Mis Publicaciones -->
+          <div class="section-card">
+            <div class="section-header">
+              <h3 class="section-label">Mis publicaciones</h3>
+              <a href="#" class="link-ver" data-destino="pagina-publicaciones">Ver →</a>
+            </div>
+
+            <div class="post-item">
+              <div class="post-icon-placeholder">✍️</div>
+              <div class="post-info">
+                <span class="post-tag">#ReinicioLaboral</span>
+                <span class="post-meta">48 reacciones · 12 comentarios</span>
+              </div>
+              <span class="verify-arrow">›</span>
+            </div>
+          </div>
+
+
+        </div><!-- /pagina-body -->
+      </div>
+      <!-- /pagina-perfil -->
+
+
+      <!-- ══════════════════════════════════════════
+           PÁGINA 3: HISTORIAL DE VERIFICACIONES
+      ══════════════════════════════════════════ -->
+      <div id="pagina-verificaciones" class="pagina">
+
+        <div class="subpage-topbar">
+          <a href="#" class="btn-back" data-destino="pagina-perfil">← Volver</a>
+          <span class="subpage-title">Verificaciones</span>
+        </div>
+
+        <div class="subpage-content">
+          <h1 class="page-title">Historial de verificaciones</h1>
+          <p class="page-subtitle">Aquí se registran todas las ofertas que analizaste. Tu historial es privado.</p>
+
+          <div class="verify-card danger">
+            <div class="vcard-icon danger">⚠️</div>
+            <div class="vcard-body">
+              <p class="vcard-title">Oferta: "Generar ingresos con mínimo esfuerzo"</p>
+              <span class="vcard-badge danger">⚠ Riesgo alto detectado</span>
+              <p class="vcard-desc">Esta oferta de trabajo ha sido clasificada con un riesgo alto de estafa piramidal. El anuncio promete generar ingresos con un esfuerzo mínimo, pero solicita un pago previo y proviene de una empresa no registrada y sin contrato formal.</p>
+              <div class="vcard-signals">
+                <span class="signal-chip">💸 Pago previo requerido</span>
+                <span class="signal-chip">🏢 Empresa no registrada</span>
+                <span class="signal-chip">📵 Sin contrato</span>
+              </div>
+              <p class="vcard-date">Analizado el 14 feb 2024</p>
+            </div>
+          </div>
+
+          <div class="verify-card safe">
+            <div class="vcard-icon safe">✅</div>
+            <div class="vcard-body">
+              <p class="vcard-title">Oferta: "Analista de datos Jr."</p>
+              <span class="vcard-badge safe">✓ Bajo riesgo</span>
+              <p class="vcard-desc">Empresa con registro válido en SUNAT, contrato formal, sueldo dentro del rango de mercado y proceso de selección transparente.</p>
+              <div class="vcard-signals">
+                <span class="signal-chip">📄 Contrato formal</span>
+                <span class="signal-chip">✔ SUNAT verificado</span>
+                <span class="signal-chip">💰 Sueldo justo</span>
+              </div>
+              <p class="vcard-date">Analizado el 20 mar 2024</p>
+            </div>
+          </div>
+
+          <div class="verify-card medio">
+            <div class="vcard-icon medio">🔍</div>
+            <div class="vcard-body">
+              <p class="vcard-title">Oferta: "Community Manager Freelance"</p>
+              <span class="vcard-badge medio">⚡ Riesgo medio</span>
+              <p class="vcard-desc">La oferta parece legítima pero el salario está por debajo del promedio de mercado en un 30%. Se recomienda negociar antes de aceptar.</p>
+              <div class="vcard-signals">
+                <span class="signal-chip">📉 Sueldo bajo</span>
+                <span class="signal-chip">⏱ Horas no definidas</span>
+              </div>
+              <p class="vcard-date">Analizado el 5 abr 2024</p>
+            </div>
+          </div>
+
+          <div class="verify-card danger">
+            <div class="vcard-icon danger">🚨</div>
+            <div class="vcard-body">
+              <p class="vcard-title">Oferta: "Ejecutiva de cuentas — trabajo remoto"</p>
+              <span class="vcard-badge danger">⚠ Riesgo alto detectado</span>
+              <p class="vcard-desc">El reclutador solicitó foto de DNI antes de la entrevista. El dominio del correo no coincide con la empresa que dicen representar.</p>
+              <div class="vcard-signals">
+                <span class="signal-chip">🪪 Solicitud de DNI prematura</span>
+                <span class="signal-chip">📧 Correo sospechoso</span>
+                <span class="signal-chip">📵 Sin LinkedIn</span>
+              </div>
+              <p class="vcard-date">Analizado el 18 abr 2024</p>
+            </div>
+          </div>
+
+          <div class="verify-card safe">
+            <div class="vcard-icon safe">🏆</div>
+            <div class="vcard-body">
+              <p class="vcard-title">Oferta: "Especialista en UX — Fintech"</p>
+              <span class="vcard-badge safe">✓ Bajo riesgo</span>
+              <p class="vcard-desc">Empresa reconocida del sector fintech con reseñas positivas. Proceso con entrevistas técnicas, sueldo competitivo y beneficios de maternidad.</p>
+              <div class="vcard-signals">
+                <span class="signal-chip">🌟 FemScore 9.1</span>
+                <span class="signal-chip">🤱 Beneficios maternidad</span>
+                <span class="signal-chip">📈 Plan de carrera</span>
+              </div>
+              <p class="vcard-date">Analizado el 2 may 2024</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <!-- /pagina-verificaciones -->
+
+
+      <!-- ══════════════════════════════════════════
+           PÁGINA 4: HISTORIAL DE EMPRESAS
+      ══════════════════════════════════════════ -->
+      <div id="pagina-empresas" class="pagina">
+
+        <div class="subpage-topbar">
+          <a href="#" class="btn-back" data-destino="pagina-perfil">← Volver</a>
+          <span class="subpage-title">Empresas guardadas</span>
+        </div>
+
+        <div class="subpage-content">
+          <h1 class="page-title">Historial de empresas guardadas</h1>
+          <p class="page-subtitle">Las empresas que marcaste como favoritas para seguir de cerca.</p>
+
+          <div class="emp-card">
+            <div class="emp-logo-placeholder">
+              <img
+                src="assets/EMPRESA.jpg"
+                alt="Empresa"
+                class="empresa-icon"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+              />
+            </div>
+            <div class="emp-body">
+              <p class="emp-name">TechNova Solutions</p>
+              <p class="emp-score">⭐ FemScore: 9.5</p>
+              <p class="emp-sector">Tecnología · Lima</p>
+              <div class="emp-tags">
+                <span class="emp-tag">Liderazgo Femenino</span>
+                <span class="emp-tag">Flexibilidad</span>
+                <span class="emp-tag">Sueldo Justo</span>
+              </div>
+              <p class="emp-date">Guardada el 10 ene 2024</p>
+            </div>
+            <span class="arrow">›</span>
+          </div>
+
+          <div class="emp-card">
+            <div class="emp-logo-placeholder">
+              <img
+                src="assets/EMPRESA2.jpg"
+                alt="Empresa"
+                class="empresa-icon"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+              />
+            </div>
+            <div class="emp-body">
+              <p class="emp-name">Salud Integral Perú</p>
+              <p class="emp-score">⭐ FemScore: 9.2</p>
+              <p class="emp-sector">Salud · Arequipa</p>
+              <div class="emp-tags">
+                <span class="emp-tag">Sala Lactancia</span>
+                <span class="emp-tag">Seguridad</span>
+                <span class="emp-tag">Ambiente Inclusivo</span>
+              </div>
+              <p class="emp-date">Guardada el 22 ene 2024</p>
+            </div>
+            <span class="arrow">›</span>
+          </div>
+
+          <div class="emp-card">
+            <div class="emp-logo-placeholder">
+              <img
+                src="assets/EMPRESA3.png"
+                alt="Empresa"
+                class="empresa-icon"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+              />
+            </div>
+            <div class="emp-body">
+              <p class="emp-name">Futuro Digital S.A.</p>
+              <p class="emp-score">⭐ FemScore: 8.7</p>
+              <p class="emp-sector">Tecnología · Lima</p>
+              <div class="emp-tags">
+                <span class="emp-tag">Trabajo Remoto</span>
+                <span class="emp-tag">Plan de Carrera</span>
+              </div>
+              <p class="emp-date">Guardada el 3 feb 2024</p>
+            </div>
+            <span class="arrow">›</span>
+          </div>
+
+          <div class="emp-card">
+            <div class="emp-logo-placeholder">
+              <img
+                src="assets/EMPRESA4.png"
+                alt="Empresa"
+                class="empresa-icon"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+              />
+            </div>
+            <div class="emp-body">
+              <p class="emp-name">AprendeMás</p>
+              <p class="emp-score">⭐ FemScore: 8.3</p>
+              <p class="emp-sector">Educación · Trujillo</p>
+              <div class="emp-tags">
+                <span class="emp-tag">Amor a aprender</span>
+                <span class="emp-tag">Crecimiento</span>
+              </div>
+              <p class="emp-date">Guardada el 18 feb 2024</p>
+            </div>
+            <span class="arrow">›</span>
+          </div>
+
+          <div class="emp-card">
+            <div class="emp-logo-placeholder">
+              <img
+                src="assets/EMPRESA5.png"
+                alt="Empresa"
+                class="empresa-icon"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+              />
+            </div>
+            <div class="emp-body">
+              <p class="emp-name">Creativa Studio Latam</p>
+              <p class="emp-score">⭐ FemScore: 8.9</p>
+              <p class="emp-sector">Diseño · Marketing · Híbrido</p>
+              <div class="emp-tags">
+                <span class="emp-tag">Equipo Diverso</span>
+                <span class="emp-tag">Flexibilidad</span>
+                <span class="emp-tag">Beneficios</span>
+              </div>
+              <p class="emp-date">Guardada el 5 mar 2024</p>
+            </div>
+            <span class="arrow">›</span>
+          </div>
+
+        </div>
+      </div>
+      <!-- /pagina-empresas -->
+
+
+      <!-- ══════════════════════════════════════════
+           PÁGINA 5: HISTORIAL DE PUBLICACIONES
+      ══════════════════════════════════════════ -->
+      <div id="pagina-publicaciones" class="pagina">
+
+        <div class="subpage-topbar">
+          <a href="#" class="btn-back" data-destino="pagina-perfil">← Volver</a>
+          <span class="subpage-title">Mis publicaciones</span>
+        </div>
+
+        <div class="subpage-content">
+          <h1 class="page-title">Historial de publicaciones</h1>
+          <p class="page-subtitle">Tus aportes a la comunidad. Todas son anónimas y cifradas.</p>
+
+          <div class="post-card">
+            <div class="post-header">
+              <div class="post-avatar">✍️</div>
+              <div class="post-meta-top">
+                <span class="post-hashtag">#ReinicioLaboral</span>
+                <span class="post-date">Publicado el 15 ene 2024</span>
+              </div>
+            </div>
+            <p class="post-text">Después de 2 años fuera del mercado por maternidad, volví a trabajar y fue más difícil de lo que imaginé. Comparto mis tips para actualizar el CV y afrontar la entrevista con confianza. ¡Sí se puede!</p>
+            <div class="post-stats">
+              <div class="post-stat"><span>❤️</span> 48 reacciones</div>
+              <div class="post-stat"><span>💬</span> 12 comentarios</div>
+              <span class="post-visibility">🔒 Anónima</span>
+            </div>
+          </div>
+
+          <div class="post-card">
+            <div class="post-header">
+              <div class="post-avatar">💬</div>
+              <div class="post-meta-top">
+                <span class="post-hashtag">#BrechaSalarial</span>
+                <span class="post-date">Publicado el 28 ene 2024</span>
+              </div>
+            </div>
+            <p class="post-text">Me enteré que mi colega con menos experiencia gana un 20% más. Pedí explicaciones a RR.HH. y me dieron evasivas. ¿A alguien más le ha pasado esto? Necesitamos hablar de esto sin miedo.</p>
+            <div class="post-stats">
+              <div class="post-stat"><span>❤️</span> 120 reacciones</div>
+              <div class="post-stat"><span>💬</span> 37 comentarios</div>
+              <span class="post-visibility">🔒 Anónima</span>
+            </div>
+          </div>
+
+          <div class="post-card">
+            <div class="post-header">
+              <div class="post-avatar">🌟</div>
+              <div class="post-meta-top">
+                <span class="post-hashtag">#EmpresaRecomendada</span>
+                <span class="post-date">Publicado el 10 feb 2024</span>
+              </div>
+            </div>
+            <p class="post-text">Quiero reconocer a Salud Integral Perú: tienen sala de lactancia real, horarios flexibles de verdad y nunca me cuestionaron por pedir permisos médicos para mi hija. FemScore merecido.</p>
+            <div class="post-stats">
+              <div class="post-stat"><span>❤️</span> 76 reacciones</div>
+              <div class="post-stat"><span>💬</span> 8 comentarios</div>
+              <span class="post-visibility">🔒 Anónima</span>
+            </div>
+          </div>
+
+          <div class="post-card">
+            <div class="post-header">
+              <div class="post-avatar">⚠️</div>
+              <div class="post-meta-top">
+                <span class="post-hashtag">#OfertaFalsa</span>
+                <span class="post-date">Publicado el 5 mar 2024</span>
+              </div>
+            </div>
+            <p class="post-text">Cuidado con la oferta de "Ejecutiva de Ventas Home Office" que circula en grupos de Facebook. Te piden pagar un kit de $50 y luego desaparecen. Denúncienla y usen la verificación de la app.</p>
+            <div class="post-stats">
+              <div class="post-stat"><span>❤️</span> 95 reacciones</div>
+              <div class="post-stat"><span>💬</span> 22 comentarios</div>
+              <span class="post-visibility">🔒 Anónima</span>
+            </div>
+          </div>
+
+          <div class="post-card">
+            <div class="post-header">
+              <div class="post-avatar">📈</div>
+              <div class="post-meta-top">
+                <span class="post-hashtag">#CrecimientoProfesional</span>
+                <span class="post-date">Publicado el 20 mar 2024</span>
+              </div>
+            </div>
+            <p class="post-text">Conseguí mi primera certificación en análisis de datos y esto cambió todo. De cobrar S/1800 a S/3200 en 6 meses. La educación continua es nuestra mejor arma. ¡Dejen sus cursos recomendados!</p>
+            <div class="post-stats">
+              <div class="post-stat"><span>❤️</span> 203 reacciones</div>
+              <div class="post-stat"><span>💬</span> 54 comentarios</div>
+              <span class="post-visibility">🔒 Anónima</span>
+            </div>
           </div>
         </div>
-        <span style="color:var(--texto-muted);">›</span>
       </div>
-
-      <!-- Empresas guardadas -->
-      <div class="seccion-titulo">Empresas guardadas</div>
-
-      <div class="mini-item">
-        <div class="mini-item-izq">
-          <div class="mini-icono">⭐</div>
-          <div>
-            <div class="mini-titulo">Futuro Digital S.A.</div>
-            <div class="mini-sub">FemScore: <strong style="color:var(--verde);">8.7</strong></div>
-          </div>
-        </div>
-        <span style="color:var(--texto-muted);">›</span>
-      </div>
-
-      <div class="mini-item">
-        <div class="mini-item-izq">
-          <div class="mini-icono">⭐</div>
-          <div>
-            <div class="mini-titulo">Salud Integral Perú</div>
-            <div class="mini-sub">FemScore: <strong style="color:var(--verde);">9.2</strong></div>
-          </div>
-        </div>
-        <span style="color:var(--texto-muted);">›</span>
-      </div>
-
-      <!-- Mis publicaciones -->
-      <div class="seccion-titulo">Mis publicaciones</div>
-
-      <div class="mini-item">
-        <div class="mini-item-izq">
-          <div class="mini-icono">💬</div>
-          <div>
-            <div class="mini-titulo">#ReinicioLaboral</div>
-            <div class="mini-sub">48 reacciones · 12 comentarios</div>
-          </div>
-        </div>
-        <span style="color:var(--texto-muted);">›</span>
-      </div>
-
-      <!-- Perfil -->
-      <div class="seccion-titulo">Mi perfil</div>
-
-      <div class="mini-item" style="border-style:dashed;" onclick="mostrarToast('Próximamente: completar perfil')">
-        <div class="mini-item-izq">
-          <div class="mini-icono" style="font-size:20px;">＋</div>
-          <div>
-            <div class="mini-titulo">Completar mi perfil</div>
-            <div class="mini-sub">Incluye experiencias de cuidado y no formales</div>
-          </div>
-        </div>
-        <span style="color:var(--texto-muted);">›</span>
-      </div>
+      <!-- /pagina-publicaciones -->
 
     </main>
   </div>
 
   <div id="toast"></div>
-  <script src="js/main.js"></script>
   <script src="js/profile.js"></script>
-  <div id="toast"></div>
-  <script src="js/main.js"></script>
-  <script src="js/profile.js"></script>
-
-  <script>
-  document.addEventListener("DOMContentLoaded", function() {
-      const contenedor = document.getElementById('lista-guardadas');
-      if(!contenedor) return; 
-
-      // 1. Sacamos las ofertas de la memoria del navegador
-      const ofertasGuardadas = JSON.parse(localStorage.getItem('wc_ofertas_guardadas') || '[]');
-
-      // 2. Si no hay nada, mostramos un mensaje sutil
-      if(ofertasGuardadas.length === 0) {
-          contenedor.innerHTML = '<div style="padding: 10px 20px; color: var(--texto-muted); font-size: 14px;">Aún no tienes verificaciones guardadas.</div>';
-          return;
-      }
-
-     // 3. Si sí hay, creamos una tarjetita usando TU PROPIO DISEÑO EXACTO
-      let htmlTarjetas = "";
-      ofertasGuardadas.forEach(oferta => {
-          
-          // LÓGICA DE COLORES E ICONOS
-          let colorRiesgo = "var(--rojo)"; 
-          let iconoPrincipal = "🛡"; // El emoji grande de la izquierda
-          let iconoSub = "⚠";       // El emoji chiquito del texto
-          let textoRiesgo = oferta.estado; 
-
-          // Si es Riesgo Medio
-          if (textoRiesgo.toLowerCase().includes("medio")) {
-              colorRiesgo = "#b8860b"; // Mostaza
-              iconoPrincipal = "⚠️";    // Triángulo de advertencia
-              iconoSub = "⚠";
-          } 
-          // Si es Riesgo Bajo / Seguro
-          else if (textoRiesgo.toLowerCase().includes("bajo") || textoRiesgo.toLowerCase().includes("seguro")) {
-              colorRiesgo = "var(--verde)"; // Verde
-              iconoPrincipal = "✅";        // Check verde grande
-              iconoSub = "✓";             // Check chiquito
-          } 
-          // Si es Riesgo Alto (por defecto)
-          else {
-              colorRiesgo = "var(--rojo)"; // Rojo
-              iconoPrincipal = "🛡";        // Escudo oscuro
-              iconoSub = "⚠";
-          }
-
-          htmlTarjetas += `
-          <div class="mini-item" onclick="mostrarToast('Abriendo diagnóstico de Valia...')">
-            <div class="mini-item-izq">
-              <div class="mini-icono">${iconoPrincipal}</div> 
-              <div>
-                <div class="mini-titulo">${oferta.tipo}</div>
-                <div class="mini-sub" style="color:${colorRiesgo};">
-                    ${iconoSub} ${textoRiesgo} · Guardado el ${oferta.fecha}
-                </div>
-              </div>
-            </div>
-            <span style="color:var(--texto-muted);">›</span>
-          </div>`;
-      });
-      // 4. Pintamos las tarjetas en la pantalla
-      contenedor.innerHTML = htmlTarjetas;
-  });
-  </script>
-</body>
-</html>
 </body>
 </html>
