@@ -9,10 +9,10 @@ WomenConnect es una plataforma web creada por la startup Misty.pe para brindar a
 ## Vista previa del proyecto
 
 ### Pantalla de Inicio
-![Home WomenConnect](./assets/imagen1.png)
+![Home WomenConnect](./assets/image1.png)
 
 ### Valia IA – Centro de Apoyo Inteligente
-![Valia IA](./assets/imagen2.png)
+![Valia IA](./assets/image2.png)
 
 ---
 
@@ -169,4 +169,5 @@ Es tu panel privado para controlar tu experiencia dentro de WomenConnect.
 ---
 
 ## Creado por Misty.pe
+
 Tecnología con propósito, construida por mujeres para mujeres.
