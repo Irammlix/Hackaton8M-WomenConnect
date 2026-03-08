@@ -122,3 +122,26 @@ function updateToggleText(id) {
     text.style.color = "var(--texto-muted)"; // Gris cuando está desactivado
   }
 }
+
+
+// Carga de datos de la usuaria
+
+function cargarDatosUsuario() {
+    const usuarioString = localStorage.getItem('wc_usuario');
+    
+    if (usuarioString) {
+        const usuario = JSON.parse(usuarioString);
+        
+        if (usuario.nombre) {
+            const nombreElem = document.getElementById('nombre-usuario');
+            const avatarLetra = document.getElementById('avatar-letra');
+            
+            if (nombreElem) nombreElem.textContent = usuario.nombre;
+            if (avatarLetra) avatarLetra.textContent = usuario.nombre.charAt(0).toUpperCase();
+        }
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    cargarDatosUsuario();
+});

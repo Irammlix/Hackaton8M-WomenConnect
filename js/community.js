@@ -79,6 +79,10 @@ function filtrarTag(btn) {
 // --- DIBUJAR LOS POSTS GUARDADOS EN EL MURO DE COMUNIDAD ---
 document.addEventListener('DOMContentLoaded', () => {
     cargarPublicacionesEnComunidad();
+    
+    // Llamamos a la nueva función para pintar el nombre en el sidebar
+    cargarDatosDeUsuariaEnComunidad(); 
+    
     if(typeof recibirBorradorDeValia === 'function') recibirBorradorDeValia();
 });
 
@@ -89,6 +93,7 @@ function cargarPublicacionesEnComunidad() {
     const publicaciones = JSON.parse(localStorage.getItem('wc_mis_publicaciones') || '[]');
     
     let htmlNuevo = "";
+    /*
     publicaciones.forEach((pub, index) => {
         const nombreAutor = pub.esAnonima ? "🔒 Usuario Anónima" : "👤 Mi Cuenta";
         const colorAvatar = pub.esAnonima ? "var(--rosa-fuerte)" : "var(--lila-claro)";
@@ -135,11 +140,73 @@ function cargarPublicacionesEnComunidad() {
 
         </div>`;
     });
+    */
+    publicaciones.forEach((pub, index) => {
+        const nombreAutor = pub.esAnonima ? "🔒 Usuario Anónima" : "👤 Mi Cuenta";
+        const colorAvatar = pub.esAnonima ? "var(--rosa-fuerte)" : "var(--lila-claro)";
+        const letraAvatar = pub.esAnonima ? "U" : "M";
+        const idUnico = `dinamico-${index}`; 
 
+        // --- PREPARAMOS EL HTML DEL ADJUNTO SI EXISTE ---
+        let adjuntoHTML = "";
+        if (pub.archivoDato) {
+            if (pub.tipoArchivo === 'imagen') {
+                adjuntoHTML = `<div style="margin-top: 12px; border-radius: 8px; overflow: hidden; border: 1px solid var(--borde);">
+                                  <img src="${pub.archivoDato}" style="max-width: 100%; display: block;" alt="Imagen adjunta">
+                               </div>`;
+            } else {
+                adjuntoHTML = `<div style="margin-top: 12px; padding: 12px; background: var(--rosa-claro); border-radius: 8px; border: 1px dashed var(--rosa-medio); color: var(--rosa-fuerte); font-weight: bold;">
+                                  📎 Documento adjunto cargado
+                               </div>`;
+            }
+        }
+
+        htmlNuevo += `
+        <div class="post-card" style="border: 1px solid var(--rosa-medio); box-shadow: 0 4px 10px rgba(183,28,99,0.1);">
+          <div class="post-header">
+            <div class="post-author">
+              <div class="author-avatar" style="background: ${colorAvatar}; color: white;">${letraAvatar}</div>
+              <div class="author-info">
+                <div class="author-name">${nombreAutor}</div>
+                <div class="author-time">${pub.fecha}</div>
+              </div>
+            </div>
+            <span style="background: var(--rosa-claro); color: var(--rosa-fuerte); padding: 4px 8px; border-radius: 12px; font-size: 0.75rem; font-weight: bold; margin-left: auto;">¡Nuevo!</span>
+          </div>
+          <span class="post-tag">${pub.etiqueta}</span>
+          <p class="post-text">${pub.texto}</p>
+          
+          ${adjuntoHTML} <div class="post-footer">
+            <div class="post-reactions">
+              <button class="reaction-btn" onclick="toggleLike(this)">❤️ <span>${pub.likes || 0}</span></button>
+              <button class="reaction-btn" onclick="toggleComments('${idUnico}')">💬 <span>${pub.comentarios || 0}</span></button>
+              <button class="reaction-btn" onclick="abrirModal('modal-apoyo')">🤝 Apoyar</button>
+            </div>
+          </div>
+          
+          <div class="comments-section" id="comments-${idUnico}">
+            <div class="comment-box-nic">
+              <div class="comment-box-header">
+                <label class="switch-sm">
+                  <input type="checkbox" id="anonToggle${idUnico}" checked onchange="updateToggleText('${idUnico}')">
+                  <span class="slider-sm"></span>
+                </label>
+                <span id="toggleText${idUnico}" class="privacy-label-text">Anónima</span>
+              </div>
+              <div class="comment-input-wrapper">
+                <input class="comment-input" id="commentInput${idUnico}" type="text" placeholder="Escribe un comentario anónimo...">
+                <button class="btn-send-comment" onclick="enviarComentario(this)">Enviar</button>
+              </div>
+            </div>
+          </div>
+
+        </div>`;
+    });
     feed.insertAdjacentHTML('afterbegin', htmlNuevo);
 }
 
 // 3. ENVÍO DE FORMULARIOS Y GUARDADO DE PUBLICACIONES
+/*
 function submitModal(idModal, mensaje) {
     const textarea = document.querySelector(`#${idModal} textarea`);
 
@@ -185,6 +252,79 @@ function submitModal(idModal, mensaje) {
     // Limpieza
     if (textarea) textarea.value = "";
     document.querySelectorAll('.btn-tag').forEach(b => b.classList.remove('activo-tag'));
+}
+*/
+// 3. ENVÍO DE FORMULARIOS Y GUARDADO DE PUBLICACIONES
+function submitModal(idModal, mensaje) {
+    const textarea = document.querySelector(`#${idModal} textarea`);
+
+    // Validación simple
+    if (textarea && textarea.value.trim() === "") {
+        alert("Por favor, escribe tu experiencia antes de publicar.");
+        return;
+    }
+
+    if (idModal === 'modal-experiencia') {
+        const textoPost = textarea.value.trim();
+        const tagSeleccionado = document.querySelector(`#${idModal} .btn-tag.activo-tag`);
+        const textoTag = tagSeleccionado ? tagSeleccionado.innerText : "#Experiencia";
+        const toggleAnon = document.getElementById('anonExp');
+        const esAnonima = toggleAnon ? toggleAnon.checked : true;
+        
+        const opcionesFecha = { day: 'numeric', month: 'short', year: 'numeric' };
+        const fechaHoy = new Date().toLocaleDateString('es-ES', opcionesFecha);
+
+        // --- MAGIA PARA LEER EL ARCHIVO ---
+        // Buscamos si hay un input de tipo archivo dentro del modal
+        const inputArchivo = document.querySelector(`#${idModal} input[type="file"]`);
+        
+        if (inputArchivo && inputArchivo.files.length > 0) {
+            const archivo = inputArchivo.files[0];
+            const lector = new FileReader();
+            
+            // Leemos el archivo y lo convertimos a un formato que el navegador pueda guardar
+            lector.onload = function(evento) {
+                const archivoBase64 = evento.target.result;
+                const esImagen = archivo.type.startsWith('image/');
+                
+                guardarPublicacionEnMemoria(textoPost, textoTag, fechaHoy, esAnonima, archivoBase64, esImagen ? 'imagen' : 'documento');
+            };
+            lector.readAsDataURL(archivo);
+        } else {
+            // Si no hay archivo, guardamos normalmente
+            guardarPublicacionEnMemoria(textoPost, textoTag, fechaHoy, esAnonima, null, null);
+        }
+    } else {
+        // Para otros modales que no sean el de experiencia
+        cerrarModal(idModal);
+        mostrarToast(mensaje, idModal);
+    }
+
+    // --- FUNCIÓN INTERNA PARA GUARDAR (Para no repetir código) ---
+    function guardarPublicacionEnMemoria(texto, etiqueta, fecha, anonima, archivoB64, tipoArchivo) {
+        let misPublicaciones = JSON.parse(localStorage.getItem('wc_mis_publicaciones') || '[]');
+        misPublicaciones.unshift({
+            id: Date.now(),
+            texto: texto,
+            etiqueta: etiqueta,
+            fecha: `Publicado el ${fecha}`,
+            esAnonima: anonima,
+            likes: 0,
+            comentarios: 0,
+            archivoDato: archivoB64, // Aquí guardamos la imagen convertida
+            tipoArchivo: tipoArchivo
+        });
+        localStorage.setItem('wc_mis_publicaciones', JSON.stringify(misPublicaciones));
+
+        // Limpiamos todo y cerramos
+        cerrarModal(idModal);
+        mostrarToast(mensaje, idModal);
+        if (textarea) textarea.value = "";
+        if (document.querySelector(`#${idModal} input[type="file"]`)) {
+            document.querySelector(`#${idModal} input[type="file"]`).value = "";
+        }
+        document.querySelectorAll('.btn-tag').forEach(b => b.classList.remove('activo-tag'));
+    }
 }
 
 // 4. SWITCH DE ANONIMATO (Sin duplicados)
@@ -345,3 +485,42 @@ function recibirBorradorDeValia() {
         localStorage.removeItem('wc_alerta_pendiente');
     }
 }
+
+// --- CARGAR DATOS DE USUARIA ---
+function cargarDatosDeUsuariaEnComunidad() {
+    const usuarioString = localStorage.getItem('wc_usuario');
+    
+    if (usuarioString) {
+        const usuario = JSON.parse(usuarioString);
+        
+        if (usuario.nombre) {
+            // Busca los elementos en el sidebar de la página de Comunidad
+            const nombreElem = document.getElementById('nombre-usuario');
+            const avatarLetra = document.getElementById('avatar-letra');
+            
+            // Si existen, actualiza el contenido
+            if (nombreElem) nombreElem.textContent = usuario.nombre;
+            if (avatarLetra) avatarLetra.textContent = usuario.nombre.charAt(0).toUpperCase();
+        }
+    }
+}
+
+// --- MOSTRAR NOMBRE DEL ARCHIVO CARGADO ---
+document.addEventListener('DOMContentLoaded', () => {
+    const inputFile = document.getElementById('file-post');
+    const btnUpload = document.querySelector('.btn-upload-nic');
+
+    if (inputFile && btnUpload) {
+        inputFile.addEventListener('change', function() {
+            if (this.files && this.files.length > 0) {
+                // Cambia el texto del botón al nombre del archivo
+                btnUpload.innerHTML = `✅ Archivo listo: ${this.files[0].name}`;
+                btnUpload.style.background = 'var(--rosa-claro)';
+                btnUpload.style.border = '1px solid var(--rosa-fuerte)';
+            } else {
+                // Vuelve al texto original si cancela
+                btnUpload.innerHTML = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="3" width="18" height="18" rx="2" ry="2" /><circle cx="8.5" cy="8.5" r="1.5" /><polyline points="21 15 16 10 5 21" /></svg> Añadir foto o evidencia`;
+            }
+        });
+    }
+});

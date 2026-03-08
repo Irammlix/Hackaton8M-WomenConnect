@@ -354,3 +354,7 @@ function iniciarDictado() {
 
     reconocimiento.start();
 }
+
+function abrirMenu() {
+  document.getElementById('menu-movil').classList.toggle('abierto');
+}
