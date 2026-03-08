@@ -1,8 +1,3 @@
-// Configuración de VALIA con la API de Google AI Studio
-
-const API_KEY = 'AIzaSyBHpxNevadV9Q_hX-4PJfwZe5DOck3K6mY'; 
-
-// 2. el prompt
 // 2. el prompt
 const promptDelSistema = `Eres Valia, la asistente virtual de confianza de la plataforma "Women Connect" (escudo). Tu objetivo principal es proteger, orientar y empoderar a las mujeres en su vida laboral.
 REGLA 1: Eres empática y validadora.
@@ -86,8 +81,7 @@ function quitarCargando() {
 
 // Conexión con la IA 
 async function consultarAValia(mensajeDeLaUsuaria, base64Data = null, mimeType = null) {
-    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${API_KEY}`;
-    
+    const url = '/api/chat';    
     const partesUsuario = [{ text: mensajeDeLaUsuaria }];
     
     if (base64Data && mimeType) {
